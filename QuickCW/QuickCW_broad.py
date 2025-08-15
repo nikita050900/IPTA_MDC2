@@ -41,7 +41,7 @@ from QuickCW.PulsarDistPriors import DMDistParameter, PXDistParameter
 #
 ################################################################################
 #@profile
-def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=False, include_ecorr=True, amplitude_prior='UL', gwb_gamma_prior=None, psr_distance_file=None, backend_selection=True):
+def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=False, include_ecorr=True, amplitude_prior='detection', gwb_gamma_prior=None, psr_distance_file=None, backend_selection=True):
     """Set up all essential objects for QuickCW to do MCMC iterations
 
     :param chain_params:        ChainParams object
@@ -87,9 +87,10 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=False, include
     if include_ecorr:
         # give ecorr a name so that we can use the usual noisefiles created for Kernel ecorr
         ec = gp_signals.EcorrBasisModel(log10_ecorr=ecorr, selection=selection, name='')
-
+    
+    #Red noise parameters
     log10_A = parameter.Uniform(-20, -11)
-    # log10_A = parameter.Uniform(-18, -11)
+    #log10_A = parameter.Uniform(-18, -11)
     gamma = parameter.Uniform(0, 7)
 
     # define powerlaw PSD and red noise signal
@@ -132,10 +133,10 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=False, include
         chain_params.freq_bounds[0] = 1 / Tspan
     log10_fgw = parameter.Uniform(np.log10(chain_params.freq_bounds[0]), np.log10(chain_params.freq_bounds[1]))(
         '0_log10_fgw')
-
-    m_max = 10
-
-    log10_mc = parameter.Uniform(7, m_max)('0_log10_mc')
+    
+    m_min = 6.46   # This is calculated and changed for a target
+    m_max = 11  # This is calculated and changed for a target
+    
 
     phase0 = parameter.Uniform(0, 2 * np.pi)('0_phase0')
     psi = parameter.Uniform(0, np.pi)('0_psi')
@@ -143,13 +144,17 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=False, include
 
     p_phase = parameter.Uniform(0, 2*np.pi)
 
+    # Set prior shapes for strain and chirp mass depending on detection vs UL.
+    log10_h = parameter.Uniform(-18, -11)('0_log10_h')
+    
     if amplitude_prior == 'detection':
-        log10_h = parameter.Uniform(-18, -11)('0_log10_h')
+        log10_mc = parameter.Uniform(m_min, m_max)('0_log10_mc')
     elif amplitude_prior == 'UL':
-        log10_h = parameter.LinearExp(-18, -11)('0_log10_h')
+        log10_mc = parameter.LinearExp(m_min, m_max)('0_log10_mc')
     else:
         raise NotImplementedError(
             "amplitude_prior provided not implemented\nuse either 'detection' for uniform in log-amplitude or 'UL' for uniform in amplitude prior")
+
 
     if psr_distance_file is None: #No pulsar distance file --> use Gaussian prior with pulsar distance and error from psr objects
         if np.any(np.array([psr.pdist[0] for psr in psrs])==0): #raise error if this is used with psr objects having zero distance
