@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 #import corner
 
 import pickle
+import glob
 
 import enterprise
 from enterprise.pulsar import Pulsar
@@ -39,6 +40,10 @@ from matplotlib import text
 import healpy as hp
 from healpy.newvisufunc import projview, newprojplot
 
+import os
+import argparse
+from pint.models.model_builder import parse_parfile
+
 #make sure this points to the pickled pulsars you want to analyze
 #data_pkl = '/scratch/na00078/15yr_data/15yrCW/v1p1_de440_pint_bipm2019_unshifted_pdist.pkl'
 
@@ -48,24 +53,69 @@ from healpy.newvisufunc import projview, newprojplot
 timdir2 = '/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/tim/'
 pardir2 = '/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/par/'
 
+#############################################
+
+pars = sorted(glob.glob(os.path.join(pardir2, "*.par")))
+tims = sorted(glob.glob(os.path.join(timdir2, "*.tim")))
+
 psrs = []
 
-parfiles = sorted(glob.glob(pardir2 + '*.par'))
-timfiles = sorted(glob.glob(timdir2 + '*.tim'))
-psrs = []
-
-for p, t in zip(parfiles, timfiles):
-    psr = Pulsar(p, t,  timing_package="tempo2")
-    psrs.append(psr)
+for par, tim in zip(pars, tims):
     
-#psrs = pickle.load(psr_pkl)
-#############################################Nikita add ended
+    print(par)
+    print(tim)
+    print()
+    
+    if len(parse_parfile(par)['NE_SW']) == 2:
+        print(f'removing extra NE_SW in {par}')
+        with open(par, 'r') as f:
+            text = f.read()
+        text_list = text.split('\n')
+        first_instance = True
+        for line in text_list:
+            if line[:5] == 'NE_SW':
+                if first_instance:
+                    first_instance = False
+                else:
+                    text_list.remove(line)
+        new_text = '\n'.join(text_list)
+        with open(par, 'w') as f:
+            f.write(new_text)
+    
+    if parse_parfile(par)['UNITS'][0] == 'TCB':
+        print('Convert tcb2tdb')
+        command = f"tcb2tdb {par} {par}"
+        os.system(command)
+        
+    if 'BINARY' in parse_parfile(par):
+        if parse_parfile(par)['BINARY'][0] == 'T2':
+            print('Convert T2 binary model')
+            command = f"t2binary2pint {par} {par}"
+            os.system(command)
+    
+    epsr = Pulsar(par, tim, timing_package='pint', ephem='DE436',
+                  include_bipm=True, bipm_version='BIPM2015')
+    
+    psrs.append(epsr)
+    
+ #################################
+'''
+psrs = []
 
+for par in sorted(glob.glob(pardir2 + '*.par')):
+    name = os.path.splitext(os.path.basename(par))[0]
+    tim = os.path.join(timdir2, name + '.tim')
+
+    if os.path.exists(tim):
+        psrs.append(Pulsar(par, tim))
+        print(f"Loaded {name}")
+    else:
+        print(f"Missing TIM file for {name}, skipping.")
 
 print(len(psrs))
-
+'''
 #number of iterations (increase to 100 million - 1 billion for actual analysis)
-N = int(1e9)
+N = 1e9
 
 n_int_block = 10000 #number of iterations in a block (which has one shape update and the rest are projection updates)
 save_every_n = 100000 #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)
@@ -95,8 +145,38 @@ rn_emp_dist_file = None
 #psr_dist_file = '/scratch/na00078/15yr_data/15yrCW/pulsar_distances_15yr.pkl'
 psr_dist_file = None
 
+
+##################################################################
+
+# Fixed directory path
+save_dir = "/scratch/na00078/projects/IPTA_MDC2/h5_files"
+
+parser = argparse.ArgumentParser(description="Run QuickMCMC narrow targeted search .")
+parser.add_argument(
+    "--save_filename",
+    type=str,
+    default="redo.h5",
+    help="Name of the .h5 file to save (default: %(default)s)"
+)
+parser.add_argument(
+    "--amplitude_prior",
+    type=str,
+    choices=["detection", "UL"],
+    default="detection",
+    help="Amplitude prior type: detection or UL (default: %(default)s)"
+)
+args = parser.parse_args()
+
+# Combine fixed path with filename
+savefile = os.path.join(save_dir, args.save_filename)
+amplitude_prior = args.amplitude_prior
+
+print(f"Saving to: {savefile}")
+print(f"Using amplitude_prior: {amplitude_prior}")
+
+#####################################################################
 #this is where results will be saved
-savefile = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect.h5'
+#savefile = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect.h5'
 #savefile = None
 
 ###############
@@ -111,7 +191,7 @@ TargFreq = 3.7e-09
 #Setup and start MCMC
 #object containing common parameters for the mcmc chain
 chain_params = ChainParams(T_max,n_chain, n_block_status_update,
-                           freq_bounds=np.array([TargFreq-1e-21, TargFreq+1e-21]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
+                           freq_bounds=np.array([TargFreq-.5e-21, TargFreq+.5e-21]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
                            n_int_block=n_int_block, #number of iterations in a block (which has one shape update and the rest are projection updates)
                            save_every_n=save_every_n, #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)
                            fisher_eig_downsample=fisher_eig_downsample, #multiplier for how much less to do more expensive updates to fisher eigendirections for red noise and common parameters compared to diagonal elements
@@ -124,7 +204,7 @@ chain_params = ChainParams(T_max,n_chain, n_block_status_update,
 
 
 pta,mcc = QuickCW.QuickCW(chain_params, psrs,
-                                  amplitude_prior='detection', #specify amplitude prior to use - 'detection':uniform in log-amplitude, 'UL': uniform in amplitude
+                                  amplitude_prior=args.amplitude_prior, #specify amplitude prior to use - 'detection':uniform in log-amplitude, 'UL': uniform in amplitude
                                   psr_distance_file=psr_dist_file, #file to specify advanced (parallax+DM) pulsar distance priors, if None use regular Gaussian priors based on pulsar distances in pulsar objects
                                   noise_json=noisefile)
 

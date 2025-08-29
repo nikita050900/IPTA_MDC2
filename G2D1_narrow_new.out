@@ -1,0 +1,7 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+Number of cores used for parallel running:  1
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_narrow_G2D2.py", line 59, in <module>
+    basedir = Path("/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/")
+NameError: name 'Path' is not defined
+Run complete.

@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --job-name=trial_pkl
-#SBATCH --output=trial_pkl.out
+#SBATCH --job-name=psr_object_pkl
+#SBATCH --output=psr_object_pkl.out
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
@@ -13,5 +13,5 @@ export PINT_EPHEM=DE436
 which python
 #python runQuickMCMC_narrow_G2D1_bjorn_version_2.py
 #python runQuickMCMC_narrow_G2D2.py
-python runQuickMCMC_pkl.py
+python runQuickMCMC_pkl_psr_distance.py
 echo "Run complete."

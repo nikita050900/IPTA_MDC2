@@ -1,0 +1,6 @@
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_new.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_new_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 14)
+Infile log_likelihood shape: (1, 100000000)
+Done.

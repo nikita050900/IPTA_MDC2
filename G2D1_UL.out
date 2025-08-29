@@ -1,0 +1,7 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+libstempo not installed. PINT or libstempo are required to use par and tim files.
+Number of cores used for parallel running:  1
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_narrow_G2D1.py", line 54, in <module>
+    parfiles = sorted(glob.glob(pardir2 + '*.par'))
+NameError: name 'glob' is not defined

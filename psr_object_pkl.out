@@ -1,0 +1,16 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+Number of cores used for parallel running:  1
+33
+Using 4 temperature chains with a geometric spacing of 1.442.
+Temperature ladder is:
+ [1.         1.44224957 2.08008382 3.        ]
+Began Main Loop
+cos_gwtheta is: 0_cos_gwtheta:Uniform(pmin=0.8028174651911145, pmax=0.8028174851911146)
+gwphi is: 0_gwphi:Uniform(pmin=3.3335788613091695, pmax=3.3335788813091694)
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_pkl_psr_distance.py", line 108, in <module>
+    pta,mcc = QuickCW.QuickCW(chain_params, psrs,
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/QuickCW/QuickCW_narrow.py", line 177, in QuickCW
+    raise ValueError("You are running in a mode using parallax and DM based pulsar distance priors, but some of the pulsar object have non-zero distances or non-unit variances. This method requires the pulsar objects to have zero mean and unit variance. Use psr objects that satisfy that or switch to using Gaussian priors based on distances in psr objects by setting psr_distance_file=None.")
+ValueError: You are running in a mode using parallax and DM based pulsar distance priors, but some of the pulsar object have non-zero distances or non-unit variances. This method requires the pulsar objects to have zero mean and unit variance. Use psr objects that satisfy that or switch to using Gaussian priors based on distances in psr objects by setting psr_distance_file=None.
+Run complete.

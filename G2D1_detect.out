@@ -1,0 +1,31 @@
+libstempo not installed. PINT or libstempo are required to use par and tim files.
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/timing_model.py:392: UserWarning: PINT does not support 'DILATEFREQ Y'
+  warn("PINT does not support 'DILATEFREQ Y'")
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/timing_model.py:395: UserWarning: PINT only supports 'TIMEEPH FB90'
+  warn("PINT only supports 'TIMEEPH FB90'")
+Number of cores used for parallel running:  1
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_narrow_G2D1.py", line 62, in <module>
+    psrs.append(Pulsar(par, tim))
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/enterprise/pulsar.py", line 850, in Pulsar
+    model, toas = get_model_and_toas(
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/model_builder.py", line 798, in get_model_and_toas
+    mm = get_model(parfile, allow_name_mixing, allow_tcb=allow_tcb, **kwargs)
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/model_builder.py", line 712, in get_model
+    model = model_builder(
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/model_builder.py", line 187, in __call__
+    self._setup_model(
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/model_builder.py", line 650, in _setup_model
+    timing_model.validate(allow_tcb=allow_tcb)
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/pint/models/timing_model.py", line 416, in validate
+    raise ValueError(error_message)
+ValueError: The TCB timescale is not fully supported by PINT. 
+                PINT only supports 'UNITS TDB' internally. See https://nanograv-pint.readthedocs.io/en/latest/explanation.html#time-scales
+                for an explanation on different timescales. A TCB par file can be 
+                converted to TDB using the `tcb2tdb` command like so:
+                
+                    $ tcb2tdb J1234+6789_tcb.par J1234+6789_tdb.par
+                
+                However, this conversion is not exact and a fit must be performed to obtain 
+                reliable results. Note that PINT only supports writing TDB par files. 
+                

@@ -23,8 +23,8 @@ import enterprise.constants as const
 
 from enterprise_extensions import deterministic
 
-import glob
-import json
+#import glob
+#import json
 
 import QuickCW.QuickCW_narrow as QuickCW
 from QuickCW.QuickMCMCUtils import ChainParams
@@ -40,34 +40,17 @@ import healpy as hp
 from healpy.newvisufunc import projview, newprojplot
 
 #make sure this points to the pickled pulsars you want to analyze
-#data_pkl = '/scratch/na00078/15yr_data/15yrCW/v1p1_de440_pint_bipm2019_unshifted_pdist.pkl'
+data_pkl = '/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/dataset2_all_pulsars.pkl'
 
-#with open(data_pkl, 'rb') as psr_pkl:
- # psrs = pickle.load(psr_pkl)
-    
-timdir2 = '/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/tim/'
-pardir2 = '/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2/par/'
-
-psrs = []
-
-parfiles = sorted(glob.glob(pardir2 + '*.par'))
-timfiles = sorted(glob.glob(timdir2 + '*.tim'))
-psrs = []
-
-for p, t in zip(parfiles, timfiles):
-    psr = Pulsar(p, t,  timing_package="tempo2")
-    psrs.append(psr)
-    
-#psrs = pickle.load(psr_pkl)
-#############################################Nikita add ended
-
+with open(data_pkl, 'rb') as psr_pkl:
+    psrs = pickle.load(psr_pkl)
 
 print(len(psrs))
 
 #number of iterations (increase to 100 million - 1 billion for actual analysis)
-N = int(1e9)
+N = 1000000000
 
-n_int_block = 10000 #number of iterations in a block (which has one shape update and the rest are projection updates)
+n_int_block = 10_000 #number of iterations in a block (which has one shape update and the rest are projection updates)
 save_every_n = 100000 #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)
 N_blocks = np.int64(N//n_int_block) #number of blocks to do
 fisher_eig_downsample = 2000 #multiplier for how much less to do more expensive updates to fisher eigendirections for red noise and common parameters compared to diagonal elements
@@ -81,25 +64,24 @@ assert N%n_int_block == 0 #or we won't execute the right number of blocks
 
 #Parallel tempering prameters
 T_max = 3.
-n_chain = 4
+n_chain = 4 
 
 #make sure this points to your white noise dictionary
 noisefile = '/scratch/na00078/projects/IPTA_MDC2/noise_files/fit_psr_noise_dataset2.json'
 
 #make sure this points to the RN empirical distribution file you plan to use (or set to None to not use empirical distributions)
-#rn_emp_dist_file = '/scratch/na00078/15yr_data/15yr_v1_1/rn_distr_v1p1.pkl'
+#rn_emp_dist_file = '/scratch/js0311/15yr_data/15yr_v1_1/rn_distr_v1p1.pkl'
 rn_emp_dist_file = None
 
 #file containing information about pulsar distances - None means use pulsar distances present in psr objects
 #if not None psr objects must have zero distance and unit variance
-#psr_dist_file = '/scratch/na00078/15yr_data/15yrCW/pulsar_distances_15yr.pkl'
+#psr_dist_file = '/scratch/js0311/15yr_data/15yrCW/pulsar_distances_15yr.pkl'
 psr_dist_file = None
 
 #this is where results will be saved
-savefile = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect.h5'
+savefile = '/scratch/na00078/projects/IPTA_MDC2/h5_files/trial_pkl.h5'
 #savefile = None
-
-###############
+#########################
 #targeted search params-LondonAdd
 cos_gwtheta = np.cos(0.6387905062299246)
 gwphi = 3.3335788713091694
@@ -111,7 +93,7 @@ TargFreq = 3.7e-09
 #Setup and start MCMC
 #object containing common parameters for the mcmc chain
 chain_params = ChainParams(T_max,n_chain, n_block_status_update,
-                           freq_bounds=np.array([TargFreq-1e-21, TargFreq+1e-21]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
+                           freq_bounds=np.array([TargFreq-.5e-21, TargFreq+.5e-21]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
                            n_int_block=n_int_block, #number of iterations in a block (which has one shape update and the rest are projection updates)
                            save_every_n=save_every_n, #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)
                            fisher_eig_downsample=fisher_eig_downsample, #multiplier for how much less to do more expensive updates to fisher eigendirections for red noise and common parameters compared to diagonal elements
