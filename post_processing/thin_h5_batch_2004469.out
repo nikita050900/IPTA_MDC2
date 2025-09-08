@@ -1,0 +1,71 @@
+Processing G2D2_narrow_detect.h5 -> G2D2_narrow_detect_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_broad_detect.h5 -> G2D2_broad_detect_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D1_narrow_detect.h5 -> G2D1_narrow_detect_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D1_broad_detect.h5 -> G2D1_broad_detect_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_detect_allsky.h5 -> G2D2_detect_allsky_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_broad_UL.h5 -> G2D2_broad_UL_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_UL.h5 -> G2D2_narrow_UL_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_UL.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_UL_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D1_broad_UL.h5 -> G2D1_broad_UL_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D1_narrow_UL.h5 -> G2D1_narrow_UL_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_UL_allsky.h5 -> G2D2_UL_allsky_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_UL_allsky.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_UL_allsky_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+All done.
