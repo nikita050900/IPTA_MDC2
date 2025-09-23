@@ -11,7 +11,7 @@ detect_jobid=$(
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D1_broad.py --save_filename G2D1_broad_detect.h5 --amplitude_prior detection
+$PY runQuickMCMC_G2D1_broad.py --save_filename G2D1_broad_detect_1e9.h5 --amplitude_prior detection
 EOF
 )
 echo "Submitted detection job: ${detect_jobid}"
@@ -23,6 +23,6 @@ sbatch --dependency=afterok:${detect_jobid} <<EOF
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D1_broad.py --save_filename G2D1_broad_UL.h5 --amplitude_prior UL
+$PY runQuickMCMC_G2D1_broad.py --save_filename G2D1_broad_UL_1e9.h5 --amplitude_prior UL
 EOF
 echo "Submitted UL job (afterok:${detect_jobid})"
