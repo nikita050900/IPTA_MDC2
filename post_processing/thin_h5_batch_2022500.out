@@ -1,0 +1,17 @@
+Processing G2D1_broad_UL_1e9.h5 -> G2D1_broad_UL_1e9_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_1e9.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_1e9_outfile.h5
+Keeping first 8 parameters with thinning factor 10
+Infile samples_cold shape: (1, 1000000000, 142)
+Outfile samples_cold shape: (1, 100000000, 8)
+Processing chain 0...
+Done.
+Processing G2D1_broad_detect_1e9.h5 -> G2D1_broad_detect_1e9_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_outfile.h5
+Keeping first 8 parameters with thinning factor 10
+Infile samples_cold shape: (1, 1000000000, 142)
+Outfile samples_cold shape: (1, 100000000, 8)
+Processing chain 0...
+Done.
+All done.
