@@ -1,0 +1,9 @@
+Running make_cw_sim_dataset.py with USE_ROTATED=0
+Loaded 33 pulsars from /scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/psr_objects/G2D2_IPTA_MDC2_all_pulsars.pkl
+Injecting CW + noise into J0030+0451
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/make_cw_sim_dataset.py", line 101, in <module>
+    cw_res = cw_residuals_switch(psr, **cw_kwargs)
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/make_cw_sim_dataset.py", line 67, in cw_residuals_switch
+    raise RuntimeError("No CW residual generator found in pta_replicator.deterministic")
+RuntimeError: No CW residual generator found in pta_replicator.deterministic

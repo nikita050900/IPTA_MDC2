@@ -1,0 +1,23 @@
+Running make_cw_sim_dataset_from_enterprise.py with USE_ROTATED=1
+Found 33 pulsars
+Injecting CW + GWB + noise into J0030+0451
+[tempo2Util.C:396] Warning: [TIM1] Please place MODE flags in the parameter file 
+[preProcess.C:158] Warning: PSR J0030+0451 uses DM2+ but does not define DM_SERIES. Assume Taylor. This has behaviour has changed since June 2020!
+See https://bitbucket.org/psrsoft/tempo2/issues/27/tempo2-dm-polynomial-is-not-a-taylor
+
+[tempo2Util.C:396] Warning: [CLK3] no clock corrections available for clock UTC(axi) for MJD 52713.8
+[tempo2Util.C:396] Warning: [CLK4] Trying assuming UTC = UTC(axi)
+[tempo2Util.C:396] Warning: [CLK9] ... ok, using stated approximation 
+[tempo2Util.C:401] Warning: [DUP1] duplicated warnings have been suppressed.
+[tempo2Util.C:396] Warning: [CLK6] Proceeding assuming UTC =  UTC(axi)
+[tempo2Util.C:397] [TROP2] Assume standard atmospheric pressure (no data) for site axi at MJD 52713.8
+[tempo2Util.C:397] [TROP1] Assume zero zenith wet delay (no data) for site axi  at MJD 52713.8
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/make_cw_sim_dataset_libstempo.py", line 131, in <module>
+    main()
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/make_cw_sim_dataset_libstempo.py", line 103, in main
+    toas = psr.toas()
+  File "libstempo/libstempo.pyx", line 1370, in libstempo.libstempo.tempopulsar.toas
+  File "<stringsource>", line 275, in View.MemoryView.array_cwrapper
+  File "<stringsource>", line 161, in View.MemoryView.array.__cinit__
+ValueError: Invalid shape in axis 0: 0.
