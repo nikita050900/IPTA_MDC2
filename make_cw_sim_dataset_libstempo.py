@@ -1,131 +1,148 @@
 #!/usr/bin/env python3
 """
-Simulate IPTA MDC2 Group2 dataset with libstempo:
-Inject a continuous wave (CW) + red/white noise.
-No Enterprise or PINT dependencies.
+Simulate CW-injected libstempo dataset for IPTA-MDC2 (dataset_2)
+matching QuickCW conventions, with rotation switch for psi/phase0.
+
+Outputs:
+  /sim_dataset2_normal/*.tim
+  /sim_dataset2_rotated/*.tim
+  plus corresponding Enterprise-compatible PKLs
 """
+import os
+os.environ["ASTROPY_USE_SYSTEM_IERS"] = "1"
+os.environ["IERS_AUTO_URL"] = ""
 
-import os, json
-import numpy as np
-import libstempo as T
-from astropy import constants as const
+from pathlib import Path
+import numpy as np, pickle, libstempo as T
+from enterprise.pulsar import Pulsar
+from astropy.coordinates import SkyCoord
+import astropy.units as u
 
-# ===============================================================
-# PATHS
-# ===============================================================
-BASE = "/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2"
-PAR_DIR = os.path.join(BASE, "par")
-TIM_DIR = os.path.join(BASE, "tim")
-NOISE_FILE = "/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/noise_files/fit_psr_noise_dataset2.json"
-OUT_DIR = "/scratch/na00078/projects/IPTA_MDC2/sim_libstempo_dataset2"
-os.makedirs(OUT_DIR, exist_ok=True)
+# ---------- Paths ----------
+BASE = Path("/scratch/na00078/projects/IPTA_MDC2/mdc2/group2/dataset_2")
+PAR_DIR, TIM_DIR = BASE / "par", BASE / "tim"
 
-# ===============================================================
-# CW PARAMETERS
-# ===============================================================
-CW = {
-    "chirp_mass": 4.3e9,                 # Msun
-    "distance": 75.4,                    # Mpc
-    "f_gw": 3.7e-9,                      # Hz
-    "gw_phi": 3.3335788713091694,        # rad
-    "gw_theta": 0.6387905062299246,      # rad
-    "inclination": 0.8412486994612669,   # rad
-    "log10_A_gwb": -15.070581074285707,
-    "log10_h": -13.668773493298787,
-    "phase0": 0.24434609527920614,
-    "psi": 1.1187560505283651,
-}
+OUT_BASE = Path("/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data")
+OUT_NORMAL = OUT_BASE / "sim_dataset2_normal"
+OUT_ROT = OUT_BASE / "sim_dataset2_rotated"
+for d in [OUT_NORMAL, OUT_ROT]:
+    d.mkdir(parents=True, exist_ok=True)
 
-# ===============================================================
-# UTILITIES
-# ===============================================================
-def load_noise_dict(path):
-    with open(path, "r") as f:
-        return json.load(f)
+# ---------- Base CW parameters (dataset2) ----------
+CW_BASE = dict(
+    chirp_mass=4.3e9,
+    distance=75.4,
+    fgw=3.7e-9,
+    gw_phi=3.3335788713091694,
+    gw_theta=0.6387905062299246,
+    inclination=0.8412486994612669,
+    log10_h=-13.668773493298787,
+    phase0=0.24434609527920614,
+    psi=1.1187560505283651,
+)
 
-def get_noise_params(name, noise_dict):
-    """Extract EFAC/EQUAD/red-noise for a single pulsar."""
-    out = {}
-    for k, v in noise_dict.items():
-        if k.startswith(name + "_"):
-            out[k.split("_", 1)[1]] = v
-    return out
+# ---------- Rotation switch ----------
+def rotate_params(CW, rotate=False):
+    """Return new CW dict with psi→psi+π/2 and phase0→phase0+π if rotate=True."""
+    new = CW.copy()
+    if rotate:
+        new["psi"] = (new["psi"] + np.pi/2.0) % np.pi
+        new["phase0"] = (new["phase0"] + np.pi) % (2*np.pi)
+    return new
 
+# ---------- Helpers ----------
+def get_radec(psr):
+    """Return RA, DEC [rad] handling RAJ/DECJ or ELONG/ELAT."""
+    pars_upper = [p.upper() for p in psr.pars()]
+    if "ELONG" in pars_upper and "ELAT" in pars_upper:
+        elon = float(psr["ELONG"].val)
+        elat = float(psr["ELAT"].val)
+        c = SkyCoord(elon*u.rad, elat*u.rad, frame="barycentrictrueecliptic")
+        return float(c.icrs.ra.rad), float(c.icrs.dec.rad)
+    for racand, deccand in [("RAJ", "DECJ"), ("RA", "DEC")]:
+        if racand in pars_upper and deccand in pars_upper:
+            pra = float(psr[psr.pars()[pars_upper.index(racand)]].val)
+            pdec = float(psr[psr.pars()[pars_upper.index(deccand)]].val)
+            return pra, pdec
+    raise KeyError(f"No RA/DEC or ELONG/ELAT in {psr.name}")
+
+def antenna_factors(p_ra, p_dec, g_ra, g_dec, psi):
+    """Compute F+ and Fx antenna patterns."""
+    ph = np.array([np.cos(p_dec)*np.cos(p_ra),
+                   np.cos(p_dec)*np.sin(p_ra),
+                   np.sin(p_dec)])
+    kh = np.array([np.cos(g_dec)*np.cos(g_ra),
+                   np.cos(g_dec)*np.sin(g_ra),
+                   np.sin(g_dec)])
+    x = np.array([-np.sin(g_ra), np.cos(g_ra), 0.0])
+    y = np.cross(kh, x)
+    c2, s2 = np.cos(2*psi), np.sin(2*psi)
+    eplus  = np.outer(x, x) - np.outer(y, y)
+    ecross = np.outer(x, y) + np.outer(y, x)
+    eplus, ecross = c2*eplus + s2*ecross, -s2*eplus + c2*ecross
+    denom = 1.0 - ph.dot(kh)
+    Fp = 0.5 * (ph @ eplus @ ph) / denom
+    Fx = 0.5 * (ph @ ecross @ ph) / denom
+    return Fp, Fx
+
+# ---------- Injection function ----------
 def cw_residuals(psr, CW):
-    """Generate simple CW residuals for a libstempo pulsar."""
-    toas = psr.toas()  # seconds
-    ra, dec = psr.pos   # radians
-    gwtheta, gwphi = CW["gw_theta"], CW["gw_phi"]
-    inc, psi = CW["inclination"], CW["psi"]
-    phase0, fgw = CW["phase0"], CW["f_gw"]
-    h0 = 10 ** CW["log10_h"]
+    """Generate CW residuals (Earth + pulsar term)."""
+    fgw = CW["fgw"]
+    iota, psi, phi0 = CW["inclination"], CW["psi"], CW["phase0"]
+    g_ra, g_dec = CW["gw_phi"], np.pi/2.0 - CW["gw_theta"]
+    pra, pdec = get_radec(psr)
+    Fp, Fx = antenna_factors(pra, pdec, g_ra, g_dec, psi)
 
-    # antenna patterns (simplified)
-    fplus = 0.5 * (1 + np.cos(dec) ** 2) * np.cos(2 * (ra - gwphi))
-    fcross = np.cos(dec) * np.sin(2 * (ra - gwphi))
-    phase = 2 * np.pi * fgw * toas + phase0
-    rplus = -0.5 * (1 + np.cos(inc) ** 2) * np.sin(2 * phase)
-    rcross = np.cos(inc) * np.cos(2 * phase)
-    return h0 / (2 * np.pi * fgw) * (fplus * rplus + fcross * rcross)
+    toas = psr.stoas.copy().astype(float) * 86400.0  # s
+    tref = psr["PEPOCH"].val * 86400.0               # QuickCW uses PEPOCH as tref
 
-def add_white_noise(res, sigma):
-    return res + np.random.normal(0, sigma, size=len(res))
+    cth = np.cos(iota)
+    # Earth term
+    phiE = 2*np.pi*fgw*(toas - tref) + phi0
+    splus_E  = 0.5*(1 + cth**2)*np.cos(phiE)
+    scross_E = cth*np.sin(phiE)
 
-def add_red_noise(res, A, gamma, toas):
-    """Generate a simple red-noise realization."""
-    n = len(toas)
-    Tspan = toas.max() - toas.min()
-    freqs = np.fft.rfftfreq(n, d=Tspan / n)
-    psd = (A**2 / 12.0 / np.pi**2) * (freqs / 1e-8)**(-gamma)
-    psd[0] = 0
-    wn = np.random.normal(0, 1, len(freqs)) + 1j * np.random.normal(0, 1, len(freqs))
-    rn = np.fft.irfft(wn * np.sqrt(psd / 2.0))
-    return res + rn[:n]
+    # Pulsar term (depends on distance via PX)
+    try:
+        pdist = 1.0 / psr["PX"].val  # kpc
+    except Exception:
+        pdist = 1.0  # fallback
+    tau = pdist * 3.086e19 / (3e8)  # kpc→m→s
+    phiP = 2*np.pi*fgw*(toas - tref - tau) + phi0
+    splus_P  = 0.5*(1 + cth**2)*np.cos(phiP)
+    scross_P = cth*np.sin(phiP)
 
-# ===============================================================
-# MAIN
-# ===============================================================
-def main():
-    noise_dict = load_noise_dict(NOISE_FILE)
-    par_files = sorted([f for f in os.listdir(PAR_DIR) if f.endswith(".par")])
-    print(f"Found {len(par_files)} pulsars")
+    h0 = 10**CW["log10_h"]
+    res = (h0 / (2*np.pi*fgw)) * (Fp*(splus_E - splus_P) + Fx*(scross_E - scross_P))
+    return res
 
-    for par in par_files:
-        name = par.replace(".par", "")
-        par_path = os.path.join(PAR_DIR, par)
-        tim_path = os.path.join(TIM_DIR, f"{name}.tim")
-        if not os.path.isfile(tim_path):
-            print(f"Skipping {name}: no .tim file")
-            continue
+# ---------- Main loop ----------
+def build_dataset(rotate=False):
+    CW = rotate_params(CW_BASE, rotate)
+    outdir = OUT_ROT if rotate else OUT_NORMAL
+    pkl_path = outdir / ("G2D2_sim_injected_rot.pkl" if rotate else "G2D2_sim_injected.pkl")
 
-        print(f"Injecting CW + GWB + noise into {name}")
-        psr = T.tempopulsar(par_path, tim_path)
-        toas = psr.toas()
+    pulsars = []
+    for par in sorted(PAR_DIR.glob("*.par")):
+        tim = TIM_DIR / (par.stem + ".tim")
+        psr = T.tempopulsar(str(par), str(tim))
         res = cw_residuals(psr, CW)
+        psr.stoas[:] += res / 86400.0
+        psr.savetim(str(outdir / f"{psr.name}_CW_new{'_rot' if rotate else ''}.tim"))
+        rms = np.std(res)*1e6
+        print(f"{psr.name:12s} [{'ROT' if rotate else 'NORM'}] RMS={rms:.3f} µs")
+        # build Enterprise object
+        psr_ent = Pulsar(str(par), str(outdir / f"{psr.name}_CW_new{'_rot' if rotate else ''}.tim"), timing_package="tempo2")
+        pulsars.append(psr_ent)
 
-        # Add GWB realization
-        A_gwb = 10 ** CW["log10_A_gwb"]
-        res += np.random.normal(0, A_gwb, size=len(toas))
+    with open(pkl_path, "wb") as f:
+        pickle.dump(pulsars, f, protocol=pickle.HIGHEST_PROTOCOL)
+    print(f"\nSaved {len(pulsars)} {'rotated' if rotate else 'normal'} pulsars → {pkl_path}")
 
-        # Add EFAC/EQUAD and red noise
-        npars = get_noise_params(name, noise_dict)
-        efac = npars.get("efac", 1.0)
-        log10_tnequad = npars.get("log10_tnequad", -np.inf)
-        equad = 0.0 if not np.isfinite(log10_tnequad) else 10 ** log10_tnequad
-        sigma = np.sqrt((efac * psr.toaerrs) ** 2 + equad ** 2)
-        res = add_white_noise(res, np.mean(sigma))
-
-        if "red_noise_log10_A" in npars and "red_noise_gamma" in npars:
-            res = add_red_noise(res, 10 ** npars["red_noise_log10_A"],
-                                npars["red_noise_gamma"], toas)
-
-        # Save residuals and new files
-        np.savetxt(os.path.join(OUT_DIR, f"{name}_residuals.txt"), res)
-        psr.residuals(res)
-        psr.savetim(os.path.join(OUT_DIR, f"{name}_sim.tim"))
-        psr.savepar(os.path.join(OUT_DIR, f"{name}_sim.par"))
-
-    print(f"\nSimulation complete. Output saved to {OUT_DIR}")
-
-if __name__ == "__main__":
-    main()
+# ---------- Execute ----------
+print("Building normal (unrotated) dataset...")
+build_dataset(rotate=False)
+print("\nBuilding rotated dataset (ψ→ψ+π/2, Φ₀→Φ₀+π)...")
+build_dataset(rotate=True)
+print("\n✅ Done.")

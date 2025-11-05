@@ -6,23 +6,23 @@ PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
 detect_jobid=$(
   sbatch --parsable <<EOF
 #!/bin/bash
-#SBATCH --job-name=G2D2_narrow_detect
-#SBATCH --output=G2D2_narrow_detect.out
+#SBATCH --job-name=G2D2_narrow_detect_tref
+#SBATCH --output=G2D2_narrow_detect_tref.out
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D2_narrow.py --save_filename G2D2_narrow_detect.h5 --amplitude_prior detection
+$PY runQuickMCMC_G2D2_narrow.py --save_filename G2D2_narrow_detect_tref.h5 --amplitude_prior detection
 EOF
 )
 echo "Submitted detection job: ${detect_jobid}"
 
 sbatch --dependency=afterok:${detect_jobid} <<EOF
 #!/bin/bash
-#SBATCH --job-name=G2D2_narrow_UL
-#SBATCH --output=G2D2_narrow_UL.out
+#SBATCH --job-name=G2D2_narrow_UL_tref
+#SBATCH --output=G2D2_narrow_UL_tref.out
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D2_narrow.py --save_filename G2D2_narrow_UL.h5 --amplitude_prior UL
+$PY runQuickMCMC_G2D2_narrow.py --save_filename G2D2_narrow_UL_tref.h5 --amplitude_prior UL
 EOF
 echo "Submitted UL job (afterok:${detect_jobid})"

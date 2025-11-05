@@ -32,6 +32,13 @@ from enterprise_extensions import deterministic
 import QuickCW.const_mcmc as cm
 from QuickCW.QuickMCMCUtils import MCMCChain, ChainParams
 
+# ======== SET CORRECT REFERENCE EPOCH (tref) ========= #
+# Match QuickCW tref to your injected dataset epoch (MJD 55443.9336)
+cm.tref = int(round(55443.93364609394 * 86400))  # seconds
+print("QuickCW tref set to", cm.tref, "seconds (MJD =", cm.tref / 86400.0, ")")
+# ===================================================== #
+
+
 import inspect
 from QuickCW.PulsarDistPriors import DMDistParameter, PXDistParameter
 

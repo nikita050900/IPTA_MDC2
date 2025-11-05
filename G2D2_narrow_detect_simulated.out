@@ -1,0 +1,3 @@
+/gpfs20/scratch/na00078/projects/IPTA_MDC2/QuickCW/QuickMTHelpers.py:656: NumbaTypeSafetyWarning: unsafe cast from uint64 to int64. Precision may be lost.
+  x0_extras[KK].update_params(tries[itrkk,:])
+slurmstepd: error: *** JOB 2048573 ON tsscl002 CANCELLED AT 2025-11-05T14:47:40 ***
