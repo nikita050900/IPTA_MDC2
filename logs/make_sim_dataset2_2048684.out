@@ -1,9 +1,0 @@
-Job started at: Thu Nov  6 11:41:59 EST 2025
-Running on node: tsscl002.hpc.wvu.edu
-Loaded pulsar: J0030+0451
-QuickCW tref set to 55443.9336 MJD
-Traceback (most recent call last):
-  File "/scratch/na00078/projects/IPTA_MDC2/psi_convention.py", line 53, in <module>
-    if not isinstance(psr, Pulsar):
-TypeError: isinstance() arg 2 must be a type or tuple of types
-Job finished at: Thu Nov  6 11:42:00 EST 2025

@@ -1,5 +1,12 @@
-Job started at: Thu Nov  6 11:59:49 EST 2025
+Job started at: Thu Nov  6 15:49:09 EST 2025
 Running on node: tsscl002.hpc.wvu.edu
-Correlation between ψ and ψ−π/2 signals = -1.000
-ψ and ψ−π/2 are opposite sign → same orientation modulo phase flip.
-Job finished at: Thu Nov  6 11:59:49 EST 2025
+
+Polarization basis offset δ = 0.000000 rad = 0.000000 deg
+
+Translated injection parameters (QuickCW/Enterprise convention):
+  ψ_inj_qc  = 1.118756 rad
+  Φ₀_inj_qc = 3.385939 rad   [B (+π)]
+
+Use these translated values as the 'true' injection for overlaying in your QuickCW/Enterprise corner plots.
+If you run this for another pulsar and get the same δ, it is a fixed convention offset between libstempo and QuickCW.
+Job finished at: Thu Nov  6 15:49:12 EST 2025
