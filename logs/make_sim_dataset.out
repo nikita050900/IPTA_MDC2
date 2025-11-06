@@ -1,4 +1,4 @@
-Job started at: Thu Nov  6 15:49:09 EST 2025
+Job started at: Thu Nov  6 16:33:57 EST 2025
 Running on node: tsscl002.hpc.wvu.edu
 
 Polarization basis offset δ = 0.000000 rad = 0.000000 deg
@@ -7,6 +7,12 @@ Translated injection parameters (QuickCW/Enterprise convention):
   ψ_inj_qc  = 1.118756 rad
   Φ₀_inj_qc = 3.385939 rad   [B (+π)]
 
-Use these translated values as the 'true' injection for overlaying in your QuickCW/Enterprise corner plots.
-If you run this for another pulsar and get the same δ, it is a fixed convention offset between libstempo and QuickCW.
-Job finished at: Thu Nov  6 15:49:12 EST 2025
+--- χ consistency check ---
+φF_eff = 0.627666 rad
+χ_injected  = 1.121153 rad
+χ_recovered = 5.767442 rad
+Δχ = -1.636897 rad
+⚠️  χ differs → check tref or pulsar-term conventions.
+
+Use ψ_inj_qc and Φ₀_inj_qc as the true injection values in your corner plots.
+Job finished at: Thu Nov  6 16:33:57 EST 2025

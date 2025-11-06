@@ -26,7 +26,7 @@ from enterprise_extensions import deterministic
 import glob
 import json
 
-import QuickCW.QuickCW_G2D2_earth_only as QuickCW
+import QuickCW.QuickCW_G2D2_earth_no_tref as QuickCW
 from QuickCW.QuickMCMCUtils import ChainParams
 #import QuickCW.FastLikelihoodNumba as FastLikelihoodNumba
 
