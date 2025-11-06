@@ -9,8 +9,8 @@ PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
 
 # List your input filenames (no paths)
 FILES=(
-  "G2D1_broad_UL_1e9.h5"
-  "G2D1_broad_detect_1e9.h5"
+  "G2D2_narrow_detect_tref.h5"
+  
   
 )
 
@@ -18,7 +18,7 @@ for IN in "${FILES[@]}"; do
   # make outfile name by suffixing _thinned
   OUT="${IN%.h5}_outfile.h5"
   echo "Processing $IN -> $OUT"
-  $PY thinning_8_params_1e9_samples.py --infile "$IN" --outfile "$OUT"
+  $PY thinning_8_params.py --infile "$IN" --outfile "$OUT"
 done
 
 echo "All done."
