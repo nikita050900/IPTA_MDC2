@@ -1,0 +1,6 @@
+Number of cores used for parallel running:  1
+QuickCW tref set to 4790355867 seconds (MJD = 55443.933645833335 )
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_G2D2_narrow_simulated_multi_psi.py", line 51, in <module>
+    with open(data_pkl, 'rb') as psr_pkl:
+FileNotFoundError: [Errno 2] No such file or directory: '/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/psr_objects/G2D2_simulated_all_pulsars_psi_3p1416pi.pkl'
