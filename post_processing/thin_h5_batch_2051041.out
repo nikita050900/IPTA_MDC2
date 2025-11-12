@@ -1,0 +1,43 @@
+Processing G2D2_narrow_detect_simulated_psi_1p8850.h5 -> G2D2_narrow_detect_simulated_psi_1p8850_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_1p8850.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_1p8850_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_psi_2p5133.h5 -> G2D2_narrow_detect_simulated_psi_2p5133_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_2p5133.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_2p5133_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_psi_1p2566.h5 -> G2D2_narrow_detect_simulated_psi_1p2566_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_1p2566.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_1p2566_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_psi_3p1416.h5 -> G2D2_narrow_detect_simulated_psi_3p1416_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_3p1416.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_3p1416_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_psi_0p00pi.h5 -> G2D2_narrow_detect_simulated_psi_0p00pi_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_0p00pi.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_0p00pi_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_psi_0p6283.h5 -> G2D2_narrow_detect_simulated_psi_0p6283_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_0p6283.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_psi_0p6283_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+All done.

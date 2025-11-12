@@ -9,9 +9,12 @@ PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
 
 # List your input filenames (no paths)
 FILES=(
-  "G2D2_narrow_detect_simulated.h5"
-  "G2D2_narrow_detect_tref_earth_only.h5"
-  "G2D2_narrow_detect_earth_only.h5"
+  "G2D2_narrow_detect_simulated_psi_1p8850.h5"
+  "G2D2_narrow_detect_simulated_psi_2p5133.h5"
+  "G2D2_narrow_detect_simulated_psi_1p2566.h5"
+  "G2D2_narrow_detect_simulated_psi_3p1416.h5"
+  "G2D2_narrow_detect_simulated_psi_0p00pi.h5"
+  "G2D2_narrow_detect_simulated_psi_0p6283.h5"
   
   
 )
