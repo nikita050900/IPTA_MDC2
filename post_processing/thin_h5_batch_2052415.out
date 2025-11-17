@@ -1,0 +1,22 @@
+Processing G2D2_narrow_detect_simulated_cosi_0p00.h5 -> G2D2_narrow_detect_simulated_cosi_0p00_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_0p00.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_0p00_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_cosi_0p71.h5 -> G2D2_narrow_detect_simulated_cosi_0p71_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_0p71.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_0p71_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_narrow_detect_simulated_cosi_1p00.h5 -> G2D2_narrow_detect_simulated_cosi_1p00_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_1p00.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_simulated_cosi_1p00_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+All done.
