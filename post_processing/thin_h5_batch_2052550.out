@@ -1,0 +1,36 @@
+Processing G2D2_detect_seed4.h5 -> G2D2_detect_seed4_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed4.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed4_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_detect_seed1.h5 -> G2D2_detect_seed1_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed1.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed1_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_detect_seed2.h5 -> G2D2_detect_seed2_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed2.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed2_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_detect_seed3.h5 -> G2D2_detect_seed3_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed3.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed3_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+Processing G2D2_detect_seed5.h5 -> G2D2_detect_seed5_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed5.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_seed5_outfile.h5
+Keeping first 8 parameters
+Infile samples_cold shape: (1, 100000000, 142)
+Infile log_likelihood shape: (1, 100000000)
+Done.
+All done.
