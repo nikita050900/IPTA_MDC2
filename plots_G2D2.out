@@ -1,0 +1,17 @@
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3504: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/numpy/core/_methods.py:129: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/numpy/core/_methods.py:206: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/numpy/core/_methods.py:163: RuntimeWarning: invalid value encountered in divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean,
+/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/numpy/core/_methods.py:198: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+Loading: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_outfile.h5
+Cold samples shape: (100000000, 8)
+Masked samples: (126372, 5)
+Unmasked samples (thinned): (1000000, 5)
+Saved PNG: plots/corner_dlmask_20251125_134524.png
+dL MASKED log10A BF = nan ± nan
+UNMASKED log10A BF = 209.4529 ± 3.5302
