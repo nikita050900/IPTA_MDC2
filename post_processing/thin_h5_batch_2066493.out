@@ -1,0 +1,33 @@
+Processing G2D1_narrow_detect_fixed_gamma.h5 -> G2D1_narrow_detect_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma_outfile.h5
+Keeping first 8 parameters
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_params.py", line 53, in <module>
+    main()
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_params.py", line 31, in main
+    samples_cold = f["samples_cold"][:, :, :]
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/dataset.py", line 820, in __getitem__
+    return self._fast_reader.read(args)
+  File "h5py/_selector.pyx", line 368, in h5py._selector.Reader.read
+  File "h5py/_selector.pyx", line 342, in h5py._selector.Reader.make_array
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 52.9 GiB for an array with shape (1, 100000000, 142) and data type float32
+Processing G2D1_broad_detect_1e9_fixed_gamma.h5 -> G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Keeping first 8 parameters
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_params.py", line 53, in <module>
+    main()
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_params.py", line 31, in main
+    samples_cold = f["samples_cold"][:, :, :]
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/dataset.py", line 820, in __getitem__
+    return self._fast_reader.read(args)
+  File "h5py/_selector.pyx", line 368, in h5py._selector.Reader.read
+  File "h5py/_selector.pyx", line 342, in h5py._selector.Reader.make_array
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 529. GiB for an array with shape (1, 1000000000, 142) and data type float32
+All done.

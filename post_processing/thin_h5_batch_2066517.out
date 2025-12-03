@@ -1,0 +1,15 @@
+Processing G2D1_narrow_detect_fixed_gamma.h5 -> G2D1_narrow_detect_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+Processing G2D1_broad_detect_1e9_fixed_gamma.h5 -> G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 1000000000, 142)
+Output samples: 100000000
+Done.
+All done.

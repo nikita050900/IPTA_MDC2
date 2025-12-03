@@ -11,14 +11,12 @@ which python
 # ---------------------- Paths ---------------------- #
 BASE_PATH="/scratch/na00078/projects/IPTA_MDC2/h5_files"
 SCRIPT_PATH="/scratch/na00078/projects/IPTA_MDC2"
-SCRIPT_NAME="dL_masked_h5_file_generator_multiple_files.py"
+SCRIPT_NAME="dL_masked_h5_file_generator_multiple.py"
 
 # ---------------------- (infile, target_dL) pairs ---------------------- #
 declare -a TARGETS=(
-"G2D1_narrow_detect.h5 75.4"
-"G2D1_broad_detect.h5 75.4"
-"G2D2_narrow_detect.h5 75.4"
-"G2D2_broad_detect.h5 75.4"
+"G2D1_broad_UL_1e9_fixed_gamma.h5 75.4"
+"G2D1_narrow_UL_fixed_gamma.h5 75.4"
 
 
 )

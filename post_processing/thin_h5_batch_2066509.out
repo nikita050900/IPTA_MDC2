@@ -1,0 +1,37 @@
+Processing G2D1_narrow_detect_fixed_gamma.h5 -> G2D1_narrow_detect_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_new.py", line 88, in <module>
+    main()
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_new.py", line 76, in main
+    ll_out[:, out_idx:out_idx + bsize] = ll_dset[:, start:end:args.thin]
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/dataset.py", line 1059, in __setitem__
+    mspace = h5s.create_simple(selection.expand_shape(mshape))
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/selections.py", line 264, in expand_shape
+    raise TypeError("Can't broadcast %s -> %s" % (source_shape, self.array_shape))  # array shape
+TypeError: Can't broadcast (4, 100000) -> (1, 100000)
+Processing G2D1_broad_detect_1e9_fixed_gamma.h5 -> G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_1e9_fixed_gamma_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 1000000000, 142)
+Output samples: 100000000
+Traceback (most recent call last):
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_new.py", line 88, in <module>
+    main()
+  File "/gpfs20/scratch/na00078/projects/IPTA_MDC2/post_processing/thinning_8_new.py", line 76, in main
+    ll_out[:, out_idx:out_idx + bsize] = ll_dset[:, start:end:args.thin]
+  File "h5py/_objects.pyx", line 56, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 57, in h5py._objects.with_phil.wrapper
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/dataset.py", line 1059, in __setitem__
+    mspace = h5s.create_simple(selection.expand_shape(mshape))
+  File "/scratch/na00078/conda_envs/QuickCW/lib/python3.9/site-packages/h5py/_hl/selections.py", line 264, in expand_shape
+    raise TypeError("Can't broadcast %s -> %s" % (source_shape, self.array_shape))  # array shape
+TypeError: Can't broadcast (4, 100000) -> (1, 100000)
+All done.

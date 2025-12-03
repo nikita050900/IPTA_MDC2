@@ -1,0 +1,12 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+--------------------------------------------------------
+Processing file: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_1e9_fixed_gamma.h5
+Target dL: 75.4 Mpc
+Output log: dl_masking_G2D1_broad_UL_1e9_fixed_gamma_75.4Mpc.out
+--------------------------------------------------------
+--------------------------------------------------------
+Processing file: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_fixed_gamma.h5
+Target dL: 75.4 Mpc
+Output log: dl_masking_G2D1_narrow_UL_fixed_gamma_75.4Mpc.out
+--------------------------------------------------------
+All runs complete.

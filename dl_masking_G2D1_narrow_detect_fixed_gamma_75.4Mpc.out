@@ -1,0 +1,24 @@
+Input file: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma.h5
+Target d_L: 75.4 Mpc
+Loaded 142 parameters from file.
+
+Mask keeps 130911 / 100000000 samples
+dL range allowed: [74.646, 76.154] Mpc
+
+💾 Saved masked file → /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_narrow_detect_fixed_gamma_dLmasked_75.400Mpc.h5
+
+Saved contents:
+  T_ladder: (4,)
+  dL_masked: (130911,)
+  logL_masked: (130911,)
+  mask_indices: (130911,)
+  par_names: (142,)
+  samples_masked: (130911, 142)
+Attributes:
+  burnin: 0
+  dL_max_Mpc: 76.15400000000001
+  dL_min_Mpc: 74.646
+  dL_percent_tolerance: 1.0
+  n_params: 142
+  target_dL_Mpc: 75.4
+  thin: 1
