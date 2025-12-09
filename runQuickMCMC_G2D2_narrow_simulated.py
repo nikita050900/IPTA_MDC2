@@ -43,7 +43,7 @@ import os
 import argparse
 
 #make sure this points to the pickled pulsars you want to analyze
-data_pkl = '/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/psr_objects/G2D2_simulated_all_pulsars.pkl'
+data_pkl = '/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/psr_objects/G2D2_new_one_source_sim_final.pkl'
 
 with open(data_pkl, 'rb') as psr_pkl:
     psrs = pickle.load(psr_pkl)

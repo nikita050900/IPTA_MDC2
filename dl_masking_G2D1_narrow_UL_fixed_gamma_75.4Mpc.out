@@ -104,6 +104,6 @@ Processing samples 97,000,000 → 98,000,000
 Processing samples 98,000,000 → 99,000,000
 Processing samples 99,000,000 → 100,000,000
 
-Mask keeps 8850 / 100000000 samples
+Mask keeps 9856 / 100000000 samples
 
 Saved masked file → /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_narrow_UL_fixed_gamma_dLmasked_75.400Mpc.h5

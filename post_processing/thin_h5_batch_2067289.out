@@ -1,0 +1,15 @@
+Processing G2D2_broad_peak_all_sky.h5 -> G2D2_broad_peak_all_sky_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_peak_all_sky.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_peak_all_sky_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+Processing G2D2_new_one_detect_source_sim.h5 -> G2D2_new_one_detect_source_sim_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_new_one_detect_source_sim.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_new_one_detect_source_sim_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+All done.

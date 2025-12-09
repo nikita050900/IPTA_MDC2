@@ -1,0 +1,5 @@
+Reading: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_outfile.h5
+Loaded cold-chain shape: (100000000, 8)
+Saved corner plot to: corner_pre_dL_mask_detect_5params.png
+/var/spool/slurmd/job2068956/slurm_script: line 11: syntax error near unexpected token `done'
+/var/spool/slurmd/job2068956/slurm_script: line 11: `done'

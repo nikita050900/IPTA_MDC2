@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-
 import numpy as np
 import matplotlib
-matplotlib.use("Agg")   # needed for saving PNGs without displaying a window
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import corner
 import h5py
@@ -11,142 +10,166 @@ import scipy.constants as sc
 # ------------------------------------------------------------
 # Input H5 file
 # ------------------------------------------------------------
-infile = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky_outfile.h5"
+infile = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_peak_all_sky_outfile.h5"
 first_n_param = 8
 
 print("Reading:", infile)
 
 with h5py.File(infile, 'r') as f:
-    Ts = f['T-ladder'][...]
     samples_cold = f['samples_cold'][:, :, :first_n_param]
-    log_likelihood = f['log_likelihood'][:1, :]
     par_names = [x.decode('UTF-8') for x in list(f['par_names'])]
-    acc_fraction = f['acc_fraction'][...]
-    fisher_diag = f['fisher_diag'][...]
 
 print("Loaded samples_cold shape:", samples_cold[-1].shape)
-
-# ------------------------------------------------------------
-# Constants
-# ------------------------------------------------------------
-KPC2S = sc.parsec / sc.c * 1e3
-SOLAR2S = sc.G / sc.c ** 3 * 1.98855e30
 
 # ------------------------------------------------------------
 # True injected values (dictionary)
 # ------------------------------------------------------------
 xxx0 = {
-    "0_cos_gwtheta": np.cos(0.6387905062299246),
-    "0_cos_inc": 0.8412486994612669,
-    "0_gwphi": 3.3335788713091694,
-    "0_log10_fgw": np.log10(3.7e-09),
-    "0_log10_h": -13.668773493298787,
-    "0_log10_mc": np.log10(4.3e9),
-    "phase0": 0.24434609527920614,
-    "psi": 1.1187560505283651,
-    "distance": 75.4,
+    "0_cos_gwtheta": np.cos(0.6387905062299246),    # cos θ
+    "0_gwphi": 3.3335788713091694,                 # φ
+    "0_cos_inc": 0.8412486994612669,               # cos ι
+    "0_log10_h": -13.668773493298787,              # log10 A
+    "0_log10_mc": np.log10(4.3e9),                 # log10 Mc
+    "phase0": 0.24434609527920614,                 # Φ0
+    "psi": 1.1187560505283651                       # ψ
 }
 
 # ------------------------------------------------------------
-# Corner plot parameter selection (NO fGW)
+# Parameter order requested:
+#   cosθ, φ, cosι, log10A, log10Mc, Φ0, ψ
 # ------------------------------------------------------------
-corner_mask = [0, 1, 2, 4, 5, 6, 7]  # drop index 3 (fgw)
+corner_mask = [0, 2, 1, 4, 5, 6, 7]
 
 labels = [
-    r"$\alpha\,$(RA)",      
-    r"$\delta\,$(Dec)",     
-    r"$\cos \iota$",
-    r"$\log_{10} A_{\rm e}$",
-    r"$\log_{10} {\cal M}$",
+    r"$\cos\theta$",
+    r"$\phi$",
+    r"$\cos\iota$",
+    r"$A_{\rm e}$",
+    r"$\mathcal{M}$",
     r"$\Phi_0$",
     r"$\psi$"
 ]
 
 label_to_key = {
-    r"$\alpha\,$(RA)": "0_gwphi",
-    r"$\delta\,$(Dec)": "0_cos_gwtheta",
-    r"$\cos \iota$": "0_cos_inc",
-    r"$\log_{10} A_{\rm e}$": "0_log10_h",
-    r"$\log_{10} {\cal M}$": "0_log10_mc",
+    r"$\cos\theta$": "0_cos_gwtheta",
+    r"$\phi$": "0_gwphi",
+    r"$\cos\iota$": "0_cos_inc",
+    r"$A_{\rm e}$": "0_log10_h",
+    r"$\mathcal{M}$": "0_log10_mc",
     r"$\Phi_0$": "phase0",
     r"$\psi$": "psi"
 }
 
 # ------------------------------------------------------------
-# Truth values
+# Truth values in correct order
 # ------------------------------------------------------------
-truths = []
-for l in labels:
-    key = label_to_key[l]
-    if l == r"$\delta\,$(Dec)":
-        truths.append(np.degrees(np.arcsin(xxx0["0_cos_gwtheta"])))
-    elif l == r"$\alpha\,$(RA)":
-        truths.append(xxx0["0_gwphi"])
-    else:
-        truths.append(xxx0[key])
+truths = [xxx0[label_to_key[l]] for l in labels]
 
 # ------------------------------------------------------------
-# Extract samples (no d_L masking)
+# Extract samples from cold chain
 # ------------------------------------------------------------
 burnin = 0
 thin = 1
-samples_raw = samples_cold[0][burnin::thin, :]
+raw = samples_cold[0][burnin::thin, :]
 
-cos_theta = samples_raw[:, 0]
-phi = samples_raw[:, 2]
-
-RA = phi
-Dec = np.degrees(np.arcsin(cos_theta))
-
-samples2plot = np.vstack([
-    RA,
-    Dec,
-    samples_raw[:, 1],   # cos_inc
-    samples_raw[:, 4],   # log10_h
-    samples_raw[:, 5],   # log10_mc
-    samples_raw[:, 6],   # phase0
-    samples_raw[:, 7]    # psi
-]).T
+samples2plot = raw[:, corner_mask]
 
 # ------------------------------------------------------------
-# Ranges
+# Axis ranges matching typical PTA CW corner plots
 # ------------------------------------------------------------
 ranges = [
-    (0, 2*np.pi),  
-    (-90, 90),      
-    (-1, 1),        
-    (-18, -11),     
-    (8, 10),        
-    (0, 2*np.pi),   
-    (0, np.pi)      
+    (-1, 1),             # cosθ
+    (0, 2*np.pi),        # φ
+    (-1, 1),             # cosι
+    (-18, -11),          # log10 A
+    (8, 10),             # log10 Mc
+    (0, 2*np.pi),        # Φ0
+    (0, np.pi)           # ψ
 ]
 
 # ------------------------------------------------------------
-# Corner plot
+# Make corner plot
 # ------------------------------------------------------------
 fig = corner.corner(
     samples2plot,
     labels=labels,
     truths=truths,
     truth_color="red",
-    show_titles=True,
     range=ranges,
-    hist_kwargs={"density": True}
-)
-
-for ax in fig.get_axes():
-    ax.tick_params(axis="both", labelsize=14)
-    ax.xaxis.label.set_size(16)
-    ax.yaxis.label.set_size(16)
-
-fig.suptitle(
-    "Corner plot (no $d_L$ masking, RA/Dec included, no $f_{\\mathrm{GW}}$)",
-    fontsize=24, y=1.05
+    show_titles=True,
+    title_fmt=".2f",
+    hist_kwargs={"density": True},
+    label_kwargs={"fontsize": 18}
 )
 
 # ------------------------------------------------------------
-# Save to PNG
+# Add PRIOR LINES (green) on 1D histograms
 # ------------------------------------------------------------
-outfile = "corner_plot.png"
+axes = np.array(fig.axes).reshape(len(labels), len(labels))
+
+# cosθ prior: uniform in [-1,1]
+x = np.linspace(-1, 1, 500)
+prior_cth = np.ones_like(x) * 0.5
+
+ax = axes[0,0]
+ax.plot(x, prior_cth, color="green")
+
+# φ prior: uniform on [0,2π]
+x = np.linspace(0, 2*np.pi, 500)
+prior_phi = np.ones_like(x) * 1/(2*np.pi)
+ax = axes[1,1]
+ax.plot(x, prior_phi, color="green")
+
+# cosι prior
+x = np.linspace(-1, 1, 500)
+prior_ci = np.ones_like(x) * 0.5
+ax = axes[2,2]
+ax.plot(x, prior_ci, color="green")
+
+# A prior (log uniform example)
+x = np.linspace(-18, -11, 500)
+prior_A = np.ones_like(x) / (7)
+axes[3,3].plot(x, prior_A, color="green")
+
+# Mc prior
+x = np.linspace(8, 10, 500)
+prior_M = np.ones_like(x) * (1/2)
+axes[4,4].plot(x, prior_M, color="green")
+
+# Φ0 prior
+x = np.linspace(0, 2*np.pi, 500)
+prior_ph = np.ones_like(x) * 1/(2*np.pi)
+axes[5,5].plot(x, prior_ph, color="green")
+
+# ψ prior
+x = np.linspace(0, np.pi, 500)
+prior_psi = np.ones_like(x) * 1/np.pi
+axes[6,6].plot(x, prior_psi, color="green")
+
+# ------------------------------------------------------------
+# Compute Single-Dimensional Bayes Factor for log10A
+# ------------------------------------------------------------
+from enterprise_extensions import model_utils
+
+# Extract log10A samples:
+# corner_mask = [0, 2, 1, 4, 5, 6, 7]
+# Index 4 corresponds to "0_log10_h"
+samples_logA = samples_cold[0][burnin::thin, 4]
+
+# OPTIONAL: thin for independence (common in BF estimation)
+samples_logA_thin = samples_logA[::10]
+
+# Compute SD BF (log-uniform noise vs signal evidence)
+BF, BF_err = model_utils.bayes_fac(samples=samples_logA_thin, logAmax=-11)
+
+print("\n==============================")
+print(f"Single–Dimensional Bayes Factor (log10A): {BF:.4f} ± {BF_err:.4f}")
+print("==============================\n")
+
+
+# ------------------------------------------------------------
+# Save figure
+# ------------------------------------------------------------
+outfile = "corner_plot_peak.png"
 plt.savefig(outfile, dpi=300, bbox_inches="tight")
 print("Saved corner plot to:", outfile)

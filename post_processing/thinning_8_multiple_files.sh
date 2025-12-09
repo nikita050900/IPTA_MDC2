@@ -9,8 +9,8 @@ PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
 
 # List your input filenames (no paths)
 FILES=(
-  "G2D1_narrow_UL_fixed_gamma.h5"
-    "G2D1_broad_UL_1e9_fixed_gamma.h5"
+  "G2D2_broad_peak_all_sky.h5"
+    "G2D2_new_one_detect_source_sim.h5"
   
   
   
