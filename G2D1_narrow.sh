@@ -4,32 +4,8 @@ set -euo pipefail
 PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
 
 # -------------------------------------------------------------
-# Submit ONLY the upper-limit job (no detection step)
+# 1. Submit detection job
 # -------------------------------------------------------------
-ul_jobid=$(
-  sbatch --parsable <<EOF
-#!/bin/bash
-#SBATCH --job-name=G2D1_narrow_UL
-#SBATCH --output=G2D1_narrow_UL.out
-#SBATCH -p sbs0016
-#SBATCH --mem-per-cpu=64G
-#SBATCH --ntasks=1
-
-$PY runQuickMCMC_G2D1_narrow.py \
-    --save_filename G2D1_narrow_UL_fixed_gamma.h5 \
-    --amplitude_prior UL
-EOF
-)
-
-echo "Submitted UL job: ${ul_jobid}"
-
-
-'''
-#!/usr/bin/env bash
-set -euo pipefail
-
-PY="/scratch/na00078/conda_envs/QuickCW/bin/python"
-
 detect_jobid=$(
   sbatch --parsable <<EOF
 #!/bin/bash
@@ -38,19 +14,31 @@ detect_jobid=$(
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D1_narrow.py --save_filename G2D1_narrow_detect_fixed_gamma.h5 --amplitude_prior detection
+
+$PY runQuickMCMC_G2D1_narrow.py \
+    --save_filename G2D1_narrow_detect_fixed_gamma_17_dec_2025.h5 \
+    --amplitude_prior detection
 EOF
 )
+
 echo "Submitted detection job: ${detect_jobid}"
 
-sbatch --dependency=afterok:${detect_jobid} <<EOF
+# -------------------------------------------------------------
+# 2. Submit UL job, dependent on detection success
+# -------------------------------------------------------------
+ul_jobid=$(
+  sbatch --parsable --dependency=afterok:${detect_jobid} <<EOF
 #!/bin/bash
 #SBATCH --job-name=G2D1_narrow_UL
 #SBATCH --output=G2D1_narrow_UL.out
 #SBATCH -p sbs0016
 #SBATCH --mem-per-cpu=64G
 #SBATCH --ntasks=1
-$PY runQuickMCMC_G2D1_narrow.py --save_filename G2D1_narrow_UL_fixed_gamma.h5 --amplitude_prior UL
+
+$PY runQuickMCMC_G2D1_narrow.py \
+    --save_filename G2D1_narrow_UL_fixed_gamma_17_dec_2025.h5 \
+    --amplitude_prior UL
 EOF
-echo "Submitted UL job (afterok:${detect_jobid})"
-'''
+)
+
+echo "Submitted UL job (afterok:${detect_jobid}): ${ul_jobid}"
