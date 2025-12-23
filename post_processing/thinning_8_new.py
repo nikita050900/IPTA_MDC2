@@ -12,7 +12,7 @@ def main():
     ap = argparse.ArgumentParser(description="Thin an HDF5 chain file without loading whole file.")
     ap.add_argument("--infile", required=True)
     ap.add_argument("--outfile", required=True)
-    ap.add_argument("--thin", type=int, default=10)
+    ap.add_argument("--thin", type=int, default=1)
     args = ap.parse_args()
 
     infile_path = BASE_DIR / args.infile

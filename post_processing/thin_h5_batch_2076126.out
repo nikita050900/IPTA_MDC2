@@ -1,0 +1,29 @@
+Processing G2D1_narrow_detect_fixed_gamma_17_dec_2025.h5 -> G2D1_narrow_detect_fixed_gamma_17_dec_2025_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma_17_dec_2025.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_fixed_gamma_17_dec_2025_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+Processing G2D2_broad_detect_no_tref_17_Dec_2025.h5 -> G2D2_broad_detect_no_tref_17_Dec_2025_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_no_tref_17_Dec_2025.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_no_tref_17_Dec_2025_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+Processing G2D1_narrow_UL_fixed_gamma_17_dec_2025.h5 -> G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_fixed_gamma_17_dec_2025.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+Processing G2D2_broad_UL_no_tref_17_Dec_2025.h5 -> G2D2_broad_UL_no_tref_17_Dec_2025_outfile.h5
+Infile:  /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_no_tref_17_Dec_2025.h5
+Outfile: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_no_tref_17_Dec_2025_outfile.h5
+Keeping first 8 parameters, thin=10
+samples_cold shape: (1, 100000000, 142)
+Output samples: 10000000
+Done.
+All done.
