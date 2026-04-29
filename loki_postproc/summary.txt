@@ -1,0 +1,14 @@
+Loki vs Run F comparison summary
+==================================================
+
+Loki usable samples:   100000000
+Run F usable samples:  126372
+
+Run F  B10 = nan +/- nan  (log-uniform prior on h0)
+Loki   B10 = 225.6306 +/- 14.7489  (derived log10_h; prior NOT log-uniform)
+
+Injected log10_h: -13.6688
+
+NOTE: Loki B10 is not directly comparable to Run F B10.
+The paper should present both with the caveat that the
+implicit prior on h0 differs between the two approaches.

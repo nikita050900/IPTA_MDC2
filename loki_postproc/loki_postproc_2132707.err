@@ -1,0 +1,26 @@
+/var/spool/slurmd/job2132707/slurm_script: line 16: /scratch/na00078/conda_envs/QuickCW/bin/activate: No such file or directory
+python: can't open file '/scratch/na00078/projects/IPTA_MDC2/postproc_loki_vs_runF.py': [Errno 2] No such file or directory
+Command exited with non-zero status 2
+	Command being timed: "python /scratch/na00078/projects/IPTA_MDC2/postproc_loki_vs_runF.py"
+	User time (seconds): 0.01
+	System time (seconds): 0.00
+	Percent of CPU this job got: 9%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.20
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5296
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1483
+	Voluntary context switches: 148
+	Involuntary context switches: 0
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2

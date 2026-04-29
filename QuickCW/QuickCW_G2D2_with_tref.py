@@ -142,7 +142,7 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=True, include_
     
     
     m_min = 7.03   # This is calculated and changed for a target
-    m_max = 11  # This is calculated and changed for a target
+    m_max = 10 # This is calculated and changed for a target
     
 
     phase0 = parameter.Uniform(0, 2 * np.pi)('0_phase0')
