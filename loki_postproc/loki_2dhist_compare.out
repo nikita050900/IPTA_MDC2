@@ -1,0 +1,14 @@
+Loading Loki run ...
+  Loki samples: 100000000
+
+Loading Run D ...
+  Run D pre-mask: 100000000,  post-mask: 18535
+
+Computing per-bin ULs ...
+  Loki valid bins:  47 / 47
+  Run D valid bins: 45 / 47
+
+Making side-by-side comparison ...
+  Saved: /scratch/na00078/projects/IPTA_MDC2/loki_postproc/freq_segmented_UL_2dhist_comparison.png
+
+Done.

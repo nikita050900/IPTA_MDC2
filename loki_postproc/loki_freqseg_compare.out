@@ -1,0 +1,16 @@
+Loading Loki run ...
+  Loki usable samples: 100000000
+
+Loading Run D ...
+  Run D pre-mask samples:  100000000
+  Run D usable post-mask:  18535
+
+Computing frequency-segmented ULs ...
+  Loki valid bins:  47 / 47
+  Run D valid bins: 45 / 47
+
+Making comparison plot ...
+  Saved: /scratch/na00078/projects/IPTA_MDC2/loki_postproc/freq_segmented_UL_comparison.png
+  Saved: /scratch/na00078/projects/IPTA_MDC2/loki_postproc/freq_segmented_summary.txt
+
+Done.
