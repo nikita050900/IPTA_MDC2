@@ -1,0 +1,124 @@
+New log_L=  +40053.803 Mean T=1 last block=  +40049.055 Best T=1 log_L=  +40061.566 best overall log_L=  +40061.566
+whole function time = 47926.394 s
+loop time = 47886.147 s
+	Command being timed: "/scratch/na00078/conda_envs/QuickCW/bin/python /scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_G2D2_broad.py --save_filename G2D2_broad_detect_tref_09_Jun_2026.h5 --amplitude_prior detection"
+	User time (seconds): 46284.58
+	System time (seconds): 1315.62
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:19:00
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1370412
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17210036
+	Voluntary context switches: 340305
+	Involuntary context switches: 90425
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+
+
+
+New log_L=  +40051.043 Mean T=1 last block=  +40048.356 Best T=1 log_L=  +40060.612 best overall log_L=  +40060.612
+whole function time = 47535.365 s
+loop time = 47495.506 s
+	Command being timed: "/scratch/na00078/conda_envs/QuickCW/bin/python /scratch/na00078/projects/IPTA_MDC2/runQuickMCMC_G2D2_narrow_with_tref.py --save_filename G2D2_narrow_detect_tref_09_Jun_2026.h5 --amplitude_prior detection"
+	User time (seconds): 45904.08
+	System time (seconds): 1325.51
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:12:56
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1420972
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17894054
+	Voluntary context switches: 324331
+	Involuntary context switches: 78779
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+
+G2D2_fixed_loki_100M_lastTOA.out
+New log_L=  +40050.206 Mean T=1 last block=  +40051.559 Best T=1 log_L=  +40060.517 best overall log_L=  +40060.517
+whole function time = 231656.898 s
+loop time = 231616.299 s
+END: Fri Jun  5 07:34:42 EDT 2026
+/scratch/na00078/projects/eccentric_QuickCW/QuickCW/QuickMTHelpers.py:656: NumbaTypeSafetyWarning: unsafe cast from uint64 to int64. Precision may be lost.
+  x0_extras[KK].update_params(tries[itrkk,:])
+slurmstepd: error: *** JOB 2155246 ON tsscl002 CANCELLED AT 2026-06-02T15:17:16 ***
+	Command being timed: "/scratch/na00078/conda_envs/QuickCW/bin/python /scratch/na00078/projects/eccentric_QuickCW/drivers/IPTA_MDC2/runQuickMCMC_IPTA_MDC2_G2D2_detect_fixed_FGW_1m_lasttoa.py /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+	User time (seconds): 228236.91
+	System time (seconds): 2295.18
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 64:21:02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1973672
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 83204615
+	Voluntary context switches: 1611573
+	Involuntary context switches: 429203
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+
+G2D2_broad_loki_100M_lastTOA.out
+New log_L=  +40049.477 Mean T=1 last block=  +40049.285 Best T=1 log_L=  +40060.496 best overall log_L=  +40060.496
+whole function time = 233326.510 s
+loop time = 233285.603 s
+END: Fri Jun  5 05:56:45 EDT 2026
+/scratch/na00078/projects/eccentric_QuickCW/QuickCW/QuickMTHelpers.py:656: NumbaTypeSafetyWarning: unsafe cast from uint64 to int64. Precision may be lost.
+  x0_extras[KK].update_params(tries[itrkk,:])
+	Command being timed: "/scratch/na00078/conda_envs/QuickCW/bin/python /scratch/na00078/projects/eccentric_QuickCW/drivers/IPTA_MDC2/runQuickMCMC_IPTA_MDC2_G2D2_detect_broad_FGW_1m_lasttoa.py /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+	User time (seconds): 229989.73
+	System time (seconds): 2273.37
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 64:49:01
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1983416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 71717743
+	Voluntary context switches: 1621283
+	Involuntary context switches: 409401
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

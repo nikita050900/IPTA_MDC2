@@ -91,7 +91,7 @@ parser = argparse.ArgumentParser(description="Run QuickMCMC narrow targeted sear
 parser.add_argument(
     "--save_filename",
     type=str,
-    default="redo.h5",
+    default="G2D2_fixed_detect.h5",
     help="Name of the .h5 file to save (default: %(default)s)"
 )
 parser.add_argument(
@@ -127,6 +127,7 @@ TargFreq = 3.7e-09
 #Setup and start MCMC
 #object containing common parameters for the mcmc chain
 chain_params = ChainParams(T_max,n_chain, n_block_status_update,
+                           # FIXED FREQUENCY run: fgw pinned to within 1e-21 Hz of TargFreq. For the broad frequency run, widen these bounds and pass a different --save_filename.
                            freq_bounds=np.array([TargFreq-1e-21, TargFreq+1e-21]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
                            n_int_block=n_int_block, #number of iterations in a block (which has one shape update and the rest are projection updates)
                            save_every_n=save_every_n, #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)

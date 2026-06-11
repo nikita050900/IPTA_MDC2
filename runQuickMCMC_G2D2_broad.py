@@ -87,11 +87,11 @@ psr_dist_file = None
 # Fixed directory path
 save_dir = "/scratch/na00078/projects/IPTA_MDC2/h5_files"
 
-parser = argparse.ArgumentParser(description="Run QuickMCMC narrow targeted search .")
+parser = argparse.ArgumentParser(description="Run QuickMCMC broad targeted search .")
 parser.add_argument(
     "--save_filename",
     type=str,
-    default="redo.h5",
+    default="G2D2_broad_detect.h5",
     help="Name of the .h5 file to save (default: %(default)s)"
 )
 parser.add_argument(
@@ -127,6 +127,7 @@ gwphi = 3.3335788713091694
 #Setup and start MCMC
 #object containing common parameters for the mcmc chain
 chain_params = ChainParams(T_max,n_chain, n_block_status_update,
+                           # BROAD FREQUENCY run: fgw spans 1/Tspan (from nan) to 1e-7 Hz.
                            freq_bounds=np.array([np.nan, 1e-7]), #prior bounds used on the GW frequency (a lower bound of np.nan is interpreted as 1/T_obs)
                            n_int_block=n_int_block, #number of iterations in a block (which has one shape update and the rest are projection updates)
                            save_every_n=save_every_n, #number of iterations between saving intermediate results (needs to be intiger multiple of n_int_block)

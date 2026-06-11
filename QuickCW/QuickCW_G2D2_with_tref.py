@@ -36,10 +36,7 @@ from QuickCW.QuickMCMCUtils import MCMCChain, ChainParams
 import inspect
 from QuickCW.PulsarDistPriors import DMDistParameter, PXDistParameter
 
-# ======== SET CORRECT REFERENCE EPOCH (tref) ========= #
-cm.tref = int(round(55443.93364609394 * 86400))  # seconds
-print("QuickCW tref set to", cm.tref, "seconds (MJD =", cm.tref / 86400.0, ")")
-# ===================================================== #
+# tref is defined in const_mcmc.py (cm.tref) and read directly by cw_delay below. Do not override it here.
 
 ################################################################################
 #
@@ -102,7 +99,7 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=True, include_
     # define powerlaw PSD and red noise signal
     pl = utils.powerlaw(log10_A=log10_A, gamma=gamma)
     rn = gp_signals.FourierBasisGP(pl, components=30)
-    log10_Agw = parameter.Uniform(-20,-11)('gwb_log10_A')
+    log10_Agw = parameter.Uniform(-18, -11)('gwb_log10_A')  # matched to Enterprise GWB amplitude prior
 
     if gwb_gamma_prior is None:
         gwb_gamma_prior = np.array([0,7])
@@ -271,8 +268,3 @@ def per_pulsar_prior(enterprise_pulsar: Pulsar, pulsar_distances: dict,
     cw = deterministic.CWSignal(cw_wf, **CWSignal_args)
 
     return cw
-
-
-
-
-
