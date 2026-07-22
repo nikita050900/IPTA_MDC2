@@ -1,0 +1,68 @@
+nohup: ignoring input
+The chain is shorter than 50 times the integrated autocorrelation time for 1 parameter(s). Use this estimate with caution and run a longer chain!
+N/50 = 1440;
+tau: [1485.612095]
+Run H: N=72,001  tau_max=1,486 (log10_fgw)  ESS=48  R_post=0.003 /s
+    log10_fgw      tau=     1,486  ESS=        48
+    cos_inc        tau=     1,321  ESS=        55
+    log10_mc       tau=     1,078  ESS=        67
+    phase0         tau=       196  ESS=       367
+    psi            tau=       161  ESS=       447
+    crn_log10_A    tau=        74  ESS=       971
+Run I: N=72,001  tau_max=190 (log10_mc)  ESS=378  R_post=0.020 /s
+    log10_mc       tau=       190  ESS=       378
+    crn_log10_A    tau=       109  ESS=       663
+    cos_inc        tau=       102  ESS=       704
+    psi            tau=        62  ESS=     1,156
+    phase0         tau=        59  ESS=     1,224
+Run J: N=72,001  tau_max=625 (log10_fgw)  ESS=115  R_post=0.011 /s
+    log10_fgw      tau=       625  ESS=       115
+    cos_inc        tau=       424  ESS=       170
+    log10_mc       tau=       370  ESS=       194
+    phase0         tau=       214  ESS=       337
+    psi            tau=       211  ESS=       341
+    crn_gamma      tau=        13  ESS=     5,496
+    crn_log10_A    tau=         8  ESS=     8,922
+Run K: N=72,001  tau_max=193 (cos_inc)  ESS=372  R_post=0.032 /s
+    cos_inc        tau=       193  ESS=       372
+    log10_mc       tau=       186  ESS=       387
+    psi            tau=       111  ESS=       649
+    phase0         tau=        82  ESS=       877
+    crn_gamma      tau=        11  ESS=     6,533
+    crn_log10_A    tau=         7  ESS=    10,078
+Run L: N=100,000,000  tau_max=6,275 (0_log10_fgw)  ESS=15,937  R_post=0.069 /s
+    0_log10_fgw    tau=     6,275  ESS=    15,937
+    gwb_log10_A    tau=     5,678  ESS=    17,613
+    0_log10_mc     tau=     5,589  ESS=    17,894
+    0_cos_inc      tau=     2,637  ESS=    37,917
+    0_psi          tau=       227  ESS=   440,817
+    0_phase0       tau=       210  ESS=   477,197
+    0_log10_dist   tau=        58  ESS= 1,728,959
+    gwb_gamma      tau=        10  ESS=10,000,000
+Run M: N=100,000,000  tau_max=4,117 (gwb_log10_A)  ESS=24,287  R_post=0.106 /s
+    gwb_log10_A    tau=     4,117  ESS=    24,287
+    0_log10_mc     tau=     2,660  ESS=    37,589
+    0_psi          tau=        64  ESS= 1,562,523
+    0_phase0       tau=        64  ESS= 1,566,831
+    0_cos_inc      tau=        36  ESS= 2,795,544
+    0_log10_dist   tau=        36  ESS= 2,814,923
+    0_log10_fgw    tau=        10  ESS=10,000,000
+    gwb_gamma      tau=        10  ESS=10,000,000
+Run N: N=100,000,000  tau_max=18,695 (0_log10_fgw)  ESS=5,349  R_post=0.023 /s
+    0_log10_fgw    tau=    18,695  ESS=     5,349
+    0_log10_mc     tau=    13,812  ESS=     7,240
+    0_cos_inc      tau=    11,283  ESS=     8,863
+    gwb_gamma      tau=     6,934  ESS=    14,422
+    gwb_log10_A    tau=     5,643  ESS=    17,722
+    0_phase0       tau=     2,690  ESS=    37,181
+    0_psi          tau=     2,291  ESS=    43,643
+    0_log10_dist   tau=        86  ESS= 1,163,777
+Run O: N=99,980,000  tau_max=5,076 (gwb_gamma)  ESS=19,698  R_post=0.085 /s
+    gwb_gamma      tau=     5,076  ESS=    19,698
+    0_log10_mc     tau=     4,599  ESS=    21,742
+    0_cos_inc      tau=     4,193  ESS=    23,846
+    gwb_log10_A    tau=     3,860  ESS=    25,902
+    0_psi          tau=     1,622  ESS=    61,626
+    0_phase0       tau=     1,363  ESS=    73,338
+    0_log10_dist   tau=        97  ESS= 1,028,446
+    0_log10_fgw    tau=        10  ESS= 9,998,000

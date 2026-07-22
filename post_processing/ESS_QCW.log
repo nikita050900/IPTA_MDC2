@@ -1,0 +1,61 @@
+nohup: ignoring input
+Run A: N_stored=1000000000 thin_extra=500
+   0_log10_mc     tau_stored=   84086.8 ESS=       11892
+   0_cos_inc      tau_stored=     656.2 ESS=     1523857
+   0_phase0       tau_stored=     597.0 ESS=     1675125
+   0_psi          tau_stored=     595.5 ESS=     1679168
+   0_log10_fgw    tau_stored=   87478.4 ESS=       11431
+   0_log10_h      tau_stored=    2389.0 ESS=      418589
+   gwb_log10_A    tau_stored=  952166.9 ESS=        1050
+   gwb_gamma      tau_stored=     500.0 ESS=     2000000
+Run A SUMMARY: tau_max=952167 ESS=1050 N_mask=143939 N_usable=min=1050 R_post=0.020 /s
+Run B: N_stored=100000000 thin_extra=50
+   0_log10_mc     tau_stored=    6158.7 ESS=       16237
+   0_cos_inc      tau_stored=      53.9 ESS=     1853854
+   0_phase0       tau_stored=      53.6 ESS=     1866498
+   0_psi          tau_stored=      54.2 ESS=     1845764
+   0_log10_fgw    tau_stored=      50.0 ESS=     2000000
+   0_log10_h      tau_stored=      74.4 ESS=     1343194
+   gwb_log10_A    tau_stored=   41258.5 ESS=        2424
+   gwb_gamma      tau_stored=      50.0 ESS=     2000000
+Run B SUMMARY: tau_max=41259 ESS=2424 N_mask=133668 N_usable=min=2423 R_post=0.045 /s
+Run C: N_stored=1000000000 thin_extra=500
+   0_log10_mc     tau_stored=  178195.0 ESS=        5612
+   0_cos_inc      tau_stored=     969.0 ESS=     1031985
+   0_phase0       tau_stored=     755.5 ESS=     1323709
+   0_psi          tau_stored=     751.0 ESS=     1331597
+   0_log10_fgw    tau_stored=  143888.9 ESS=        6950
+   0_log10_h      tau_stored=   31172.6 ESS=       32080
+   gwb_log10_A    tau_stored=  519776.9 ESS=        1924
+   gwb_gamma      tau_stored=     500.0 ESS=     2000000
+Run C SUMMARY: tau_max=519777 ESS=1924 N_mask=18582 N_usable=min=1923 R_post=0.036 /s
+Run D: N_stored=100000000 thin_extra=50
+   0_log10_mc     tau_stored=   11617.6 ESS=        8608
+   0_cos_inc      tau_stored=      51.7 ESS=     1932591
+   0_phase0       tau_stored=      52.0 ESS=     1924604
+   0_psi          tau_stored=      51.3 ESS=     1948014
+   0_log10_fgw    tau_stored=      50.0 ESS=     2000000
+   0_log10_h      tau_stored=      61.3 ESS=     1630781
+   gwb_log10_A    tau_stored=   41308.4 ESS=        2421
+   gwb_gamma      tau_stored=      50.0 ESS=     2000000
+Run D SUMMARY: tau_max=41308 ESS=2421 N_mask=7782 N_usable=min=2420 R_post=0.044 /s
+Run E: N_stored=100000000 thin_extra=50
+   0_log10_mc     tau_stored=   33494.9 ESS=        2986
+   0_cos_inc      tau_stored=     712.3 ESS=      140386
+   0_phase0       tau_stored=    2514.5 ESS=       39770
+   0_psi          tau_stored=    1895.0 ESS=       52771
+   0_log10_fgw    tau_stored=   44690.4 ESS=        2238
+   0_log10_h      tau_stored=    7195.8 ESS=       13897
+   gwb_log10_A    tau_stored=   42298.1 ESS=        2364
+   gwb_gamma      tau_stored=   43300.0 ESS=        2309
+Run E SUMMARY: tau_max=44690 ESS=2238 N_mask=204278 N_usable=min=2237 R_post=0.047 /s
+Run F: N_stored=100000000 thin_extra=50
+   0_log10_mc     tau_stored=   11780.1 ESS=        8489
+   0_cos_inc      tau_stored=     455.1 ESS=      219726
+   0_phase0       tau_stored=     908.5 ESS=      110068
+   0_psi          tau_stored=    1073.4 ESS=       93166
+   0_log10_fgw    tau_stored=      50.0 ESS=     2000000
+   0_log10_h      tau_stored=     379.2 ESS=      263748
+   gwb_log10_A    tau_stored=   24019.5 ESS=        4163
+   gwb_gamma      tau_stored=   23957.6 ESS=        4174
+Run F SUMMARY: tau_max=24019 ESS=4163 N_mask=239526 N_usable=min=4163 R_post=0.088 /s

@@ -1,0 +1,19 @@
+nohup: ignoring input
+loading Run D outfile...
+Run D: N=100000000 tau_mc=11530 ESS=8673
+ ntol 0.5%: n=3938 neff=3938 UL=9.7862 +/- 0.0037
+ ntol 1.0%: n=7782 neff=7782 UL=9.7862 +/- 0.0040
+ ntol 2.0%: n=15324 neff=8672 UL=9.7452 +/- 0.0051
+ ntol 3.0%: n=23158 neff=8672 UL=9.7442 +/- 0.0050
+ ntol 5.0%: n=40736 neff=8672 UL=9.7862 +/- 0.0072
+ ntol 7.0%: n=57415 neff=8672 UL=9.8108 +/- 0.0047
+ ntol 10.0%: n=84921 neff=8672 UL=9.8111 +/- 0.0030
+ ntol 15.0%: n=129742 neff=8672 UL=9.8182 +/- 0.0021
+ ntol 20.0%: n=174039 neff=8672 UL=9.8182 +/- 0.0022
+ ntol 30.0%: n=260615 neff=8672 UL=9.8182 +/- 0.0025
+ ntol 50.0%: n=447089 neff=8672 UL=9.8217 +/- 0.0030
+G2D1_fixed_UL_loki_100M_lastTOA_10_Jul_2026.h5: N=100000000 tau=2660 ESS=37589 UL=9.7724 +/- 0.0019
+G2D1_fixed_UL_loki_100M_lastTOA_ntol_10_15_Jul_2026.h5: N=100000000 tau=2383 ESS=41958 UL=9.7736 +/- 0.0018
+loading Enterprise...
+ENT: N=72001 ESS=378 UL=9.7814 +/- 0.0162
+saved ntol_sweep.png/pdf

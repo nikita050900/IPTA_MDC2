@@ -1,0 +1,224 @@
+nohup: ignoring input
+Number of cores used for parallel running:  1
+Number of pulsars loaded: 33
+Saving to: /tmp/bench_loki_dummy.h5
+Using 4 temperature chains with a geometric spacing of 1.442.
+Temperature ladder is:
+ [1.         1.44224957 2.08008382 3.        ]
+Using QuickCW default tref: 5026378181.932800 s (MJD 58175.673402)
+Began Main Loop
+Begin Loading Pulsar Timing Array from Enterprise at    0.082s
+Finished Loading Pulsar Timing Array from Enterprise at    0.082s
+List of parameters in the model with their priors:
+[0_cos_gwtheta:Uniform(pmin=0.8028174651911145, pmax=0.8028174851911146), 0_cos_inc:Uniform(pmin=-1, pmax=1), 0_gwphi:Uniform(pmin=3.3335788613091695, pmax=3.3335788813091694), 0_log10_dist:Uniform(pmin=1.873006540467324, pmax=1.8816927196524167), 0_log10_fgw:Uniform(pmin=-8.431798275933122, pmax=-8.431798275932888), 0_log10_mc:Uniform(pmin=7.03, pmax=10), 0_phase0:Uniform(pmin=0, pmax=6.283185307179586), 0_psi:Uniform(pmin=0, pmax=3.141592653589793), J0030+0451_cw0_p_dist:Normal(mu=0, sigma=1), J0030+0451_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0030+0451_red_noise_gamma:Uniform(pmin=0, pmax=7), J0030+0451_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0034-0534_cw0_p_dist:Normal(mu=0, sigma=1), J0034-0534_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0034-0534_red_noise_gamma:Uniform(pmin=0, pmax=7), J0034-0534_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0218+4232_cw0_p_dist:Normal(mu=0, sigma=1), J0218+4232_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0218+4232_red_noise_gamma:Uniform(pmin=0, pmax=7), J0218+4232_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0437-4715_cw0_p_dist:Normal(mu=0, sigma=1), J0437-4715_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0437-4715_red_noise_gamma:Uniform(pmin=0, pmax=7), J0437-4715_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0613-0200_cw0_p_dist:Normal(mu=0, sigma=1), J0613-0200_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0613-0200_red_noise_gamma:Uniform(pmin=0, pmax=7), J0613-0200_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0621+1002_cw0_p_dist:Normal(mu=0, sigma=1), J0621+1002_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0621+1002_red_noise_gamma:Uniform(pmin=0, pmax=7), J0621+1002_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0711-6830_cw0_p_dist:Normal(mu=0, sigma=1), J0711-6830_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0711-6830_red_noise_gamma:Uniform(pmin=0, pmax=7), J0711-6830_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0751+1807_cw0_p_dist:Normal(mu=0, sigma=1), J0751+1807_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0751+1807_red_noise_gamma:Uniform(pmin=0, pmax=7), J0751+1807_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J0900-3144_cw0_p_dist:Normal(mu=0, sigma=1), J0900-3144_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J0900-3144_red_noise_gamma:Uniform(pmin=0, pmax=7), J0900-3144_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1012+5307_cw0_p_dist:Normal(mu=0, sigma=1), J1012+5307_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1012+5307_red_noise_gamma:Uniform(pmin=0, pmax=7), J1012+5307_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1022+1001_cw0_p_dist:Normal(mu=0, sigma=1), J1022+1001_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1022+1001_red_noise_gamma:Uniform(pmin=0, pmax=7), J1022+1001_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1024-0719_cw0_p_dist:Normal(mu=0, sigma=1), J1024-0719_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1024-0719_red_noise_gamma:Uniform(pmin=0, pmax=7), J1024-0719_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1045-4509_cw0_p_dist:Normal(mu=0, sigma=1), J1045-4509_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1045-4509_red_noise_gamma:Uniform(pmin=0, pmax=7), J1045-4509_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1455-3330_cw0_p_dist:Normal(mu=0, sigma=1), J1455-3330_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1455-3330_red_noise_gamma:Uniform(pmin=0, pmax=7), J1455-3330_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1600-3053_cw0_p_dist:Normal(mu=0, sigma=1), J1600-3053_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1600-3053_red_noise_gamma:Uniform(pmin=0, pmax=7), J1600-3053_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1603-7202_cw0_p_dist:Normal(mu=0, sigma=1), J1603-7202_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1603-7202_red_noise_gamma:Uniform(pmin=0, pmax=7), J1603-7202_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1614-2230_cw0_p_dist:Normal(mu=0, sigma=1), J1614-2230_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1614-2230_red_noise_gamma:Uniform(pmin=0, pmax=7), J1614-2230_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1640+2224_cw0_p_dist:Normal(mu=0, sigma=1), J1640+2224_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1640+2224_red_noise_gamma:Uniform(pmin=0, pmax=7), J1640+2224_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1643-1224_cw0_p_dist:Normal(mu=0, sigma=1), J1643-1224_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1643-1224_red_noise_gamma:Uniform(pmin=0, pmax=7), J1643-1224_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1713+0747_cw0_p_dist:Normal(mu=0, sigma=1), J1713+0747_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1713+0747_red_noise_gamma:Uniform(pmin=0, pmax=7), J1713+0747_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1730-2304_cw0_p_dist:Normal(mu=0, sigma=1), J1730-2304_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1730-2304_red_noise_gamma:Uniform(pmin=0, pmax=7), J1730-2304_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1744-1134_cw0_p_dist:Normal(mu=0, sigma=1), J1744-1134_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1744-1134_red_noise_gamma:Uniform(pmin=0, pmax=7), J1744-1134_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1857+0943_cw0_p_dist:Normal(mu=0, sigma=1), J1857+0943_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1857+0943_red_noise_gamma:Uniform(pmin=0, pmax=7), J1857+0943_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1909-3744_cw0_p_dist:Normal(mu=0, sigma=1), J1909-3744_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1909-3744_red_noise_gamma:Uniform(pmin=0, pmax=7), J1909-3744_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1918-0642_cw0_p_dist:Normal(mu=0, sigma=1), J1918-0642_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1918-0642_red_noise_gamma:Uniform(pmin=0, pmax=7), J1918-0642_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1939+2134_cw0_p_dist:Normal(mu=0, sigma=1), J1939+2134_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1939+2134_red_noise_gamma:Uniform(pmin=0, pmax=7), J1939+2134_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J1944+0907_cw0_p_dist:Normal(mu=0, sigma=1), J1944+0907_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J1944+0907_red_noise_gamma:Uniform(pmin=0, pmax=7), J1944+0907_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2010-1323_cw0_p_dist:Normal(mu=0, sigma=1), J2010-1323_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2010-1323_red_noise_gamma:Uniform(pmin=0, pmax=7), J2010-1323_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2124-3358_cw0_p_dist:Normal(mu=0, sigma=1), J2124-3358_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2124-3358_red_noise_gamma:Uniform(pmin=0, pmax=7), J2124-3358_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2129-5721_cw0_p_dist:Normal(mu=0, sigma=1), J2129-5721_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2129-5721_red_noise_gamma:Uniform(pmin=0, pmax=7), J2129-5721_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2145-0750_cw0_p_dist:Normal(mu=0, sigma=1), J2145-0750_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2145-0750_red_noise_gamma:Uniform(pmin=0, pmax=7), J2145-0750_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2229+2643_cw0_p_dist:Normal(mu=0, sigma=1), J2229+2643_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2229+2643_red_noise_gamma:Uniform(pmin=0, pmax=7), J2229+2643_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), J2317+1439_cw0_p_dist:Normal(mu=0, sigma=1), J2317+1439_cw0_p_phase:Uniform(pmin=0, pmax=6.283185307179586), J2317+1439_red_noise_gamma:Uniform(pmin=0, pmax=7), J2317+1439_red_noise_log10_A:Uniform(pmin=-20, pmax=-11), gwb_gamma:Uniform(pmin=0, pmax=7), gwb_log10_A:Uniform(pmin=-18, pmax=-11)]
+uniform  [  0   1   2   3   4   5   6   7   9  10  11  13  14  15  17  18  19  21
+  22  23  25  26  27  29  30  31  33  34  35  37  38  39  41  42  43  45
+  46  47  49  50  51  53  54  55  57  58  59  61  62  63  65  66  67  69
+  70  71  73  74  75  77  78  79  81  82  83  85  86  87  89  90  91  93
+  94  95  97  98  99 101 102 103 105 106 107 109 110 111 113 114 115 117
+ 118 119 121 122 123 125 126 127 129 130 131 133 134 135 137 138 139 140
+ 141]
+normal  [  8  12  16  20  24  28  32  36  40  44  48  52  56  60  64  68  72  76
+  80  84  88  92  96 100 104 108 112 116 120 124 128 132 136]
+lin exp  []
+dm dist  []
+px dist  []
+[-1.          1.87300654  0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.
+  0.          0.          0.          0.          0.          0.
+  0.        ]
+[1.         1.88169272 6.28318531 3.14159265 6.28318531 6.28318531
+ 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531
+ 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531
+ 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531
+ 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531
+ 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531 6.28318531
+ 6.28318531]
+Setting up first sample at    5.434s...
+No value found in noisedict for: gwb_gamma
+Using a random draw from the prior as a first sample instead
+No value found in noisedict for: gwb_log10_A
+Setting it to a low value of -19 to help convergence of insignificant RN
+No value found in noisedict for: gwb_gamma
+Using a random draw from the prior as a first sample instead
+No value found in noisedict for: gwb_log10_A
+Setting it to a low value of -19 to help convergence of insignificant RN
+No value found in noisedict for: gwb_gamma
+Using a random draw from the prior as a first sample instead
+No value found in noisedict for: gwb_log10_A
+Setting it to a low value of -19 to help convergence of insignificant RN
+No value found in noisedict for: gwb_gamma
+Using a random draw from the prior as a first sample instead
+No value found in noisedict for: gwb_log10_A
+Setting it to a low value of -19 to help convergence of insignificant RN
+log_prior=-183.94766766333512
+Creating Shared Info Objects at   12.025s
+Calculating RN fisher Eigenvectors
+Number of Pulsars with Fisher Eigenvectors in Full Default:  11 Diagonal Default:  8 No Default:  14
+Finished Creating Shared Info Objects at   37.997s
+Distance prior sigmas calculated for fisher correction:
+[1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1. 1.
+ 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+Geting Starting Fishers at   37.998s
+Calculating RN fisher Eigenvectors
+Updating Common Parameter Fisher Eigenvectors
+eig sizes [4.e+00 4.e+00 4.e+00 1.e+04]
+Number of Pulsars with Fisher Eigenvectors in Full Default:  11 Diagonal Default:  8 No Default:  14
+Calculating RN fisher Eigenvectors
+Updating Common Parameter Fisher Eigenvectors
+eig sizes [4.e+00 4.e+00 4.e+00 1.e+04]
+Number of Pulsars with Fisher Eigenvectors in Full Default:  12 Diagonal Default:  10 No Default:  11
+Calculating RN fisher Eigenvectors
+Updating Common Parameter Fisher Eigenvectors
+eig sizes [4.e+00 4.e+00 4.e+00 1.e+04]
+Number of Pulsars with Fisher Eigenvectors in Full Default:  10 Diagonal Default:  10 No Default:  13
+Calculating RN fisher Eigenvectors
+Updating Common Parameter Fisher Eigenvectors
+eig sizes [4.e+00 4.e+00 4.e+00 1.e+04]
+Number of Pulsars with Fisher Eigenvectors in Full Default:  8 Diagonal Default:  6 No Default:  19
+Finished Getting Starting Fishers at   39.689s
+Finished Setting up Differential Evolution Buffer at   40.129s
+chain #0
+log_likelihood=40027.57382361145
+log_prior_old=-183.94766766333515
+log_prior_new=-183.94766766333512
+Initial samples:
+[  0.80281747  -0.76383544   3.33357887   1.87489242  -8.43179828
+   9.08651339   1.27178109   1.75564397  -1.08911041   6.09127858
+   2.97401154 -16.03141949   0.87458048   1.79125253   3.28543515
+ -16.38955644  -0.5841276    2.87901989   3.1863854  -16.49238695
+   1.32618275   5.63395963   3.04969887 -17.20030402   0.16620248
+   2.00041793   3.18035997 -16.64809966  -0.11943003   2.52891267
+   4.43262979 -13.03437399  -2.81731086   3.46986168   3.14093899
+ -16.64233111  -0.42172446   0.20801193   3.32557767 -16.17160702
+  -0.73315736   3.3689261    3.23792217 -16.63090809   0.39913008
+   4.47079586   3.22286605 -16.62909801  -0.88157109   1.39738078
+   3.42507133 -15.75459033   0.23788665   0.38305233   3.18691622
+ -16.60433532   1.06158986   4.44396113   3.24366764 -16.6673554
+   0.61136347   4.48530179   3.25408914 -16.36675477   0.07234394
+   3.40171258   4.62798133 -15.01083956   1.265107     5.37832644
+   3.14023616 -16.66907879  -2.19922937   4.24551998   3.27891274
+ -16.70411369  -0.43601227   1.76216807   3.80336785 -15.77752303
+  -0.97027375   4.96505005   2.98065051 -12.58040174   1.84029422
+   2.75507525   3.31721523 -16.40948134  -0.08068602   3.50603175
+   3.13351421 -16.77664979  -0.24931742   0.33909306   3.15899153
+ -16.7707048   -1.13945208   4.40242288   3.24013783 -16.34596207
+   0.56672829   4.76170737   3.59541068 -16.35116523  -0.75852363
+   2.94916464   3.25868201 -16.3968854   -0.95971468   4.72769014
+   3.87561473 -13.58401647  -0.97909024   0.96312852   3.19846372
+ -16.54340219   0.09274654   4.78658981   3.1648248  -16.63091918
+   1.14992951   1.40159752   3.14924377 -16.58132018  -0.2798455
+   4.71916286   3.14180194 -16.16806839  -0.3132552    1.15389115
+   3.21370634 -16.67392904   0.89776982   6.23122434   3.3103482
+ -16.34137071  -1.04635547   5.7402094    3.13151979 -16.66450196
+   3.69403483 -17.        ]
+chain #1
+log_likelihood=40026.74919602146
+log_prior_old=-178.98619084698956
+log_prior_new=-178.98619084698956
+Initial samples:
+[  0.80281747   0.16492533   3.33357888   1.87669287  -8.43179828
+   7.20381426   2.56757273   0.20073528  -0.32877034   3.67667385
+   2.97401154 -16.03141949   1.02966192   0.74677342   3.28543515
+ -16.38955644  -0.5623531    1.1614082    3.1863854  -16.49238695
+  -0.43386223   2.18732568   3.04969887 -17.20030402  -0.99506854
+   4.92457871   3.18035997 -16.64809966   0.76776578   3.97093492
+   4.43262979 -13.03437399  -0.29923109   4.93469833   3.14093899
+ -16.64233111   0.86786142   5.88885836   3.32557767 -16.17160702
+   0.78804543   1.09793679   3.23792217 -16.63090809  -0.18217466
+   0.53256156   3.22286605 -16.62909801   0.77219173   5.55375109
+   3.42507133 -15.75459033  -0.98546963   0.14048717   3.18691622
+ -16.60433532  -1.11591109   0.30275263   3.24366764 -16.6673554
+   1.6516774    1.023543     3.25408914 -16.36675477  -0.22804588
+   0.60283394   4.62798133 -15.01083956   0.21740319   2.12758788
+   3.14023616 -16.66907879  -1.20045101   3.84008854   3.27891274
+ -16.70411369  -1.19801005   1.63055558   3.80336785 -15.77752303
+   1.75577637   2.28349382   2.98065051 -12.58040174  -1.37730569
+   5.91744379   3.31721523 -16.40948134  -0.36121864   4.34797869
+   3.13351421 -16.77664979  -0.11840622   1.98017123   3.15899153
+ -16.7707048    0.68572522   1.12599479   3.24013783 -16.34596207
+  -0.44026975   4.52315376   3.59541068 -16.35116523  -0.59939363
+   3.07772139   3.25868201 -16.3968854   -0.92522437   5.36605489
+   3.87561473 -13.58401647   0.13319505   2.8093356    3.19846372
+ -16.54340219  -0.08761816   4.81164736   3.1648248  -16.63091918
+   0.43674336   2.43658886   3.14924377 -16.58132018  -0.86517526
+   4.58700824   3.14180194 -16.16806839  -0.70733677   4.0857776
+   3.21370634 -16.67392904  -1.2922345    2.06929038   3.3103482
+ -16.34137071   0.65136853   2.29903422   3.13151979 -16.66450196
+   4.09615019 -17.        ]
+chain #2
+log_likelihood=40026.734316887276
+log_prior_old=-194.29767730232845
+log_prior_new=-194.29767730232845
+Initial samples:
+[  0.80281748  -0.71031524   3.33357887   1.8796686   -8.43179828
+   8.03176648   3.25651521   1.85654225   1.24077871   2.67343212
+   2.97401154 -16.03141949  -0.79336482   5.17209269   3.28543515
+ -16.38955644  -2.69136225   2.27153224   3.1863854  -16.49238695
+  -1.50779575   2.72770709   3.04969887 -17.20030402   1.13715148
+   1.12780387   3.18035997 -16.64809966   2.12054315   5.06904781
+   4.43262979 -13.03437399   0.51513439   2.23227312   3.14093899
+ -16.64233111   0.41341443   1.55524149   3.32557767 -16.17160702
+   0.73531141   3.42645098   3.23792217 -16.63090809  -3.02854252
+   4.69324877   3.22286605 -16.62909801  -1.50782644   4.56898099
+   3.42507133 -15.75459033   0.21992706   4.98987869   3.18691622
+ -16.60433532  -0.36071042   5.48893188   3.24366764 -16.6673554
+   1.79708741   3.34107319   3.25408914 -16.36675477  -0.43907035
+   0.27172185   4.62798133 -15.01083956  -0.40799776   0.99915161
+   3.14023616 -16.66907879   1.37706674   5.55565008   3.27891274
+ -16.70411369  -1.16199127   1.95174148   3.80336785 -15.77752303
+   2.34849121   5.58107665   2.98065051 -12.58040174   0.11200049
+   3.52403632   3.31721523 -16.40948134   1.59227786   0.35205461
+   3.13351421 -16.77664979   0.65651065   4.77274615   3.15899153
+ -16.7707048    0.79048338   1.20879979   3.24013783 -16.34596207
+   0.34685638   3.60442991   3.59541068 -16.35116523   0.81230004
+   1.12002816   3.25868201 -16.3968854   -0.9527149    0.20483177
+   3.87561473 -13.58401647  -0.22385566   2.61048833   3.19846372
+ -16.54340219   1.97907896   0.94121928   3.1648248  -16.63091918
+   0.10587384   0.98044602   3.14924377 -16.58132018   0.58773888
+   3.54522279   3.14180194 -16.16806839   0.97599919   1.31421985
+   3.21370634 -16.67392904  -0.95751607   5.32823931   3.3103482
+ -16.34137071  -0.73447112   3.82789647   3.13151979 -16.66450196
+   1.16258241 -17.        ]
+chain #3
+log_likelihood=40026.707905762465
+log_prior_old=-193.00806901421416
+log_prior_new=-193.00806901421416
+Initial samples:
+[  0.80281748  -0.45479806   3.33357888   1.88065717  -8.43179828
+   8.13682166   3.84891447   2.74756069   1.10724428   3.68387322
+   2.97401154 -16.03141949  -1.45140215   6.01482418   3.28543515
+ -16.38955644  -0.89161702   1.53847256   3.1863854  -16.49238695
+  -1.66918636   0.75934019   3.04969887 -17.20030402  -0.94548153
+   3.80402586   3.18035997 -16.64809966  -1.08453481   6.05815862
+   4.43262979 -13.03437399  -2.14840639   3.59798524   3.14093899
+ -16.64233111   1.98285643   0.79206442   3.32557767 -16.17160702
+   1.71632072   2.88632995   3.23792217 -16.63090809   0.6591606
+   0.81405815   3.22286605 -16.62909801  -1.83362385   2.57008343
+   3.42507133 -15.75459033   0.6220345    3.27029004   3.18691622
+ -16.60433532   2.04805813   0.27925265   3.24366764 -16.6673554
+  -1.65551605   2.01643127   3.25408914 -16.36675477   1.01784445
+   2.34497343   4.62798133 -15.01083956   0.48816921   2.84049148
+   3.14023616 -16.66907879   0.35417788   2.95125066   3.27891274
+ -16.70411369   0.12447011   2.79679854   3.80336785 -15.77752303
+   1.40250377   5.13641862   2.98065051 -12.58040174   0.34564325
+   2.30151108   3.31721523 -16.40948134  -1.59004934   2.02158714
+   3.13351421 -16.77664979   2.06574035   3.01618374   3.15899153
+ -16.7707048    2.11104879   0.9910106    3.24013783 -16.34596207
+   0.42899734   1.97205596   3.59541068 -16.35116523   0.73574534
+   2.46383956   3.25868201 -16.3968854    0.37486079   2.17606735
+   3.87561473 -13.58401647  -0.80184041   1.96793608   3.19846372
+ -16.54340219  -0.06027189   2.36042944   3.1648248  -16.63091918
+   0.03431512   1.06650144   3.14924377 -16.58132018  -0.06185893
+   4.31602888   3.14180194 -16.16806839  -1.97385355   1.41465234
+   3.21370634 -16.67392904   0.05364715   0.27788692   3.3103482
+ -16.34137071  -0.32561526   1.49141726   3.13151979 -16.66450196
+   1.27370456 -17.        ]
+finished initialization steps in   40.335s
+warm-up done
+LOKI PROJECTION: median 0.01353 ms (min 0.01338, max 0.0137)
+LOKI SHAPE: median 7.717 ms (min 7.598, max 7.918)
+implied per-iter cost (block 1000): 0.02123 ms

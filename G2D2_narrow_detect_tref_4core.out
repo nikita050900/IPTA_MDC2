@@ -1,0 +1,6 @@
+JOBID=2197299 NODE=tsscl001.hpc.wvu.edu ALLOC_CPUS_PER_TASK=4 NUMBA=4 OMP=4 TEMPO2=/scratch/na00078/conda_envs/QuickCW/share/tempo2
+Thread(s) per core:    1
+Core(s) per socket:    20
+Socket(s):             2
+Model name:            Intel(R) Xeon(R) Gold 6138 CPU @ 2.00GHz
+START: Wed Jul 22 17:43:46 EDT 2026
