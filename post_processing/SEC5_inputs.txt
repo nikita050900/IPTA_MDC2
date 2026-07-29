@@ -1,0 +1,44 @@
+#### compare_G2D2_broad_detect_three_pipelines_corrected_tref_latest.ipynb  kernel=python3
+   [0] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+   [0] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+   [0] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5"
+   [1] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+   [1] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+   [1] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5"
+   [9] fig.savefig("g2d2_broad_truth.png", dpi=300, bbox_inches="tight")
+   [9] fig.savefig("g2d2_broad_truth.pdf", bbox_inches="tight")
+#### compare_G2D2_fixed_detect_three_pipelines_corrected_tref_latest.ipynb  kernel=python3
+   [0] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+   [0] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+   [0] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5"
+   [1] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+   [1] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+   [1] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5"
+   [3] "QCW  G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5", "samples_masked"),
+   [3] "Loki G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5", "samples_cold"),
+   [3] "Ent  G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5", "chain"),
+   [3] "QCW  G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5", "samples_masked"),
+   [3] "Loki G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5", "samples_cold"),
+   [3] "Ent  G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5", "chain"),
+   [8] fig.savefig("g2d2_fixed_truth.png", dpi=300, bbox_inches="tight")
+   [8] fig.savefig("g2d2_fixed_truth.pdf", bbox_inches="tight")
+#### Figure_freq_marginalized_UL.ipynb  kernel=python3
+   [0] ('QuickCW',    H + 'G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5', 'qcw',  QCW_C),
+   [0] ('Enterprise', H + 'core_single_MDC2_DS1_new.h5',                       'ent',  ENT_C),
+   [0] ('QuickCW-dL', H + 'G2D1_fixed_UL_loki_100M_lastTOA_10_Jul_2026.h5',    'loki', DL_C),
+   [0] ('QuickCW',    H + 'G2D1_broad_UL_1e9_fixed_gamma_outfile.h5',          'qcw',  QCW_C),
+   [0] ('Enterprise', H + 'core_single_MDC2_DS1_varyfgw.h5',                   'ent',  ENT_C),
+   [0] ('QuickCW-dL', H + 'G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5',    'loki', DL_C),
+   [0] fig.savefig('G2D1_freq_marginalized_UL_fixed_broad.pdf', bbox_inches='tight')
+   [1] 'fixed': [('QuickCW', H+'G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5', 'qcw'),
+   [1] ('Enterprise', H+'core_single_MDC2_DS1_new.h5', 'ent'),
+   [1] ('QuickCW-dL', H+'G2D1_fixed_UL_loki_100M_lastTOA_10_Jul_2026.h5', 'loki')],
+   [1] 'broad': [('QuickCW', H+'G2D1_broad_UL_1e9_fixed_gamma_outfile.h5', 'qcw'),
+   [1] ('Enterprise', H+'core_single_MDC2_DS1_varyfgw.h5', 'ent'),
+   [1] ('QuickCW-dL', H+'G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5', 'loki')]}
+   [1] fig.savefig(fname + '.pdf', bbox_inches='tight')
+   [1] fig.savefig(fname + '.png', dpi=300, bbox_inches='tight')
+#### Figure_freq_segmented_UL.ipynb  kernel=python3
+   [0] QCW  = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_1e9_fixed_gamma_outfile.h5'
+   [0] LOKI = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5'
+   [0] fig.savefig('G2D1_broad_freq_segmented_UL_sidebyside.pdf', bbox_inches='tight')

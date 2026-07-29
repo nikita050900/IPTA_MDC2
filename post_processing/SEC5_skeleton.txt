@@ -1,0 +1,300 @@
+############ compare_G2D2_broad_detect_three_pipelines_corrected_tref_latest.ipynb
+  [0] np.random.seed(42)
+  [0] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+  [0] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+  [0] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5"
+  [0] def derive_log10_h0(log10_mc, log10_fgw, log10_dL_Mpc):
+  [0] qc = f["samples_masked"][...]
+  [0] # subsample QCW and Loki to match Enterprise post burn-in
+  [0] qc_idx = np.random.choice(len(qc), min(N_TARGET, len(qc)), replace=False)
+  [0] lk_idx = np.random.choice(len(lk), N_TARGET, replace=False)
+  [0] print(f"All pipelines subsampled to match Enterprise (N = {N_TARGET})")
+  [0] loki_cosi = lk_sub[:, lk_pn.index("0_cos_inc")]
+  [0] loki_fgw  = lk_sub[:, lk_pn.index("0_log10_fgw")]
+  [0] loki_mc   = lk_sub[:, lk_pn.index("0_log10_mc")]
+  [0] loki_dist = lk_sub[:, lk_pn.index("0_log10_dist")]
+  [0] loki_h    = derive_log10_h0(loki_mc, loki_fgw, loki_dist)
+  [0] loki_amp  = lk_sub[:, lk_pn.index("gwb_log10_A")]
+  [0] loki_gam  = lk_sub[:, lk_pn.index("gwb_gamma")]
+  [0] loki_phi  = lk_sub[:, lk_pn.index("0_phase0")]
+  [0] loki_psi  = lk_sub[:, lk_pn.index("0_psi")]
+  [0] loki_c = np.column_stack([loki_cosi, loki_fgw, loki_h, loki_mc, loki_amp, loki_phi, loki_psi])
+  [0] def make_corner(data_list, color_list, label_list, title):
+  [0] fig = corner.corner(data_list[0], labels=labels_c, truths=truths_c,
+  [0] corner.corner(d, fig=fig, labels=labels_c, truths=truths_c,
+  [0] handles = [plt.Line2D([0],[0], color=c, lw=2.5, label=l)
+  [0] handles.append(plt.Line2D([0],[0], color=CT, lw=1.5, label="Injected"))
+  [0] make_corner([qcw_c, loki_c], [CB, CG],
+  [0] make_corner([loki_c, ent_c], [CG, CO],
+  [0] make_corner([qcw_c, loki_c, ent_c], [CB, CG, CO],
+  [0] (r"$\cos\iota$",              t_cosi, [(qcw_cosi, CB), (loki_cosi, CG), (ent_cosi, CO)]),
+  [0] (r"$\log_{10}f_{\rm GW}$",    t_fgw,  [(qcw_fgw, CB),  (loki_fgw, CG),  (ent_fgw, CO)]),
+  [0] (r"$\log_{10}h_0$",           t_h,    [(qcw_h, CB),    (loki_h, CG),    (ent_h, CO)]),
+  [0] (r"$\log_{10}\mathcal{M}_c$", t_mc,   [(qcw_mc, CB),   (loki_mc, CG),   (ent_mc, CO)]),
+  [0] (r"$\log_{10}A_{\rm GWB}$",   t_amp,  [(qcw_amp, CB),  (loki_amp, CG),  (ent_amp, CO)]),
+  [0] (r"$\gamma_{\rm GWB}$",       None,   [(qcw_gam, CB),  (loki_gam, CG),  (ent_gam, CO)]),
+  [0] (r"$\Phi_0$",                 t_phi,  [(qcw_phi, CB),  (loki_phi, CG),  (ent_phi, CO)]),
+  [0] (r"$\psi$",                   t_psi,  [(qcw_psi, CB),  (loki_psi, CG),  (ent_psi, CO)]),
+  [0] f"Loki (n={len(loki_cosi):,})",
+  [0] ("Loki",   (loki_cosi, loki_fgw, loki_h, loki_mc, loki_amp, loki_gam, loki_phi, loki_psi)),
+  [1] np.random.seed(42)
+  [1] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+  [1] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+  [1] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5"
+  [1] def derive_log10_h0(log10_mc, log10_fgw, log10_dL_Mpc):
+  [1] qc = f["samples_masked"][...]
+  [1] # subsample QCW and Loki to match Enterprise post burn-in (for CORNER plots)
+  [1] qc_idx = np.random.choice(len(qc), min(N_TARGET, len(qc)), replace=False)
+  [1] lk_idx = np.random.choice(len(lk), N_TARGET, replace=False)
+  [1] print(f"Corner: subsampled to Enterprise N = {N_TARGET}")
+  [1] # CORNER plot data (subsampled)
+  [1] loki_cosi = lk_sub[:, lk_pn.index("0_cos_inc")]
+  [1] loki_fgw  = lk_sub[:, lk_pn.index("0_log10_fgw")]
+  [1] loki_mc   = lk_sub[:, lk_pn.index("0_log10_mc")]
+  [1] loki_dist = lk_sub[:, lk_pn.index("0_log10_dist")]
+  [1] loki_h    = derive_log10_h0(loki_mc, loki_fgw, loki_dist)
+  [1] loki_amp  = lk_sub[:, lk_pn.index("gwb_log10_A")]
+  [1] loki_phi  = lk_sub[:, lk_pn.index("0_phase0")]
+  [1] loki_psi  = lk_sub[:, lk_pn.index("0_psi")]
+  [1] loki_c = np.column_stack([loki_cosi, loki_fgw, loki_h, loki_mc, loki_amp, loki_phi, loki_psi])
+  [1] def make_corner(data_list, color_list, label_list, title):
+  [1] fig = corner.corner(data_list[0], labels=labels_c, truths=truths_c,
+  [1] corner.corner(d, fig=fig, labels=labels_c, truths=truths_c,
+  [1] handles = [plt.Line2D([0],[0], color=c, lw=2.5, label=l)
+  [1] handles.append(plt.Line2D([0],[0], color=CT, lw=1.5, label="Injected"))
+  [1] make_corner([qcw_c, loki_c], [CB, CG],
+  [1] make_corner([loki_c, ent_c], [CG, CO],
+  [1] make_corner([qcw_c, loki_c, ent_c], [CB, CG, CO],
+  [1] loki_t_cosi = lk[:, lk_pn.index("0_cos_inc")]
+  [1] loki_t_fgw  = lk[:, lk_pn.index("0_log10_fgw")]
+  [1] loki_t_mc   = lk[:, lk_pn.index("0_log10_mc")]
+  [1] loki_t_dist = lk[:, lk_pn.index("0_log10_dist")]
+  [1] loki_t_h    = derive_log10_h0(loki_t_mc, loki_t_fgw, loki_t_dist)
+  [1] loki_t_amp  = lk[:, lk_pn.index("gwb_log10_A")]
+  [1] loki_t_gam  = lk[:, lk_pn.index("gwb_gamma")]
+  [1] loki_t_phi  = lk[:, lk_pn.index("0_phase0")]
+  [1] loki_t_psi  = lk[:, lk_pn.index("0_psi")]
+  [1] (r"$\cos\iota$",              t_cosi, [(qcw_t_cosi, CB), (loki_t_cosi, CG), (ent_t_cosi, CO)]),
+  [1] (r"$\log_{10}f_{\rm GW}$",    t_fgw,  [(qcw_t_fgw, CB),  (loki_t_fgw, CG),  (ent_t_fgw, CO)]),
+  [1] (r"$\log_{10}h_0$",           t_h,    [(qcw_t_h, CB),    (loki_t_h, CG),    (ent_t_h, CO)]),
+  [1] (r"$\log_{10}\mathcal{M}_c$", t_mc,   [(qcw_t_mc, CB),   (loki_t_mc, CG),   (ent_t_mc, CO)]),
+  [1] (r"$\log_{10}A_{\rm GWB}$",   t_amp,  [(qcw_t_amp, CB),  (loki_t_amp, CG),  (ent_t_amp, CO)]),
+  [1] (r"$\gamma_{\rm GWB}$",       None,   [(qcw_t_gam, CB),  (loki_t_gam, CG),  (ent_t_gam, CO)]),
+  [1] (r"$\Phi_0$",                 t_phi,  [(qcw_t_phi, CB),  (loki_t_phi, CG),  (ent_t_phi, CO)]),
+  [1] (r"$\psi$",                   t_psi,  [(qcw_t_psi, CB),  (loki_t_psi, CG),  (ent_t_psi, CO)]),
+  [1] f"Loki (n={len(loki_t_cosi):,})",
+  [1] ("Loki",   (loki_t_cosi, loki_t_fgw, loki_t_h, loki_t_mc, loki_t_amp, loki_t_gam, loki_t_phi, loki_t_psi)),
+  [2] ("cos_inc",     qcw_t_cosi, loki_t_cosi, ent_t_cosi),
+  [2] ("log10_fGW",   qcw_t_fgw,  loki_t_fgw,  ent_t_fgw),
+  [2] ("log10_h0",    qcw_t_h,    loki_t_h,    ent_t_h),
+  [2] ("log10_Mc",    qcw_t_mc,   loki_t_mc,   ent_t_mc),
+  [2] ("log10_A_GWB", qcw_t_amp,  loki_t_amp,  ent_t_amp),
+  [2] ("gamma_GWB",   qcw_t_gam,  loki_t_gam,  ent_t_gam),
+  [2] ("phase0",      qcw_t_phi,  loki_t_phi,  ent_t_phi),
+  [2] ("psi",         qcw_t_psi,  loki_t_psi,  ent_t_psi),
+  [3] for name, l, e in [("cos_inc", loki_t_cosi, ent_t_cosi),
+  [3] ("log10_h0", loki_t_h, ent_t_h),
+  [3] ("log10_Mc", loki_t_mc, ent_t_mc)]:
+  [3] lp = np.percentile(l, [5, 50, 95])
+  [3] ep = np.percentile(e, [5, 50, 95])
+  [4] def sum_uniform_pdf(y, widths):
+  [4] def induced_prior(terms, const):
+  [4] def sd_bf10(x, x_lo, x_hi, weights=None, label=""):
+  [4] if weights is None: weights = np.ones_like(x)
+  [4] pd = 1.0/(x_hi - x_lo); ws = weights.sum()
+  [4] ne = ws**2/(weights**2).sum()
+  [4] wh, _ = np.histogram(x, bins=edges, weights=weights)
+  [4] loki_x = derive_log10_h0(lk_mc_f, lk_fgw_f, lk_dl_f)
+  [4] print(f"loki dL range: [{lk_dl_f.min():.5f}, {lk_dl_f.max():.5f}] vs prior [{np.log10(DL0*0.99):.5f}, {np.log10(DL0*1.01):.5f}]")
+  [4] print(f"         | Loki [{loki_x.min():.3f}, {loki_x.max():.3f}] analytic [{l_lo:.3f}, {l_hi:.3f}]")
+  [4] w_l = 1.0/np.clip(l_pdf(loki_x), 1e-300, None)
+  [4] sd_bf10(qcw_x, QCW_H_MIN, QCW_H_MAX, label="QCW broad: sampled log10 h0, flat prior, dL-masked")
+  [4] sd_bf10(ent_x, e_lo, e_hi, weights=w_e, label="Enterprise broad: derived log10 h0, reweighted")
+  [4] sd_bf10(loki_x, l_lo, l_hi, weights=w_l, label="LokiCW broad: derived log10 h0, reweighted")
+  [4] ("Ent", ent_x, w_e, e_lo), ("Loki", loki_x, w_l, l_lo)):
+  [5] for nm, arr in [('QCW_h', qcw_x), ('Loki_h', loki_x), ('Ent_h', ent_x), ('QCW_mc', qc[:, qc_pn.index('0_log10_mc')]), ('Loki_mc', lk_mc_f), ('Ent_mc', en_mc_f), ('QCW_A',
+  [5] q = np.percentile(arr, [5, 50, 95])
+  [6] sd_bf10(qcw_x[m], l_lo, l_hi, weights=w_q[m], label='QCW broad: masked samples, reweighted to flat over induced support')
+  [7] np.random.seed(7)
+  [7] def bf_resampled(x, w, lo, hi, ntol):
+  [7] idx = np.random.choice(len(xm), size=len(xm), replace=True, p=wm/wm.sum())
+  [7] return model_utils.bayes_fac(xm[idx], ntol=ntol, logAmin=lo, logAmax=hi)
+  [7] print('  QCW :', model_utils.bayes_fac(qcw_x, ntol=ntol, logAmin=-18.0, logAmax=-11.0))
+  [7] print('  Loki:', bf_resampled(loki_x, w_l, l_lo, l_hi, ntol))
+  [9] DL_arr  = np.column_stack([loki_mc, loki_h, loki_fgw, loki_cosi, loki_phi, loki_psi])
+  [9] fig = corner.corner(QCW_arr, color=C_QCW, contour_kwargs={"linewidths": LW, "colors": C_QCW}, hist_kwargs={"density": True, "color": C_QCW, "lw": LW}, **base_kw)
+  [9] corner.corner(ENT_arr, fig=fig, color=C_ENT, contour_kwargs={"linewidths": LW, "colors": C_ENT}, hist_kwargs={"density": True, "color": C_ENT, "lw": LW}, **base_kw)
+  [9] corner.corner(DL_arr, fig=fig, color=C_DL, contour_kwargs={"linewidths": LW, "colors": C_DL}, hist_kwargs={"density": True, "color": C_DL, "lw": LW}, **base_kw)
+  [9] fig.savefig("g2d2_broad_truth.png", dpi=300, bbox_inches="tight")
+  [9] fig.savefig("g2d2_broad_truth.pdf", bbox_inches="tight")
+############ compare_G2D2_fixed_detect_three_pipelines_corrected_tref_latest.ipynb
+  [0] np.random.seed(42)
+  [0] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+  [0] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+  [0] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5"
+  [0] def derive_log10_h0(log10_mc, log10_fgw, log10_dL_Mpc):
+  [0] qc = f["samples_masked"][...]
+  [0] # subsample QCW and Loki to match Enterprise post burn-in
+  [0] qc_idx = np.random.choice(len(qc), min(N_TARGET, len(qc)), replace=False)
+  [0] lk_idx = np.random.choice(len(lk), N_TARGET, replace=False)
+  [0] print(f"All pipelines subsampled to match Enterprise (N = {N_TARGET})")
+  [0] loki_cosi = lk_sub[:, lk_pn.index("0_cos_inc")]
+  [0] loki_mc   = lk_sub[:, lk_pn.index("0_log10_mc")]
+  [0] loki_dist = lk_sub[:, lk_pn.index("0_log10_dist")]
+  [0] loki_h    = derive_log10_h0(loki_mc, np.full_like(loki_mc, F_GW_FIXED), loki_dist)
+  [0] loki_amp  = lk_sub[:, lk_pn.index("gwb_log10_A")]
+  [0] loki_gam  = lk_sub[:, lk_pn.index("gwb_gamma")]
+  [0] loki_phi  = lk_sub[:, lk_pn.index("0_phase0")]
+  [0] loki_psi  = lk_sub[:, lk_pn.index("0_psi")]
+  [0] loki_c = np.column_stack([loki_cosi, loki_h, loki_mc, loki_amp, loki_gam, loki_phi, loki_psi])
+  [0] def make_corner(data_list, color_list, label_list, title):
+  [0] fig = corner.corner(data_list[0], labels=labels_c, truths=truths_c,
+  [0] corner.corner(d, fig=fig, labels=labels_c, truths=truths_c,
+  [0] handles = [plt.Line2D([0],[0], color=c, lw=2.5, label=l)
+  [0] handles.append(plt.Line2D([0],[0], color=CT, lw=1.5, label="Injected"))
+  [0] make_corner([qcw_c, loki_c], [CB, CG],
+  [0] make_corner([loki_c, ent_c], [CG, CO],
+  [0] make_corner([qcw_c, loki_c, ent_c], [CB, CG, CO],
+  [0] (r"$\cos\iota$",              t_cosi, [(qcw_cosi, CB), (loki_cosi, CG), (ent_cosi, CO)]),
+  [0] (r"$\log_{10}h_0$",           t_h,    [(qcw_h, CB),    (loki_h, CG),    (ent_h, CO)]),
+  [0] (r"$\log_{10}\mathcal{M}_c$", t_mc,   [(qcw_mc, CB),   (loki_mc, CG),   (ent_mc, CO)]),
+  [0] (r"$\log_{10}A_{\rm GWB}$",   t_amp,  [(qcw_amp, CB),  (loki_amp, CG),  (ent_amp, CO)]),
+  [0] (r"$\gamma_{\rm GWB}$",       None,   [(qcw_gam, CB),  (loki_gam, CG),  (ent_gam, CO)]),
+  [0] (r"$\Phi_0$",                 t_phi,  [(qcw_phi, CB),  (loki_phi, CG),  (ent_phi, CO)]),
+  [0] (r"$\psi$",                   t_psi,  [(qcw_psi, CB),  (loki_psi, CG),  (ent_psi, CO)]),
+  [0] f"Loki (n={len(loki_cosi):,})",
+  [0] ("Loki",   (loki_cosi, loki_h, loki_mc, loki_amp, loki_gam, loki_phi, loki_psi)),
+  [1] np.random.seed(42)
+  [1] QCW_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5"
+  [1] LOKI_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5"
+  [1] ENT_FILE = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5"
+  [1] def derive_log10_h0(log10_mc, log10_fgw, log10_dL_Mpc):
+  [1] qc = f["samples_masked"][...]
+  [1] # subsample QCW and Loki to match Enterprise post burn-in (for CORNER plots)
+  [1] qc_idx = np.random.choice(len(qc), min(N_TARGET, len(qc)), replace=False)
+  [1] lk_idx = np.random.choice(len(lk), N_TARGET, replace=False)
+  [1] print(f"Corner: subsampled to Enterprise N = {N_TARGET}")
+  [1] # CORNER plot data (subsampled, no fGW since it's fixed)
+  [1] loki_cosi = lk_sub[:, lk_pn.index("0_cos_inc")]
+  [1] loki_mc   = lk_sub[:, lk_pn.index("0_log10_mc")]
+  [1] loki_dist = lk_sub[:, lk_pn.index("0_log10_dist")]
+  [1] loki_h    = derive_log10_h0(loki_mc, np.full_like(loki_mc, F_GW_FIXED), loki_dist)
+  [1] loki_amp  = lk_sub[:, lk_pn.index("gwb_log10_A")]
+  [1] loki_phi  = lk_sub[:, lk_pn.index("0_phase0")]
+  [1] loki_psi  = lk_sub[:, lk_pn.index("0_psi")]
+  [1] loki_gam_c = lk_sub[:, lk_pn.index("gwb_gamma")]
+  [1] loki_c = np.column_stack([loki_cosi, loki_h, loki_mc, loki_amp, loki_gam_c, loki_phi, loki_psi])
+  [1] def make_corner(data_list, color_list, label_list, title):
+  [1] fig = corner.corner(data_list[0], labels=labels_c, truths=truths_c,
+  [1] corner.corner(d, fig=fig, labels=labels_c, truths=truths_c,
+  [1] handles = [plt.Line2D([0],[0], color=c, lw=2.5, label=l)
+  [1] handles.append(plt.Line2D([0],[0], color=CT, lw=1.5, label="Injected"))
+  [1] make_corner([qcw_c, loki_c], [CB, CG],
+  [1] make_corner([loki_c, ent_c], [CG, CO],
+  [1] make_corner([qcw_c, loki_c, ent_c], [CB, CG, CO],
+  [1] loki_t_cosi = lk[:, lk_pn.index("0_cos_inc")]
+  [1] loki_t_mc   = lk[:, lk_pn.index("0_log10_mc")]
+  [1] loki_t_dist = lk[:, lk_pn.index("0_log10_dist")]
+  [1] loki_t_h    = derive_log10_h0(loki_t_mc, np.full_like(loki_t_mc, F_GW_FIXED), loki_t_dist)
+  [1] loki_t_amp  = lk[:, lk_pn.index("gwb_log10_A")]
+  [1] loki_t_gam  = lk[:, lk_pn.index("gwb_gamma")]
+  [1] loki_t_phi  = lk[:, lk_pn.index("0_phase0")]
+  [1] loki_t_psi  = lk[:, lk_pn.index("0_psi")]
+  [1] (r"$\cos\iota$",              t_cosi, [(qcw_t_cosi, CB), (loki_t_cosi, CG), (ent_t_cosi, CO)]),
+  [1] (r"$\log_{10}h_0$",           t_h,    [(qcw_t_h, CB),    (loki_t_h, CG),    (ent_t_h, CO)]),
+  [1] (r"$\log_{10}\mathcal{M}_c$", t_mc,   [(qcw_t_mc, CB),   (loki_t_mc, CG),   (ent_t_mc, CO)]),
+  [1] (r"$\log_{10}A_{\rm GWB}$",   t_amp,  [(qcw_t_amp, CB),  (loki_t_amp, CG),  (ent_t_amp, CO)]),
+  [1] (r"$\gamma_{\rm GWB}$",       None,   [(qcw_t_gam, CB),  (loki_t_gam, CG),  (ent_t_gam, CO)]),
+  [1] (r"$\Phi_0$",                 t_phi,  [(qcw_t_phi, CB),  (loki_t_phi, CG),  (ent_t_phi, CO)]),
+  [1] (r"$\psi$",                   t_psi,  [(qcw_t_psi, CB),  (loki_t_psi, CG),  (ent_t_psi, CO)]),
+  [1] f"Loki (n={len(loki_t_cosi):,})",
+  [1] ("Loki",   (loki_t_cosi, loki_t_h, loki_t_mc, loki_t_amp, loki_t_gam, loki_t_phi, loki_t_psi)),
+  [2] ("cos_inc",     qcw_t_cosi, loki_t_cosi, ent_t_cosi),
+  [2] ("log10_h0",    qcw_t_h,    loki_t_h,    ent_t_h),
+  [2] ("log10_Mc",    qcw_t_mc,   loki_t_mc,   ent_t_mc),
+  [2] ("log10_A_GWB", qcw_t_amp,  loki_t_amp,  ent_t_amp),
+  [2] ("gamma_GWB",   qcw_t_gam,  loki_t_gam,  ent_t_gam),
+  [2] ("phase0",      qcw_t_phi,  loki_t_phi,  ent_t_phi),
+  [2] ("psi",         qcw_t_psi,  loki_t_psi,  ent_t_psi),
+  [3] "QCW  G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5", "samples_masked"),
+  [3] "Loki G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_02_Jun_2026.h5", "samples_cold"),
+  [3] "Ent  G2D2 broad": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_varyfgw_core_new.h5", "chain"),
+  [3] "QCW  G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_09_Jun_2026_dLmasked_75.400Mpc.h5", "samples_masked"),
+  [3] "Loki G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_02_Jun_2026.h5", "samples_cold"),
+  [3] "Ent  G2D2 fixed": ("/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_core_fixed_new.h5", "chain"),
+  [4] def sum_uniform_pdf(y, widths):
+  [4] def induced_prior(terms, const):
+  [4] def sd_bf10(x, x_lo, x_hi, weights=None, label=""):
+  [4] if weights is None: weights = np.ones_like(x)
+  [4] pd = 1.0/(x_hi - x_lo); ws = weights.sum()
+  [4] ne = ws**2/(weights**2).sum()
+  [4] wh, _ = np.histogram(x, bins=edges, weights=weights)
+  [4] loki_x = derive_log10_h0(lk_mc_f, np.full_like(lk_mc_f, F_GW_FIXED), lk_dl_f)
+  [4] print(f"loki dL range: [{lk_dl_f.min():.5f}, {lk_dl_f.max():.5f}] vs prior [{np.log10(DL0*0.99):.5f}, {np.log10(DL0*1.01):.5f}]")
+  [4] print(f"         | Loki [{loki_x.min():.3f}, {loki_x.max():.3f}] analytic [{l_lo:.3f}, {l_hi:.3f}]")
+  [4] w_l = 1.0/np.clip(l_pdf(loki_x), 1e-300, None)
+  [4] sd_bf10(qcw_x, QCW_H_MIN, QCW_H_MAX, label="QCW fixed: sampled log10 h0, flat prior, dL-masked")
+  [4] sd_bf10(ent_x, e_lo, e_hi, weights=w_e, label="Enterprise fixed: derived log10 h0, reweighted")
+  [4] sd_bf10(loki_x, l_lo, l_hi, weights=w_l, label="LokiCW fixed: derived log10 h0, reweighted")
+  [4] ("Ent", ent_x, w_e, e_lo), ("Loki", loki_x, w_l, l_lo)):
+  [5] for nm, arr in [('QCW_h', qcw_x), ('Loki_h', loki_x), ('Ent_h', ent_x), ('QCW_mc', qc[:, qc_pn.index('0_log10_mc')]), ('Loki_mc', lk_mc_f), ('Ent_mc', en_mc_f), ('QCW_A',
+  [5] q = np.percentile(arr, [5, 50, 95])
+  [6] sd_bf10(qcw_x[m], l_lo, l_hi, weights=w_q[m], label='QCW fixed: masked samples, reweighted to flat over induced support')
+  [7] np.random.seed(7)
+  [7] def bf_resampled(x, w, lo, hi, ntol):
+  [7] idx = np.random.choice(len(xm), size=len(xm), replace=True, p=wm/wm.sum())
+  [7] return model_utils.bayes_fac(xm[idx], ntol=ntol, logAmin=lo, logAmax=hi)
+  [7] print('  QCW :', model_utils.bayes_fac(qcw_x, ntol=ntol, logAmin=-18.0, logAmax=-11.0))
+  [7] print('  Loki:', bf_resampled(loki_x, w_l, l_lo, l_hi, ntol))
+  [8] DL_arr  = np.column_stack([loki_mc, loki_h, loki_cosi, loki_phi, loki_psi])
+  [8] fig = corner.corner(QCW_arr, color=C_QCW, contour_kwargs={"linewidths": LW, "colors": C_QCW}, hist_kwargs={"density": True, "color": C_QCW, "lw": LW}, **base_kw)
+  [8] corner.corner(ENT_arr, fig=fig, color=C_ENT, contour_kwargs={"linewidths": LW, "colors": C_ENT}, hist_kwargs={"density": True, "color": C_ENT, "lw": LW}, **base_kw)
+  [8] corner.corner(DL_arr, fig=fig, color=C_DL, contour_kwargs={"linewidths": LW, "colors": C_DL}, hist_kwargs={"density": True, "color": C_DL, "lw": LW}, **base_kw)
+  [8] fig.savefig("g2d2_fixed_truth.png", dpi=300, bbox_inches="tight")
+  [8] fig.savefig("g2d2_fixed_truth.pdf", bbox_inches="tight")
+############ Figure_freq_marginalized_UL.ipynb
+  [0] np.random.seed(42)
+  [0] ('QuickCW',    H + 'G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5', 'qcw',  QCW_C),
+  [0] ('Enterprise', H + 'core_single_MDC2_DS1_new.h5',                       'ent',  ENT_C),
+  [0] ('QuickCW-dL', H + 'G2D1_fixed_UL_loki_100M_lastTOA_10_Jul_2026.h5',    'loki', DL_C),
+  [0] ('QuickCW',    H + 'G2D1_broad_UL_1e9_fixed_gamma_outfile.h5',          'qcw',  QCW_C),
+  [0] ('Enterprise', H + 'core_single_MDC2_DS1_varyfgw.h5',                   'ent',  ENT_C),
+  [0] ('QuickCW-dL', H + 'G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5',    'loki', DL_C),
+  [0] def col(f, name):
+  [0] def tau_of(x):
+  [0] def mc_posterior(path, kind):
+  [0] def ul95(mc, n_eff):
+  [0] u = np.quantile(mc, CONF)
+  [0] sub = mc if len(mc) <= 200_000 else np.random.choice(mc, 200_000, replace=False)
+  [0] fig.savefig('G2D1_freq_marginalized_UL_fixed_broad.pdf', bbox_inches='tight')
+  [1] np.random.seed(42)
+  [1] 'fixed': [('QuickCW', H+'G2D1_narrow_UL_fixed_gamma_17_dec_2025_outfile.h5', 'qcw'),
+  [1] ('Enterprise', H+'core_single_MDC2_DS1_new.h5', 'ent'),
+  [1] ('QuickCW-dL', H+'G2D1_fixed_UL_loki_100M_lastTOA_10_Jul_2026.h5', 'loki')],
+  [1] 'broad': [('QuickCW', H+'G2D1_broad_UL_1e9_fixed_gamma_outfile.h5', 'qcw'),
+  [1] ('Enterprise', H+'core_single_MDC2_DS1_varyfgw.h5', 'ent'),
+  [1] ('QuickCW-dL', H+'G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5', 'loki')]}
+  [1] def getcol(f, name):
+  [1] def tau_of(x):
+  [1] def derive_lh(mc, fgw, dl_mpc):
+  [1] def load(path, kind):
+  [1] def ul(x, n_eff):
+  [1] u = np.quantile(x, CONF)
+  [1] sub = x if len(x) <= 200_000 else np.random.choice(x, 200_000, replace=False)
+  [1] fig.savefig(fname + '.pdf', bbox_inches='tight')
+  [1] fig.savefig(fname + '.png', dpi=300, bbox_inches='tight')
+############ Figure_freq_segmented_UL.ipynb
+  [0] np.random.seed(42)
+  [0] QCW  = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_1e9_fixed_gamma_outfile.h5'
+  [0] LOKI = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_loki_100M_lastTOA_10_Jul_2026.h5'
+  [0] STAR = {'qcw': 9.786, 'loki': 9.772}    # log10 Mc 95% UL from the fixed runs (D, M)
+  [0] def col(f, name):
+  [0] def tau_of(x):
+  [0] def get_fgw_mc(path, kind):
+  [0] def segmented_ul(log10_fgw, log10_mc, Tspan, rho):
+  [0] u = np.quantile(samp, CONF)
+  [0] sub = samp if len(samp) <= 200_000 else np.random.choice(samp, 200_000, replace=False)
+  [0] lf, lm, lrho = get_fgw_mc(LOKI, 'loki')
+  [0] print('rho: qcw =', round(qrho, 4), ' loki =', round(lrho, 6))
+  [0] (axes[1], lf, lm, l, 'RdPu',  '#7a1750', 'loki')]
+  [0] fig.savefig('G2D1_broad_freq_segmented_UL_sidebyside.pdf', bbox_inches='tight')

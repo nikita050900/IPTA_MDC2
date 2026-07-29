@@ -5,6 +5,7 @@
 #SBATCH --mem=64G
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
+#SBATCH --exclusive
 cd /scratch/na00078/projects/IPTA_MDC2
 source /shared/software/conda/etc/profile.d/conda.sh
 conda activate /scratch/na00078/conda_envs/QuickCW

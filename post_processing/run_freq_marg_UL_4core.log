@@ -1,0 +1,15 @@
+nohup: ignoring input
+fixed  QuickCW      95% UL Mc = 6.207e+09 Msun (+/- 6.0e+08; log10 = 9.793; tau = 29, N_eff = 244)
+fixed  Enterprise   95% UL Mc = 6.044e+09 Msun (+/- 2.3e+08; log10 = 9.781; tau = 190, N_eff = 378)
+fixed  QuickCW-dL   95% UL Mc = 5.908e+09 Msun (+/- 8.1e+07; log10 = 9.771; tau = 108, N_eff = 4634)
+broad  QuickCW      95% UL Mc = 5.644e+09 Msun (+/- 1.2e+08; log10 = 9.752; tau = 59, N_eff = 232)
+broad  Enterprise   95% UL Mc = 6.292e+09 Msun (+/- 2.0e+08; log10 = 9.799; tau = 1078, N_eff = 67)
+broad  QuickCW-dL   95% UL Mc = 5.898e+09 Msun (+/- 4.9e+07; log10 = 9.771; tau = 235, N_eff = 2127)
+fixed  QuickCW      Mc: log10=9.793 +/- 0.0422   h0: log10=-13.404 +/- 0.0602   tau=29 N_eff=244
+fixed  Enterprise   Mc: log10=9.781 +/- 0.0162   h0: log10=-13.422 +/- 0.0256   tau=190 N_eff=378
+fixed  QuickCW-dL   Mc: log10=9.771 +/- 0.0059   h0: log10=-13.438 +/- 0.0106   tau=108 N_eff=4634
+broad  QuickCW      Mc: log10=9.752 +/- 0.0095   h0: log10=-12.768 +/- 0.0571   tau=59 N_eff=232
+broad  Enterprise   Mc: log10=9.799 +/- 0.0135   h0: log10=-12.553 +/- 0.0261   tau=1078 N_eff=67
+broad  QuickCW-dL   Mc: log10=9.771 +/- 0.0037   h0: log10=-12.705 +/- 0.0192   tau=235 N_eff=2127
+saved G2D1_broad_freq_marginalized_UL
+saved G2D1_fixed_freq_marginalized_UL

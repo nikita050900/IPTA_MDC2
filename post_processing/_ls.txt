@@ -1,0 +1,7 @@
+/scratch/na00078/projects/IPTA_MDC2/post_processing/G2D2_pre_dl_masked_plot_4core.py
+/scratch/na00078/projects/IPTA_MDC2/post_processing/master_fig_builder.py
+/scratch/na00078/projects/IPTA_MDC2/post_processing/probe.py
+/scratch/na00078/projects/IPTA_MDC2/plots.py
+--- structure of raw ---
+G2D2_broad_detect_tref_4core.h5 {'T-ladder': (4,), 'acc_fraction': (32, 4), 'fisher_diag': (4, 142), 'log_likelihood': (4, 100000000), 'par_names': (142,), 'samples_cold': (1, 100000000, 142), 'samples_freq': (4, 100000000)}
+G2D2_narrow_detect_tref_4core.h5 {'T-ladder': (4,), 'acc_fraction': (32, 4), 'fisher_diag': (4, 142), 'log_likelihood': (4, 100000000), 'par_names': (142,), 'samples_cold': (1, 100000000, 142), 'samples_freq': (4, 100000000)}

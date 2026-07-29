@@ -1,0 +1,200 @@
+==================== A G2D1_broad_detect_4core.h5
+A params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+A 0_cos_gwtheta constant, skipped
+A 0_cos_inc tau 15
+A 0_gwphi constant, skipped
+A 0_log10_fgw tau 7059
+A 0_log10_h tau 70
+A 0_log10_mc tau 7048
+A 0_phase0 tau 14
+A 0_psi tau 14
+A gwb_gamma constant, skipped
+A gwb_log10_A tau 37281
+A: tau_max 37281  ESS 2682  Nusable 2682  Rpost 0.08 per s
+==================== B G2D1_narrow_detect_4core.h5
+B params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+B 0_cos_gwtheta constant, skipped
+B 0_cos_inc tau 11
+B 0_gwphi constant, skipped
+B 0_log10_fgw constant, skipped
+B 0_log10_h tau 15
+B 0_log10_mc tau 6346
+B 0_phase0 tau 11
+B 0_psi tau 11
+B gwb_gamma constant, skipped
+B gwb_log10_A tau 27661
+B: tau_max 27661  ESS 3615  Nusable 3615  Rpost 0.10 per s
+==================== C G2D1_broad_UL_4core.h5
+C params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+C 0_cos_gwtheta constant, skipped
+C 0_cos_inc tau 20
+C 0_gwphi constant, skipped
+C 0_log10_fgw tau 8707
+C 0_log10_h tau 404
+C 0_log10_mc tau 11137
+C 0_phase0 tau 17
+C 0_psi tau 17
+C gwb_gamma constant, skipped
+C gwb_log10_A tau 38402
+C: tau_max 38402  ESS 2604  Nusable 2604  Rpost 0.07 per s
+==================== D G2D1_narrow_UL_4core.h5
+D params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+D 0_cos_gwtheta constant, skipped
+D 0_cos_inc tau 10
+D 0_gwphi constant, skipped
+D 0_log10_fgw constant, skipped
+D 0_log10_h tau 12
+D 0_log10_mc tau 9385
+D 0_phase0 tau 10
+D 0_psi tau 10
+D gwb_gamma constant, skipped
+D gwb_log10_A tau 45501
+D: tau_max 45501  ESS 2198  Nusable 2198  Rpost 0.06 per s
+==================== E G2D2_broad_detect_tref_4core.h5
+E params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+E 0_cos_gwtheta constant, skipped
+E 0_cos_inc tau 769
+E 0_gwphi constant, skipped
+E 0_log10_fgw tau 53429
+E 0_log10_h tau 1600
+E 0_log10_mc tau 36777
+E 0_phase0 tau 3305
+E 0_psi tau 2541
+E gwb_gamma tau 45598
+E gwb_log10_A tau 50159
+E: tau_max 53429  ESS 1872  Nusable 1872  Rpost 0.05 per s
+==================== F G2D2_narrow_detect_tref_4core.h5
+F params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+F 0_cos_gwtheta constant, skipped
+F 0_cos_inc tau 468
+F 0_gwphi constant, skipped
+F 0_log10_fgw constant, skipped
+F 0_log10_h tau 397
+F 0_log10_mc tau 11725
+F 0_phase0 tau 927
+F 0_psi tau 1098
+F gwb_gamma tau 21773
+F gwb_log10_A tau 22352
+F: tau_max 22352  ESS 4474  Nusable 4474  Rpost 0.13 per s
+==================== G G2D2_detect_allsky_4core.h5
+G params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+G 0_cos_gwtheta tau 62233
+G 0_cos_inc tau 5251
+G 0_gwphi tau 121814
+G 0_log10_fgw constant, skipped
+G 0_log10_h tau 15413
+G 0_log10_mc tau 170129
+G 0_phase0 tau 1348
+G 0_psi tau 2047
+G gwb_gamma tau 72861
+G gwb_log10_A tau 64748
+G: tau_max 170129  ESS 588  Nusable 588  Rpost 0.02 per s
+==================== L G2D2_broad_UL_loki_100M_lastTOA_4core.h5
+L params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+L 0_cos_gwtheta constant, skipped
+L 0_cos_inc tau 22160
+L 0_gwphi constant, skipped
+L 0_log10_dist tau 48
+L 0_log10_fgw tau 52076
+L 0_log10_mc tau 46849
+L 0_phase0 tau 237
+L 0_psi tau 252
+L gwb_gamma constant, skipped
+L gwb_log10_A tau 70413
+L: tau_max 70413  ESS 1420  Nusable 1420  Rpost 0.04 per s
+==================== M G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core.h5
+M params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+M 0_cos_gwtheta constant, skipped
+M 0_cos_inc tau 33
+M 0_gwphi constant, skipped
+M 0_log10_dist tau 28
+M 0_log10_fgw constant, skipped
+M 0_log10_mc tau 21358
+M 0_phase0 tau 57
+M 0_psi tau 58
+M gwb_gamma constant, skipped
+M gwb_log10_A tau 43311
+M: tau_max 43311  ESS 2309  Nusable 2309  Rpost 0.06 per s
+==================== N G2D2_broad_detect_loki_100M_lastTOA_4core.h5
+N params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+N 0_cos_gwtheta constant, skipped
+N 0_cos_inc tau 49762
+N 0_gwphi constant, skipped
+N 0_log10_dist tau 89
+N 0_log10_fgw tau 83214
+N 0_log10_mc tau 70217
+N 0_phase0 tau 3466
+N 0_psi tau 2912
+N gwb_gamma tau 54546
+N gwb_log10_A tau 50172
+N: tau_max 83214  ESS 1202  Nusable 1202  Rpost 0.04 per s
+==================== O G2D2_fixed_detect_loki_100M_lastTOA_4core.h5
+O params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi', 'gwb_gamma', 'gwb_log10_A']
+O 0_cos_gwtheta constant, skipped
+O 0_cos_inc tau 25395
+O 0_gwphi constant, skipped
+O 0_log10_dist tau 95
+O 0_log10_fgw constant, skipped
+O 0_log10_mc tau 33887
+O 0_phase0 tau 1702
+O 0_psi tau 2418
+O gwb_gamma tau 31795
+O gwb_log10_A tau 37404
+O: tau_max 37404  ESS 2673  Nusable 2673  Rpost 0.08 per s
+{
+  "A": {
+    "ESS": 2682,
+    "Nusable": 2682,
+    "Rpost": 0.08
+  },
+  "B": {
+    "ESS": 3615,
+    "Nusable": 3615,
+    "Rpost": 0.1
+  },
+  "C": {
+    "ESS": 2604,
+    "Nusable": 2604,
+    "Rpost": 0.07
+  },
+  "D": {
+    "ESS": 2198,
+    "Nusable": 2198,
+    "Rpost": 0.06
+  },
+  "E": {
+    "ESS": 1872,
+    "Nusable": 1872,
+    "Rpost": 0.05
+  },
+  "F": {
+    "ESS": 4474,
+    "Nusable": 4474,
+    "Rpost": 0.13
+  },
+  "G": {
+    "ESS": 588,
+    "Nusable": 588,
+    "Rpost": 0.02
+  },
+  "L": {
+    "ESS": 1420,
+    "Nusable": 1420,
+    "Rpost": 0.04
+  },
+  "M": {
+    "ESS": 2309,
+    "Nusable": 2309,
+    "Rpost": 0.06
+  },
+  "N": {
+    "ESS": 1202,
+    "Nusable": 1202,
+    "Rpost": 0.04
+  },
+  "O": {
+    "ESS": 2673,
+    "Nusable": 2673,
+    "Rpost": 0.08
+  }
+}

@@ -1,0 +1,10 @@
+nohup: ignoring input
+=== START run_broad_detect_4core 17:10:32 ===
+=== END run_broad_detect_4core 17:25:20 ===
+=== START run_fixed_detect_4core 17:25:20 ===
+=== END run_fixed_detect_4core 17:41:01 ===
+=== START run_freq_seg_UL_4core 17:41:01 ===
+=== END run_freq_seg_UL_4core 17:42:46 ===
+=== START run_freq_marg_UL_4core 17:42:46 ===
+=== END run_freq_marg_UL_4core 17:51:11 ===
+ALLFULL_DONE

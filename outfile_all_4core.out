@@ -1,0 +1,151 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+==================== masked outfile: G2D1_broad_detect_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_broad_detect_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_4core_outfile.h5
+  masked samples (130506, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 130506) float32
+    par_names (8,) |S13
+    samples_cold (1, 130506, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== masked outfile: G2D1_narrow_detect_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_narrow_detect_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_detect_4core_outfile.h5
+  masked samples (132314, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 132314) float32
+    par_names (8,) |S13
+    samples_cold (1, 132314, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== masked outfile: G2D1_broad_UL_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_broad_UL_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_4core_outfile.h5
+  masked samples (13663, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 13663) float32
+    par_names (8,) |S13
+    samples_cold (1, 13663, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== masked outfile: G2D1_narrow_UL_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D1_narrow_UL_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_narrow_UL_4core_outfile.h5
+  masked samples (7151, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 7151) float32
+    par_names (8,) |S13
+    samples_cold (1, 7151, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== masked outfile: G2D2_broad_detect_tref_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D2_broad_detect_tref_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_4core_outfile.h5
+  masked samples (192354, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 192354) float32
+    par_names (8,) |S13
+    samples_cold (1, 192354, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== masked outfile: G2D2_narrow_detect_tref_4core ====================
+Masked in : /scratch/na00078/projects/IPTA_MDC2/h5_files/dl_masked/G2D2_narrow_detect_tref_4core_dLmasked_75.400Mpc.h5
+Raw meta  : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_4core.h5
+Outfile   : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_narrow_detect_tref_4core_outfile.h5
+  masked samples (239466, 142), keeping first 8 params
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+  saved:
+    T-ladder (4,) float64
+    acc_fraction (32, 4) float64
+    fisher_diag (4, 142) float64
+    log_likelihood (1, 239466) float32
+    par_names (8,) |S13
+    samples_cold (1, 239466, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== raw outfile: G2D2_detect_allsky_4core ====================
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================== raw outfile: G2D2_broad_UL_loki_100M_lastTOA_4core ====================
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_loki_100M_lastTOA_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_loki_100M_lastTOA_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+==================== raw outfile: G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core ====================
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+==================== raw outfile: G2D2_broad_detect_loki_100M_lastTOA_4core ====================
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_loki_100M_lastTOA_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+==================== raw outfile: G2D2_fixed_detect_loki_100M_lastTOA_4core ====================
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_fixed_detect_loki_100M_lastTOA_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_dist', '0_log10_fgw', '0_log10_mc', '0_phase0', '0_psi']
+All outfiles complete.

@@ -1,0 +1,19 @@
+A: generating unmasked E outfile
+   raw samples_cold shape (1, 100000000, 142) float32
+   unmasked array (100000000, 8)
+   wrote /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_4core_UNMASKED_outfile.h5
+built G2D2_pre_dl_masked_plot_4core.py
+built all_sky_healpy_4core.py
+RUN G2D2_pre_dl_masked_plot_4core.py
+Traceback (most recent call last):
+  File "/scratch/na00078/projects/IPTA_MDC2/post_processing/master_fig_builder.py", line 55, in <module>
+    rc = subprocess.run([sys.executable, scr], capture_output=True, text=True)
+  File "/usr/local/anaconda/lib/python3.9/subprocess.py", line 507, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+  File "/usr/local/anaconda/lib/python3.9/subprocess.py", line 1134, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+  File "/usr/local/anaconda/lib/python3.9/subprocess.py", line 1979, in _communicate
+    ready = selector.select(timeout)
+  File "/usr/local/anaconda/lib/python3.9/selectors.py", line 416, in select
+    fd_event_list = self._selector.poll(timeout)
+KeyboardInterrupt

@@ -1,0 +1,4 @@
+Reading: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_detect_tref_4core_UNMASKED_sub200k_outfile.h5
+Loaded cold-chain shape: (200000, 8)
+saved corner_pre_dL_mask_detect_5params_4core.png
+Saved corner plot to: corner_pre_dL_mask_detect_5params_4core.png

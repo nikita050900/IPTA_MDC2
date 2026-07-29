@@ -1,0 +1,6 @@
+nohup: ignoring input
+built G2D2_broad_detect_loki_100M_lastTOA_4core (500000, 142)
+built G2D2_fixed_detect_loki_100M_lastTOA_4core (500000, 142)
+built G2D2_broad_UL_loki_100M_lastTOA_4core (500000, 142)
+built G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core (500000, 142)
+BUILD_DONE

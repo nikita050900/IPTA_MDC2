@@ -1,0 +1,45 @@
+===== run_broad_detect_4core Tue Jul 28 17:34:59 EDT 2026 =====
+----- Bayes factors from run_broad_detect_4core -----
+  QCW : 0.0000  3.1416
+  Loki: 0.0000  3.1416
+  Ent : 0.0023  3.1408
+    BF10 = 913.3 +/- 2e+02 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1924)
+    BF10 = inf for all widths (no samples at null; quote lower limit)
+    (1-sample density floor at bins=100: BF10 limit ~ 720)
+    BF10 = 7929 +/- 1e+04 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1e+06)
+    BF10 = 1148 +/- 0 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1924)
+  QCW : (nan, nan)
+  Loki: (nan, nan)
+  Ent : (nan, nan)
+  QCW : (nan, nan)
+  Loki: (25702.65573505546, 1474.7138612626939)
+  Ent : (nan, nan)
+  QCW : (nan, nan)
+  Loki: (25860.29923149569, 8639.528962260474)
+  Ent : (nan, nan)
+===== run_fixed_detect_4core Tue Jul 28 17:52:38 EDT 2026 =====
+----- Bayes factors from run_fixed_detect_4core -----
+  QCW : 0.0000  3.1415
+  Loki: 0.0000  3.1416
+  Ent : 0.0004  3.1409
+    BF10 = 283.4 +/- 43 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 2395)
+    BF10 = inf for all widths (no samples at null; quote lower limit)
+    (1-sample density floor at bins=100: BF10 limit ~ 720)
+    BF10 = 1145 +/- 9.1e+02 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1e+06)
+    BF10 = 814.3 +/- 2.6e+02 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 2395)
+  QCW : (nan, nan)
+  Loki: (1918.7874378274264, 1119.1373661706064)
+  Ent : (nan, nan)
+  QCW : (nan, nan)
+  Loki: (2695.3036337291087, 3131.2627230310486)
+  Ent : (nan, nan)
+  QCW : (306.75396694214874, 3.1609342048404026)
+  Loki: (4811.009786822881, 10050.995161412115)
+  Ent : (nan, nan)
+ALL_DONE

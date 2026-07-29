@@ -1,0 +1,239 @@
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+WARNING:root:Too few points to create valid contours
+/usr/local/anaconda/lib/python3.9/site-packages/scipy/stats/_ksstats.py:74: RuntimeWarning: invalid value encountered in ldexp
+  _EP128 = np.ldexp(np.longdouble(1), _E128)
+/usr/local/anaconda/lib/python3.9/site-packages/enterprise_extensions/model_utils.py:194: RuntimeWarning: divide by zero encountered in double_scalars
+  bf.append(prior/post)
+/usr/local/anaconda/lib/python3.9/site-packages/numpy/core/fromnumeric.py:3440: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/anaconda/lib/python3.9/site-packages/numpy/core/_methods.py:189: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+/usr/local/anaconda/lib/python3.9/site-packages/numpy/core/_methods.py:262: RuntimeWarning: Degrees of freedom <= 0 for slice
+  ret = _var(a, axis=axis, dtype=dtype, out=out, ddof=ddof,
+/usr/local/anaconda/lib/python3.9/site-packages/numpy/core/_methods.py:222: RuntimeWarning: invalid value encountered in true_divide
+  arrmean = um.true_divide(arrmean, div, out=arrmean, casting='unsafe',
+/usr/local/anaconda/lib/python3.9/site-packages/numpy/core/_methods.py:254: RuntimeWarning: invalid value encountered in double_scalars
+  ret = ret.dtype.type(ret / rcount)
+Loading...
+All pipelines subsampled to match Enterprise (N = 72001)
+My QCW: 72,001, Loki: 72,001, Enterprise: 72,001
+
+======================================================================
+Parameter ranges
+======================================================================
+
+My QCW (n=72,001):
+  cos_inc: [-0.989, 1.000]  median=0.625
+  log10_fGW: [-8.674, -7.011]  median=-8.555
+  log10_h0: [-17.932, -12.768]  median=-13.586
+  log10_Mc: [7.038, 9.999]  median=9.737
+  log10_A_GWB: [-18.000, -13.104]  median=-16.291
+  gamma_GWB: [0.002, 6.999]  median=2.997
+  phase0: [0.000, 6.283]  median=3.128
+  psi: [0.000, 3.142]  median=1.577
+
+Loki (n=72,001):
+  cos_inc: [-0.998, 1.000]  median=0.599
+  log10_fGW: [-8.674, -7.002]  median=-8.558
+  log10_h0: [-17.813, -12.883]  median=-13.573
+  log10_Mc: [7.035, 10.000]  median=9.743
+  log10_A_GWB: [-18.000, -13.035]  median=-16.238
+  gamma_GWB: [0.001, 7.000]  median=2.938
+  phase0: [0.000, 6.283]  median=3.115
+  psi: [0.000, 3.142]  median=1.577
+
+Ent (n=72,001):
+  cos_inc: [-0.064, 1.000]  median=0.631
+  log10_fGW: [-8.674, -8.388]  median=-8.555
+  log10_h0: [-14.195, -13.093]  median=-13.588
+  log10_Mc: [9.353, 10.058]  median=9.735
+  log10_A_GWB: [-18.000, -13.034]  median=-16.332
+  gamma_GWB: [0.000, 6.999]  median=2.650
+  phase0: [0.001, 6.281]  median=3.030
+  psi: [0.002, 3.141]  median=1.559
+Loading...
+Corner: subsampled to Enterprise N = 72001
+  My QCW: 72,001, Loki: 72,001, Enterprise: 72,001
+Trace: full chains (no thinning, no burn-in for QCW and Loki)
+  My QCW: 192,354, Loki: 100,000,000, Enterprise: 72,001
+
+======================================================================
+Parameter ranges (full chains)
+======================================================================
+
+My QCW (n=192,354):
+  cos_inc: [-0.989, 1.000]  median=0.624
+  log10_fGW: [-8.674, -7.006]  median=-8.555
+  log10_h0: [-17.977, -12.768]  median=-13.585
+  log10_Mc: [7.037, 9.999]  median=9.737
+  log10_A_GWB: [-18.000, -13.022]  median=-16.292
+  gamma_GWB: [0.001, 6.999]  median=2.975
+  phase0: [0.000, 6.283]  median=3.112
+  psi: [0.000, 3.142]  median=1.588
+
+Loki (n=100,000,000):
+  cos_inc: [-1.000, 1.000]  median=0.600
+  log10_fGW: [-8.674, -7.000]  median=-8.558
+  log10_h0: [-18.152, -12.585]  median=-13.574
+  log10_Mc: [7.030, 10.000]  median=9.742
+  log10_A_GWB: [-18.000, -12.867]  median=-16.218
+  gamma_GWB: [0.000, 7.000]  median=2.943
+  phase0: [0.000, 6.283]  median=3.137
+  psi: [0.000, 3.142]  median=1.568
+
+Ent (n=72,001):
+  cos_inc: [-0.064, 1.000]  median=0.631
+  log10_fGW: [-8.674, -8.388]  median=-8.555
+  log10_h0: [-14.195, -13.093]  median=-13.588
+  log10_Mc: [9.353, 10.058]  median=9.735
+  log10_A_GWB: [-18.000, -13.034]  median=-16.332
+  gamma_GWB: [0.000, 6.999]  median=2.650
+  phase0: [0.001, 6.281]  median=3.030
+  psi: [0.002, 3.141]  median=1.559
+
+======================================================================
+Min / Max per parameter (full trace chains)
+======================================================================
+
+cos_inc:
+  QCW : -0.9888  1.0000
+  Loki: -1.0000  1.0000
+  Ent : -0.0640  0.9997
+
+log10_fGW:
+  QCW : -8.6740  -7.0058
+  Loki: -8.6741  -7.0001
+  Ent : -8.6740  -8.3884
+
+log10_h0:
+  QCW : -17.9766  -12.7682
+  Loki: -18.1522  -12.5847
+  Ent : -14.1953  -13.0933
+
+log10_Mc:
+  QCW : 7.0368  9.9986
+  Loki: 7.0301  9.9996
+  Ent : 9.3534  10.0577
+
+log10_A_GWB:
+  QCW : -17.9997  -13.0216
+  Loki: -18.0000  -12.8675
+  Ent : -18.0000  -13.0343
+
+gamma_GWB:
+  QCW : 0.0009  6.9994
+  Loki: 0.0002  6.9998
+  Ent : 0.0000  6.9992
+
+phase0:
+  QCW : 0.0000  6.2831
+  Loki: 0.0000  6.2832
+  Ent : 0.0009  6.2812
+
+psi:
+  QCW : 0.0000  3.1416
+  Loki: 0.0000  3.1416
+  Ent : 0.0023  3.1408
+cos_inc:
+  Loki 5/50/95: 0.224 0.600 0.958
+  Ent  5/50/95: 0.255 0.631 0.960
+log10_h0:
+  Loki 5/50/95: -13.835 -13.574 -13.297
+  Ent  5/50/95: -13.840 -13.588 -13.331
+log10_Mc:
+  Loki 5/50/95: 9.569 9.742 9.919
+  Ent  5/50/95: 9.570 9.735 9.901
+fgw ranges | QCW sub n/a full: [-8.6740, -7.0058]
+           | Loki [-8.6741, -7.0001]  Ent [-8.6740, -8.3884]
+using LOG10_F_MIN = -8.68  <-- verify equals log10(1/Tspan) from run config
+loki dL range: [1.87301, 1.88169] vs prior [1.87301, 1.88169]
+x ranges | QCW [-17.977, -12.768] prior [-18.0, -11.0]
+         | Loki [-18.152, -12.585] analytic [-18.228, -12.099]
+         | Ent  [-14.195, -13.093] analytic [-18.223, -12.103]
+
+--- QCW broad: sampled log10 h0, flat prior, dL-masked
+    support [-18.000, -11.000] width 7.000 N=192,354 Neff=192,354
+    bins=  20 raw n(lowest)=       11 BF10=874.336
+    bins=  30 raw n(lowest)=        9 BF10=712.422
+    bins=  40 raw n(lowest)=        7 BF10=686.979
+    bins=  50 raw n(lowest)=        4 BF10=961.77
+    bins=  75 raw n(lowest)=        2 BF10=1282.36
+    bins= 100 raw n(lowest)=        2 BF10=961.77
+    BF10 = 913.3 +/- 2e+02 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1924)
+
+--- Enterprise broad: derived log10 h0, reweighted
+    support [-18.223, -12.103] width 6.120 N=72,001 Neff=71,999
+    bins=  20 raw n(lowest)=        0 BF10=inf
+    bins=  30 raw n(lowest)=        0 BF10=inf
+    bins=  40 raw n(lowest)=        0 BF10=inf
+    bins=  50 raw n(lowest)=        0 BF10=inf
+    bins=  75 raw n(lowest)=        0 BF10=inf
+    bins= 100 raw n(lowest)=        0 BF10=inf
+    BF10 = inf for all widths (no samples at null; quote lower limit)
+    (1-sample density floor at bins=100: BF10 limit ~ 720)
+
+--- LokiCW broad: derived log10 h0, reweighted
+    support [-18.228, -12.099] width 6.129 N=100,000,000 Neff=99,960,566
+    bins=  20 raw n(lowest)=      502 BF10=1793.32
+    bins=  30 raw n(lowest)=      159 BF10=2484.55
+    bins=  40 raw n(lowest)=      113 BF10=2352.79
+    bins=  50 raw n(lowest)=       45 BF10=4394.58
+    bins=  75 raw n(lowest)=        3 BF10=28619.8
+    bins= 100 raw n(lowest)=        0 BF10=inf
+    BF10 = 7929 +/- 1e+04 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1e+06)
+
+QCW posterior mass within lower bound + t: [(0.25, 5.198748112889007e-05), (0.5, 0.00011957121023442596), (1.0, 0.0004003036010544747), (2.0, 0.0010345508344471455)]
+Ent posterior mass within lower bound + t: [(0.25, 0.0), (0.5, 0.0), (1.0, 0.0), (2.0, 0.0)]
+Loki posterior mass within lower bound + t: [(0.25, 1.7772355622728384e-05), (0.5, 0.00011659013276064019), (1.0, 0.0006247732601209779), (2.0, 0.0012664019715623873)]
+QCW_h p5=-13.833 p50=-13.585 p95=-13.298
+Loki_h p5=-13.835 p50=-13.574 p95=-13.297
+Ent_h p5=-13.840 p50=-13.588 p95=-13.331
+QCW_mc p5=9.572 p50=9.737 p95=9.919
+Loki_mc p5=9.569 p50=9.742 p95=9.919
+Ent_mc p5=9.570 p50=9.735 p95=9.901
+QCW_A p5=-17.809 p50=-16.292 p95=-13.901
+Loki_A p5=-17.816 p50=-16.218 p95=-13.800
+Ent_A p5=-17.835 p50=-16.332 p95=-13.991
+QCW_fgw p5=-8.657 p50=-8.555 p95=-8.458
+Loki_fgw p5=-8.658 p50=-8.558 p95=-8.457
+Ent_fgw p5=-8.655 p50=-8.555 p95=-8.465
+QCW samples outside induced support: 0
+--- QCW broad: masked samples, reweighted to flat over induced support
+    support [-18.228, -12.099] width 6.129 N=192,354 Neff=192,278
+    bins=  20 raw n(lowest)=        2 BF10=1148.33
+    bins=  30 raw n(lowest)=        0 BF10=inf
+    bins=  40 raw n(lowest)=        0 BF10=inf
+    bins=  50 raw n(lowest)=        0 BF10=inf
+    bins=  75 raw n(lowest)=        0 BF10=inf
+    bins= 100 raw n(lowest)=        0 BF10=inf
+    BF10 = 1148 +/- 0 over finite variants
+    (1-sample density floor at bins=100: BF10 limit ~ 1924)
+
+ntol = 200
+  QCW : (nan, nan)
+  Loki: (nan, nan)
+  Ent : (nan, nan)
+ntol = 50
+  QCW : (nan, nan)
+  Loki: (25702.65573505546, 1474.7138612626939)
+  Ent : (nan, nan)
+ntol = 10
+  QCW : (nan, nan)
+  Loki: (25860.29923149569, 8639.528962260474)
+  Ent : (nan, nan)
+crn_gamma in broad ENT: True
+ent params: ['J0030+0451_red_noise_gamma', 'J0034-0534_red_noise_gamma', 'J0218+4232_red_noise_gamma', 'J0437-4715_red_noise_gamma', 'J0613-0200_red_noise_gamma', 'J0621+1002_red_noise_gamma', 'J0711-6830_red_noise_gamma', 'J0751+1807_red_noise_gamma', 'J0900-3144_red_noise_gamma', 'J1012+5307_red_noise_gamma', 'J1022+1001_red_noise_gamma', 'J1024-0719_red_noise_gamma', 'J1045-4509_red_noise_gamma', 'J1455-3330_red_noise_gamma', 'J1600-3053_red_noise_gamma', 'J1603-7202_red_noise_gamma', 'J1614-2230_red_noise_gamma', 'J1640+2224_red_noise_gamma', 'J1643-1224_red_noise_gamma', 'J1713+0747_red_noise_gamma', 'J1730-2304_red_noise_gamma', 'J1744-1134_red_noise_gamma', 'J1857+0943_red_noise_gamma', 'J1909-3744_red_noise_gamma', 'J1918-0642_red_noise_gamma', 'J1939+2134_red_noise_gamma', 'J1944+0907_red_noise_gamma', 'J2010-1323_red_noise_gamma', 'J2124-3358_red_noise_gamma', 'J2129-5721_red_noise_gamma', 'J2145-0750_red_noise_gamma', 'J2229+2643_red_noise_gamma', 'J2317+1439_red_noise_gamma', 'crn_gamma', 'crn_log10_A']
+qcw gamma range: 0.00091987546 6.999368
+saved g2d2_broad_truth_4core

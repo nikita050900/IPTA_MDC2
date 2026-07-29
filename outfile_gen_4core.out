@@ -1,0 +1,18 @@
+/scratch/na00078/conda_envs/QuickCW/bin/python
+==================================================
+Generating outfile for: G2D1_broad_detect_4core.h5
+Input : /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_4core.h5
+Output: /scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_detect_4core_outfile.h5
+  100000000 samples x 142 params, keeping first 8
+  kept params: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+Saved contents:
+   T-ladder: (4,) float64
+   acc_fraction: (32, 4) float64
+   fisher_diag: (4, 142) float64
+   log_likelihood: (4, 100000000) float64
+   par_names: (8,) |S13
+   samples_cold: (1, 100000000, 8) float32
+   par_names: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi']
+==================================================
+Generating outfile for: G2D1_narrow_detect_4core.h5
+slurmstepd: error: *** JOB 2223982 ON tsscl002 CANCELLED AT 2026-07-28T13:57:14 ***

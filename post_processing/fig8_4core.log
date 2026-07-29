@@ -1,0 +1,5 @@
+WARNING: AstropyDeprecationWarning: "verbose" was deprecated in version 1.15.0 and will be removed in a future version.  [__main__]
+25% credible area = 427.2 deg^2
+68% credible area = 2035.3 deg^2
+95% credible area = 6291.3 deg^2
+saved all_sky_map_4core

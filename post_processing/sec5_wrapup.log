@@ -1,0 +1,16 @@
+========== 5.1 Table 5, loki B10 ==========
+N broad log10 h0 range -18.152 to -12.585
+N broad B10 full 1e8: 2049.4 +/- 369.4
+O fixed log10 h0 range -18.012 to -13.055
+O fixed B10 full 1e8: 253.6 +/- 27.2
+========== 5.2 Runs A and B ==========
+A broad  B10 0.714 +/- 0.001   log10 AGWB median -14.683
+B fixed  B10 0.593 +/- 0.000   log10 AGWB median -14.693
+========== 5.3 Table 6, limits with Eq 7 errors ==========
+QuickCW broad (C)  n=13663  Mc UL 9.752 +/- 0.001   h0 UL -12.768 +/- 0.007
+QuickCW fixed (D)  n=7151  Mc UL 9.793 +/- 0.008   h0 UL -13.404 +/- 0.011
+loki broad (L)  N=100000000 ESS=2135  Mc UL 9.771 +/- 0.004   h0 UL -12.707 +/- 0.020
+loki fixed (M)  N=100000000 ESS=4682  Mc UL 9.771 +/- 0.006   h0 UL -13.439 +/- 0.010
+========== 5.4 injected sky position, Run G ==========
+credible level containing injection: 76.8% (inside 68% region: False)
+=== DONE ===
