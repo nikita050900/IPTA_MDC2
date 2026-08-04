@@ -23,7 +23,7 @@ THIN_TAU = 10
 QCW  = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D1_broad_UL_4core_outfile.h5'
 LOKI = '/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_broad_UL_loki_100M_lastTOA_4core.h5'
 F_EM = np.log10(3.7e-9)
-STAR = {'qcw': 9.786, 'loki': 9.772}    # log10 Mc 95% UL from the fixed runs (D, M)
+STAR = {'qcw': 9.793, 'loki': 9.771}    # log10 Mc 95% UL from the fixed runs (D, M)
 # %%
 ps = pickle.load(open('/scratch/na00078/projects/IPTA_MDC2/IPTA_MDC2_data/psr_objects/G2D1_IPTA_MDC2_all_pulsars.pkl', 'rb'))
 Tspan = max(p.toas.max() for p in ps) - min(p.toas.min() for p in ps)

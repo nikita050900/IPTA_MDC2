@@ -1,5 +1,6 @@
 import matplotlib
 matplotlib.use('Agg')
+
 import numpy as np
 import h5py
 import json
@@ -13,11 +14,12 @@ CORE_FILE   = "/scratch/na00078/projects/IPTA_MDC2/h5_files/G2D2_detect_allsky_4
 PULSAR_JSON = "pulsar_positions.json"
 
 NSIDE     = 64
-THIN      = 1          # you can thin later if needed
+THIN      = 1
 FWHM_DEG  = 2.0
 LEVELS    = (0.25, 0.68, 0.95)
-BINS_RA   = 360
-BINS_DEC  = 180
+
+BINS_RA   = 720          # was 360
+BINS_DEC  = 360          # was 180
 
 # -------------------------------------------------
 # LOAD SAMPLES
@@ -64,8 +66,12 @@ for lev in LEVELS:
 
 levels_vals = np.sort(levels_vals)
 
+inj_pix = hp.ang2pix(NSIDE, 0.6387905062299246, 3.3335788713091694)
+rank = int(np.where(idx == inj_pix)[0][0])
+print(f"injection credible level = {100*cdf[rank]:.1f}%")
+
 # -------------------------------------------------
-# PROJECT TO RA–DEC GRID (PHYSICAL SKY FIRST)
+# PROJECT TO RA-DEC GRID (PHYSICAL SKY FIRST)
 # -------------------------------------------------
 ra_cent_phys  = np.linspace(0, 2*np.pi, BINS_RA, endpoint=False)
 dec_cent      = np.linspace(-np.pi/2, np.pi/2, BINS_DEC)
@@ -75,8 +81,13 @@ RA_phys, DEC = np.meshgrid(ra_cent_phys, dec_cent, indexing="ij")
 theta_g = np.pi/2 - DEC
 phi_g   = RA_phys                       # IMPORTANT: NO +pi HERE
 
-pix_g = hp.ang2pix(NSIDE, theta_g, phi_g)
-post_grid = post_hp[pix_g]
+# THE FIX: bilinear interpolation on the sphere instead of a
+# nearest-pixel lookup. The old line was
+#     pix_g = hp.ang2pix(NSIDE, theta_g, phi_g)
+#     post_grid = post_hp[pix_g]
+# which snapped every grid cell to one whole healpix pixel and turned
+# the map into an NSIDE=64 staircase.
+post_grid = hp.get_interp_val(post_hp, theta_g, phi_g)
 
 # -------------------------------------------------
 # CONVERT RA ONLY FOR PLOTTING (ASTRONOMICAL CONVENTION)
@@ -107,7 +118,6 @@ vmax = np.percentile(post_grid, 99.5)
 # -------------------------------------------------
 # PLOT (VIRIDIS-STYLE, COLORBLIND SAFE, LARGE FONTS)
 # -------------------------------------------------
-
 plt.rcParams.update({
     "figure.facecolor": "white",
     "axes.facecolor": "white",
@@ -130,12 +140,13 @@ pcm = ax.pcolormesh(
     ra_plot,
     dec_cent,
     post_grid.T,
-    cmap="viridis",   # lighter background, CB-safe
+    cmap="viridis",
     shading="nearest",
     vmin=0,
-    vmax=vmax
+    vmax=vmax,
+    rasterized=True          # one image in the PDF instead of 260k vector quads
 )
-
+pcm.set_edgecolor("face")    # removes the white hairline seams between cells
 
 cb = plt.colorbar(
     pcm,
@@ -148,17 +159,14 @@ cb.ax.tick_params(labelsize=13)
 
 # --- Credible regions (light, readable on viridis)
 RA_plot, _ = np.meshgrid(ra_plot, dec_cent, indexing="ij")
+
 ax.contour(
     RA_plot, DEC, post_grid,
     levels=levels_vals,
     colors=["#F2F2F2", "#BDBDBD", "#4D4D4D"],
-    linewidths=[2.6, 2.0, 1.6],   # inner → outer
+    linewidths=[2.6, 2.0, 1.6],   # inner -> outer
     alpha=1.0
 )
-
-
-
-
 
 # --- Pulsars (white stars, high contrast)
 ax.scatter(
@@ -179,7 +187,7 @@ ax.scatter(
     gw_dec,
     marker="D",
     s=260,
-    facecolor="cyan",      # viridis-friendly cyan
+    facecolor="cyan",
     edgecolor="black",
     linewidth=1.8,
     label="Injected CW source",
@@ -212,12 +220,10 @@ leg = ax.legend(
 )
 
 fig.tight_layout()
-plt.show()
-
 
 try:
     fig.savefig("all_sky_map_4core.png", dpi=300, bbox_inches="tight")
-    fig.savefig("all_sky_map_4core.pdf", bbox_inches="tight")
+    fig.savefig("all_sky_map_4core.pdf", dpi=300, bbox_inches="tight")
     print("saved all_sky_map_4core")
 except Exception as e:
     print("SAVEFIG ERR", repr(e))
