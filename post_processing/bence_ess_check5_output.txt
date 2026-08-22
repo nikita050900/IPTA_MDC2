@@ -1,0 +1,8 @@
+Identical block length for every parameter (like for like).
+Lblk=  93850 ( 766 blocks)  log10_mc     ESS=   178  log10_h      ESS=   192  gwb_log10_A  ESS=   108
+Lblk= 187700 ( 483 blocks)  log10_mc     ESS=   161  log10_h      ESS=   166  gwb_log10_A  ESS=   113
+Lblk= 455010 ( 220 blocks)  log10_mc     ESS=   156  log10_h      ESS=   152  gwb_log10_A  ESS=   111
+Lblk= 910020 ( 110 blocks)  log10_mc     ESS=   167  log10_h      ESS=   192  gwb_log10_A  ESS=   116
+
+corr(masked mc, masked h) = 0.999995
+DONE5 (11 s)

@@ -1,0 +1,29 @@
+10:38:14 === START ===
+10:42:17 read G2D1_narrow_UL_4core.h5 ['0_log10_mc', '0_log10_h', 'gwb_log10_A'] (243s)
+10:42:20 D: {"Nsurv": 7151, "gap_median": 690.0, "gap_mean": 13972.504475524476, "ESSmask_0_log10_mc": 170.64910256880646, "ESSmask_gwb_log10_A": 132.24865458836, "UL": 9.792848587036133, "ULerr": 0.08189321653161233, "ESS_full": 2197.7524370524507, "Twall": 34947, "ESSmask_worst": 132.24865458836, "Rpost_mask": 0.0037842634443116725}
+10:42:23 ntol 0.5%: n=3360 UL=9.7379 +/- 0.0398 (434 blocks)
+10:42:24 ntol 1.0%: n=7151 UL=9.7928 +/- 0.0794 (482 blocks)
+10:42:24 ntol 2.0%: n=15297 UL=9.8877 +/- 0.0774 (505 blocks)
+10:42:25 ntol 3.0%: n=22690 UL=9.8060 +/- 0.0691 (512 blocks)
+10:42:26 ntol 5.0%: n=37532 UL=9.7823 +/- 0.0473 (517 blocks)
+10:42:26 ntol 7.0%: n=52434 UL=9.7808 +/- 0.0266 (523 blocks)
+10:42:27 ntol 10.0%: n=74083 UL=9.7659 +/- 0.0205 (524 blocks)
+10:42:28 ntol 15.0%: n=111087 UL=9.7612 +/- 0.0176 (527 blocks)
+10:42:29 ntol 20.0%: n=149699 UL=9.7544 +/- 0.0179 (528 blocks)
+10:42:30 ntol 30.0%: n=226691 UL=9.7596 +/- 0.0164 (528 blocks)
+10:42:31 ntol 50.0%: n=388925 UL=9.7734 +/- 0.0151 (531 blocks)
+10:43:21 read G2D2_fixed_UL_loki_100M_lastTOA_ntol_10_4core.h5 ['0_log10_mc'] (50s)
+10:48:33 lokiM_1pc: UL=9.7711 +/- 0.0076
+10:49:37 read G2D1_fixed_UL_loki_100M_lastTOA_ntol_10_15_Jul_2026.h5 ['0_log10_mc'] (64s)
+10:54:55 loki_10pc: UL=9.7736 +/- 0.0022
+10:54:57 ENT: tau=190 UL=9.7814 +/- 0.0196
+11:00:26 read G2D1_broad_UL_4core.h5 ['0_log10_mc', '0_log10_h', 'gwb_log10_A', '0_log10_fgw'] (329s)
+11:00:29 C: {"Nsurv": 13662, "gap_median": 13.0, "gap_mean": 7312.847741746577, "ESSmask_0_log10_mc": 283.5974242080679, "ESSmask_gwb_log10_A": 126.72596471252702, "UL": 9.751612663269043, "ULerr": 0.010873309171156894, "ESS_full": 2604.0323984251463, "Twall": 34860, "ESSmask_worst": 126.72596471252702, "Rpost_mask": 0.003635282980852754}
+11:06:21 read G2D1_broad_detect_4core.h5 ['0_log10_mc', '0_log10_h', 'gwb_log10_A', '0_log10_fgw'] (352s)
+11:06:25 A: {"Nsurv": 130504, "gap_median": 378.0, "gap_mean": 766.2563772480327, "ESSmask_0_log10_mc": 1601.4147011420594, "ESSmask_gwb_log10_A": 1706.9873978994765, "UL": 9.671131134033203, "ULerr": 0.013443132320385692, "ESS_full": 2682.2961801413935, "Twall": 34612, "ESSmask_worst": 1601.4147011420594, "Rpost_mask": 0.04626761531093434}
+11:10:07 read G2D1_narrow_detect_4core.h5 ['0_log10_mc', '0_log10_h', 'gwb_log10_A'] (222s)
+11:10:10 B: {"Nsurv": 132315, "gap_median": 413.0, "gap_mean": 755.7098190667655, "ESSmask_0_log10_mc": 4098.190576349554, "ESSmask_gwb_log10_A": 2322.098766161357, "UL": 9.482827377319335, "ULerr": 0.02783662776435497, "ESS_full": 3615.164961675841, "Twall": 34950, "ESSmask_worst": 2322.098766161357, "Rpost_mask": 0.06644059416770692}
+11:10:11 E: {"Nsurv": 192354, "ESSmask_0_log10_mc": 1262.5084863760326, "ESSmask_gwb_log10_A": 473.8903665149936, "ESS_full": 1871.6431804346107, "Twall": 34091, "ESSmask_worst": 473.8903665149936, "Rpost_mask": 0.013900747015781104}
+11:10:12 F: {"Nsurv": 239466, "ESSmask_0_log10_mc": 4256.467849895919, "ESSmask_gwb_log10_A": 1735.0621644553696, "ESS_full": 4473.883108177015, "Twall": 33744, "ESSmask_worst": 1735.0621644553696, "Rpost_mask": 0.05141839036437203}
+11:10:13 figure saved
+11:10:13 === DONE ===

@@ -1,0 +1,59 @@
+N=100000000 P=142 chunks=(1, 625, 9)
+mask cols: {'0_log10_mc': 5, '0_log10_fgw': 3}
+read 2000000 / 100000000 rows  (5 s)
+read 12000000 / 100000000 rows  (31 s)
+read 22000000 / 100000000 rows  (56 s)
+read 32000000 / 100000000 rows  (86 s)
+read 42000000 / 100000000 rows  (112 s)
+read 52000000 / 100000000 rows  (140 s)
+read 62000000 / 100000000 rows  (164 s)
+read 72000000 / 100000000 rows  (191 s)
+read 82000000 / 100000000 rows  (215 s)
+read 92000000 / 100000000 rows  (240 s)
+thinned matrix (10000000, 142)  (261 s)
+--- per parameter tau, full chain, sorted worst first (935 s) ---
+J1643-1224_red_noise_gamma   tau=     4863129  ESS=          21
+J1643-1224_red_noise_log10_A tau=     4132199  ESS=          24
+J0437-4715_red_noise_log10_A tau=     2878660  ESS=          35
+J1022+1001_red_noise_log10_A tau=     2348279  ESS=          43
+J2129-5721_red_noise_log10_A tau=     2187789  ESS=          46
+J2129-5721_red_noise_gamma   tau=     2168960  ESS=          46
+J1713+0747_red_noise_gamma   tau=     1403196  ESS=          71
+J1918-0642_red_noise_log10_A tau=     1272339  ESS=          79
+J1022+1001_red_noise_gamma   tau=      666663  ESS=         150
+J1603-7202_red_noise_gamma   tau=      663937  ESS=         151
+J1603-7202_red_noise_log10_A tau=      663080  ESS=         151
+J0437-4715_red_noise_gamma   tau=      631017  ESS=         158
+J1918-0642_red_noise_gamma   tau=      629513  ESS=         159
+J0613-0200_red_noise_log10_A tau=      617195  ESS=         162
+J1857+0943_red_noise_gamma   tau=      592840  ESS=         169
+J1713+0747_red_noise_log10_A tau=      591487  ESS=         169
+J0621+1002_red_noise_log10_A tau=      577070  ESS=         173
+J0621+1002_red_noise_gamma   tau=      536157  ESS=         187
+J0034-0534_red_noise_gamma   tau=      535478  ESS=         187
+J0034-0534_red_noise_log10_A tau=      532662  ESS=         188
+J1600-3053_red_noise_log10_A tau=      531690  ESS=         188
+J0218+4232_red_noise_gamma   tau=      504909  ESS=         198
+J0218+4232_red_noise_log10_A tau=      496961  ESS=         201
+J1857+0943_red_noise_log10_A tau=      492121  ESS=         203
+J2124-3358_red_noise_log10_A tau=      491142  ESS=         204
+--- CW+GWB params only ---
+gwb_log10_A                  tau=       45501  ESS=        2198
+0_log10_mc                   tau=        9385  ESS=       10656
+0_log10_h                    tau=          12  ESS=     8129275
+0_phase0                     tau=          10  ESS=     9542172
+0_cos_inc                    tau=          10  ESS=     9571261
+0_psi                        tau=          10  ESS=     9577260
+read 0_log10_h full res (93 s)
+--- 1% mask around 75.4 Mpc ---
+survivors: 7151 of 100000000
+gaps: mean=13973 median=690 min=1 max=549164 first=68676 last=99972083
+naive subset tau(log10_mc) = 29.3 -> naive ESS = 244
+--- corrected masked ESS = min(Nsurv, N/tau), CW+GWB ---
+gwb_log10_A        tau=       45501  masked ESS ~         2198
+0_log10_mc         tau=        9385  masked ESS ~         7151
+0_log10_h          tau=          12  masked ESS ~         7151
+0_phase0           tau=          10  masked ESS ~         7151
+0_cos_inc          tau=          10  masked ESS ~         7151
+0_psi              tau=          10  masked ESS ~         7151
+DONE2 (105 s)

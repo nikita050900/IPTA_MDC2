@@ -1,0 +1,18 @@
+survivors 7151
+--- split chain into K equal segments, masked q95 in each ---
+K= 2 used= 2  q95: [9.728 9.91 ]
+        nsurv: [3227, 3924]
+K= 4 used= 4  q95: [9.676 9.784 9.91  9.657]
+        nsurv: [1529, 1698, 2120, 1804]
+        sd=0.1166 -> SE(full) ~ 0.0583
+K= 8 used= 8  q95: [9.677 9.672 9.793 9.716 9.697 9.91  9.637 9.679]
+        nsurv: [782, 747, 859, 839, 827, 1293, 879, 925]
+        sd=0.0884 -> SE(full) ~ 0.0312
+K=16 used=16  q95: [9.739 9.638 9.689 9.672 9.727 9.793 9.716 9.74  9.672 9.742 9.643 9.91  9.592 9.677 9.6   9.688]
+        nsurv: [423, 359, 287, 460, 402, 457, 436, 403, 404, 423, 502, 791, 434, 445, 422, 503]
+        sd=0.0774 -> SE(full) ~ 0.0193
+full masked q95 = 9.7928
+clumps sep > tau_mc(9385): 1101 -> mean surv/clump 6.5
+clumps sep > tau_gwb(45501): 659 -> mean surv/clump 10.9
+distinct rounded log10_mc among survivors: 2108 of 7151
+DONE3 (10 s)

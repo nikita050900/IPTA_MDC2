@@ -1,0 +1,20 @@
+read cols 0-8 + gwb_log10_A (196 s)
+cols: ['0_cos_gwtheta', '0_cos_inc', '0_gwphi', '0_log10_fgw', '0_log10_h', '0_log10_mc', '0_phase0', '0_psi', 'J0030+0451_cw0_p_dist']
+=== 1 pct mask: 7151 survivors of 100000000 ===
+gaps mean=13973 median=690 p10=1 p90=39324 max=549164
+frac of gaps < tau_mc(9385): 0.846 ; frac < 100: 0.262 ; n_clumps(gap>9385)+1 = 1101
+frac of gaps < tau_gwb(45501): 0.908 ; n_clumps(gap>45501)+1 = 659
+--- block bootstrap in chain time (no reindexing) ---
+log10_mc     mean Lblk=    93850 ( 766 blk)  val=9.2061  SE=0.03650  ESS_eff=     159   [iid SE=0.00545]
+log10_mc     q95  Lblk=    93850 ( 766 blk)  val=9.7928  SE=0.07684  ESS_eff=      36   [iid SE=0.00545]
+log10_mc     mean Lblk=   187700 ( 483 blk)  val=9.2061  SE=0.03427  ESS_eff=     181   [iid SE=0.00545]
+log10_mc     q95  Lblk=   187700 ( 483 blk)  val=9.7928  SE=0.07822  ESS_eff=      35   [iid SE=0.00545]
+gwb_log10_A  mean Lblk=   455010 ( 220 blk)  val=-15.1403  SE=0.08627  ESS_eff=     109   [iid SE=0.01067]
+gwb_log10_A  q95  Lblk=   455010 ( 220 blk)  val=-14.3963  SE=0.01157  ESS_eff=    6083   [iid SE=0.01067]
+gwb_log10_A  mean Lblk=   910020 ( 110 blk)  val=-15.1403  SE=0.08249  ESS_eff=     120   [iid SE=0.01067]
+gwb_log10_A  q95  Lblk=   910020 ( 110 blk)  val=-14.3963  SE=0.01142  ESS_eff=    6241   [iid SE=0.01067]
+naive reindexed log10_mc     tau_sub=   29.3 -> ESS=    244
+naive reindexed gwb_log10_A  tau_sub=   61.7 -> ESS=    116
+gwb_log10_A full mean=-14.8736 sd=0.6596 | masked mean=-15.1403 sd=0.9022
+log10_mc   full mean=10.5653 sd=0.4263 | masked mean=9.2061 sd=0.4607
+DONE (11 s)

@@ -1,0 +1,21 @@
+==================================================================
+RUN E  survivors 192354   Table 8 ESS_full 1870   (read 25s)
+  gaps mean 520 median 1   span 11320 to 99999094
+  distinct log10_mc: 3605
+  param            ESS_masked  (Lblk 93850 / 187700 / 455010 / 910020)
+  0_log10_mc         2152     1715     1517     1609
+  0_log10_h          1898     1837     1656     1455
+  gwb_log10_A         728      630      594      552
+  gwb_gamma           670      507      612      645
+  elapsed 27 s
+==================================================================
+RUN F  survivors 239466   Table 8 ESS_full 4470   (read 14s)
+  gaps mean 417 median 1   span 13981 to 99990121
+  distinct log10_mc: 8003
+  param            ESS_masked  (Lblk 93850 / 187700 / 455010 / 910020)
+  0_log10_mc         4656     4153     4108     4113
+  0_log10_h          4842     4543     3829     3879
+  gwb_log10_A        1568     1927     1504     1669
+  gwb_gamma          1424     1498     1200     1438
+  elapsed 16 s
+DONE_EF

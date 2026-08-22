@@ -1,0 +1,16 @@
+survivors 7151 of 100000000
+
+param            tau_full     ESS_full      Nsurv  ESS_mask_bb ESS_mask_naive
+log10_mc             9385        10655       7151          178          244
+     (block bootstrap: Lblk=187700, 483 blocks, mean=9.2061, SE=0.03452, sd=0.4608)
+log10_h                12      8333333       7151          194          245
+     (block bootstrap: Lblk=20000, 1375 blocks, mean=-14.3812, SE=0.05518, sd=0.7677)
+gwb_log10_A         45501         2198       7151          124          116
+     (block bootstrap: Lblk=910020, 110 blocks, mean=-15.1403, SE=0.08090, sd=0.9023)
+
+--- is masked h just a function of masked Mc? ---
+corr(masked log10_mc, masked log10_h) = 0.999995
+spread of (log10_h - 5/3 log10_mc) among survivors: sd=0.00254, range=0.00868 dex
+predicted band full width log10((1+eta)/(1-eta)) = 0.00869 dex
+sd of masked log10_h alone = 0.7677 ; sd of masked log10_mc = 0.4607
+DONE4 (13 s)
