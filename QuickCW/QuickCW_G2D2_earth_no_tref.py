@@ -85,7 +85,7 @@ def QuickCW(chain_params, psrs, noise_json=None, use_legacy_equad=True,
     log10_fgw = parameter.Uniform(np.log10(chain_params.freq_bounds[0]),
                                   np.log10(chain_params.freq_bounds[1]))('0_log10_fgw')
 
-    m_min, m_max = 7.03, 11
+    m_min, m_max = 7.03, 10
     phase0 = parameter.Uniform(0, 2*np.pi)('0_phase0')
     psi = parameter.Uniform(0, np.pi)('0_psi')
     cos_inc = parameter.Uniform(-1, 1)('0_cos_inc')

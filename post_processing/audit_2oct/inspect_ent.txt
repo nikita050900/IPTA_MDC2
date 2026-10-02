@@ -1,0 +1,175 @@
+core_single_MDC2_DS1.h5
+    chain (75001, 141) float64
+    cov (137, 137) float64
+    jump_fractions/DEJump () float64
+    jump_fractions/covarianceJumpProposalAM () float64
+    jump_fractions/covarianceJumpProposalSCAM () float64
+    jump_fractions/draw_from_cw_prior () float64
+    jump_fractions/draw_from_log10_mc_prior () float64
+    jump_fractions/draw_from_p_dist_prior () float64
+    jump_fractions/draw_from_p_phase_prior () float64
+    jump_fractions/draw_from_prior () float64
+    jump_fractions/draw_from_red_prior () float64
+    jump_fractions/phase_psi_reverse_jump () float64
+    jumps/DEJump_jump (747,) float64
+    jumps/covarianceJumpProposalAM_jump (751,) float64
+    jumps/covarianceJumpProposalSCAM_jump (751,) float64
+    jumps/draw_from_cw_prior_jump (751,) float64
+    jumps/draw_from_log10_mc_prior_jump (751,) float64
+    jumps/draw_from_p_dist_prior_jump (751,) float64
+    jumps/draw_from_p_phase_prior_jump (751,) float64
+    jumps/draw_from_prior_jump (751,) float64
+    jumps/draw_from_red_prior_jump (751,) float64
+    jumps/phase_psi_reverse_jump_jump (751,) float64
+    metadata/burn () int64
+    metadata/chaindir () object
+    metadata/chainpath () object
+    metadata/label () object
+    metadata/runtime_info () object
+    params (141,) object
+    priors (137,) object
+   params ['cos_inc', 'crn_log10_A', 'log10_mc', 'phase0', 'psi', 'lnpost', 'lnlike', 'chain_accept', 'pt_chain_accept']
+   chain (75001, 141)
+   q95 mc(lin) 9.781357760725683
+core_single_MDC2_DS1_varyfgw.h5
+    chain (75001, 142) float64
+    cov (138, 138) float64
+    jump_fractions/DEJump () float64
+    jump_fractions/covarianceJumpProposalAM () float64
+    jump_fractions/covarianceJumpProposalSCAM () float64
+    jump_fractions/draw_from_cw_prior () float64
+    jump_fractions/draw_from_log10_fgw_prior () float64
+    jump_fractions/draw_from_log10_mc_prior () float64
+    jump_fractions/draw_from_p_dist_prior () float64
+    jump_fractions/draw_from_p_phase_prior () float64
+    jump_fractions/draw_from_prior () float64
+    jump_fractions/draw_from_red_prior () float64
+    jump_fractions/phase_psi_reverse_jump () float64
+    jumps/DEJump_jump (747,) float64
+    jumps/covarianceJumpProposalAM_jump (751,) float64
+    jumps/covarianceJumpProposalSCAM_jump (751,) float64
+    jumps/draw_from_cw_prior_jump (751,) float64
+    jumps/draw_from_log10_fgw_prior_jump (751,) float64
+    jumps/draw_from_log10_mc_prior_jump (751,) float64
+    jumps/draw_from_p_dist_prior_jump (751,) float64
+    jumps/draw_from_p_phase_prior_jump (751,) float64
+    jumps/draw_from_prior_jump (751,) float64
+    jumps/draw_from_red_prior_jump (751,) float64
+    jumps/phase_psi_reverse_jump_jump (751,) float64
+    metadata/burn () int64
+    metadata/chaindir () object
+    metadata/chainpath () object
+    metadata/label () object
+    metadata/runtime_info () object
+    params (142,) object
+    priors (138,) object
+   params ['cos_inc', 'crn_log10_A', 'log10_fgw', 'log10_mc', 'phase0', 'psi', 'lnpost', 'lnlike', 'chain_accept', 'pt_chain_accept']
+   chain (75001, 142)
+   fgw range -8.67399637501201 -7.0000140630242775
+   q95 mc(lin) 9.79875826671424
+core_single_MDC2.h5
+    chain (75001, 142) float64
+    cov (138, 138) float64
+    jump_fractions/DEJump () float64
+    jump_fractions/covarianceJumpProposalAM () float64
+    jump_fractions/covarianceJumpProposalSCAM () float64
+    jump_fractions/draw_from_cw_prior () float64
+    jump_fractions/draw_from_gwb_log_uniform_distribution () float64
+    jump_fractions/draw_from_log10_mc_prior () float64
+    jump_fractions/draw_from_p_dist_prior () float64
+    jump_fractions/draw_from_p_phase_prior () float64
+    jump_fractions/draw_from_prior () float64
+    jump_fractions/draw_from_red_prior () float64
+    jump_fractions/phase_psi_reverse_jump () float64
+    jumps/DEJump_jump (747,) float64
+    jumps/covarianceJumpProposalAM_jump (751,) float64
+    jumps/covarianceJumpProposalSCAM_jump (751,) float64
+    jumps/draw_from_cw_prior_jump (751,) float64
+    jumps/draw_from_gwb_log_uniform_distribution_jump (751,) float64
+    jumps/draw_from_log10_mc_prior_jump (751,) float64
+    jumps/draw_from_p_dist_prior_jump (751,) float64
+    jumps/draw_from_p_phase_prior_jump (751,) float64
+    jumps/draw_from_prior_jump (751,) float64
+    jumps/draw_from_red_prior_jump (751,) float64
+    jumps/phase_psi_reverse_jump_jump (751,) float64
+    metadata/burn () int64
+    metadata/chaindir () object
+    metadata/chainpath () object
+    metadata/label () object
+    metadata/runtime_info () object
+    params (142,) object
+    priors (138,) object
+   params ['cos_inc', 'crn_gamma', 'crn_log10_A', 'log10_mc', 'phase0', 'psi', 'lnpost', 'lnlike', 'chain_accept', 'pt_chain_accept']
+   chain (75001, 142)
+   q95 mc(lin) 9.869113910573537
+core_single_MDC2_varyfgw.h5
+    chain (75001, 143) float64
+    cov (139, 139) float64
+    jump_fractions/DEJump () float64
+    jump_fractions/covarianceJumpProposalAM () float64
+    jump_fractions/covarianceJumpProposalSCAM () float64
+    jump_fractions/draw_from_cw_prior () float64
+    jump_fractions/draw_from_gwb_log_uniform_distribution () float64
+    jump_fractions/draw_from_log10_fgw_prior () float64
+    jump_fractions/draw_from_log10_mc_prior () float64
+    jump_fractions/draw_from_p_dist_prior () float64
+    jump_fractions/draw_from_p_phase_prior () float64
+    jump_fractions/draw_from_prior () float64
+    jump_fractions/draw_from_red_prior () float64
+    jump_fractions/phase_psi_reverse_jump () float64
+    jumps/DEJump_jump (747,) float64
+    jumps/covarianceJumpProposalAM_jump (751,) float64
+    jumps/covarianceJumpProposalSCAM_jump (751,) float64
+    jumps/draw_from_cw_prior_jump (751,) float64
+    jumps/draw_from_gwb_log_uniform_distribution_jump (751,) float64
+    jumps/draw_from_log10_fgw_prior_jump (751,) float64
+    jumps/draw_from_log10_mc_prior_jump (751,) float64
+    jumps/draw_from_p_dist_prior_jump (751,) float64
+    jumps/draw_from_p_phase_prior_jump (751,) float64
+    jumps/draw_from_prior_jump (751,) float64
+    jumps/draw_from_red_prior_jump (751,) float64
+    jumps/phase_psi_reverse_jump_jump (751,) float64
+    metadata/burn () int64
+    metadata/chaindir () object
+    metadata/chainpath () object
+    metadata/label () object
+    metadata/runtime_info () object
+    params (143,) object
+    priors (139,) object
+   params ['cos_inc', 'crn_gamma', 'crn_log10_A', 'log10_fgw', 'log10_mc', 'phase0', 'psi', 'lnpost', 'lnlike', 'chain_accept', 'pt_chain_accept']
+   chain (75001, 143)
+   fgw range -8.673987850905752 -7.0075505026305684
+   q95 mc(lin) 9.900762056740358
+core_single_MDC2_DS1_new.h5
+    chain (75001, 141) float64
+    cov (137, 137) float64
+    jump_fractions/DEJump () float64
+    jump_fractions/covarianceJumpProposalAM () float64
+    jump_fractions/covarianceJumpProposalSCAM () float64
+    jump_fractions/draw_from_cw_prior () float64
+    jump_fractions/draw_from_log10_mc_prior () float64
+    jump_fractions/draw_from_p_dist_prior () float64
+    jump_fractions/draw_from_p_phase_prior () float64
+    jump_fractions/draw_from_prior () float64
+    jump_fractions/draw_from_red_prior () float64
+    jump_fractions/phase_psi_reverse_jump () float64
+    jumps/DEJump_jump (747,) float64
+    jumps/covarianceJumpProposalAM_jump (751,) float64
+    jumps/covarianceJumpProposalSCAM_jump (751,) float64
+    jumps/draw_from_cw_prior_jump (751,) float64
+    jumps/draw_from_log10_mc_prior_jump (751,) float64
+    jumps/draw_from_p_dist_prior_jump (751,) float64
+    jumps/draw_from_p_phase_prior_jump (751,) float64
+    jumps/draw_from_prior_jump (751,) float64
+    jumps/draw_from_red_prior_jump (751,) float64
+    jumps/phase_psi_reverse_jump_jump (751,) float64
+    metadata/burn () int64
+    metadata/chaindir () object
+    metadata/chainpath () object
+    metadata/label () object
+    metadata/runtime_info () object
+    params (141,) object
+    priors (137,) object
+   params ['cos_inc', 'crn_log10_A', 'log10_mc', 'phase0', 'psi', 'lnpost', 'lnlike', 'chain_accept', 'pt_chain_accept']
+   chain (75001, 141)
+   q95 mc(lin) 9.781357760725683
