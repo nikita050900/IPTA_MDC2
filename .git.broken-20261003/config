@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[branch "main"]
+[remote "origin"]
+	url = git@github.com:nikita050900/IPTA_MDC2.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

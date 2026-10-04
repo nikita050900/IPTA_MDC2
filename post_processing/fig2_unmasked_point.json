@@ -1,0 +1,10 @@
+{
+ "file": "G2D1_narrow_UL_4core_UNMASKED_outfile.h5",
+ "N": 100000000,
+ "tau_mc": 9384.818918868972,
+ "blocks": 533,
+ "UL": 10.978480339050293,
+ "ULerr": 0.0006941870655882086,
+ "nboot": 300,
+ "seed": 11
+}

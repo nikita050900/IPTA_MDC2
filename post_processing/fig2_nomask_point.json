@@ -1,0 +1,9 @@
+{
+ "UL": 9.980048179626465,
+ "ULerr": 0.0017843806948243707,
+ "N_total": 100000000,
+ "N_used": 9973093,
+ "prior_bound_used": 10.0,
+ "prior_bound_in_chain": 10.999998092651367,
+ "note": "95% UL with no dL mask, chain conditioned to log10 Mc <= 10 (paper prior bound)"
+}
